@@ -22,8 +22,8 @@
           <a href="#">About Us</a>
           <i class="aboutTransform fa-solid fa-address-card"></i>
         </div> 
-        <div class="loginContainer">
-          <a href="#">login</a>
+        <div id="formButton" class="loginContainer">
+          <button>login</button>
           <i class="loginTransform fa-solid fa-right-to-bracket"></i>
         </div>
       </div>
@@ -83,10 +83,11 @@
       <div class="secondInfo">2</div>
       <div class="thirdInfo">3</div>
 
-      <form action="submit" method="post">
+      <form id="myForm" action="submit" method="post">
         <h3>LOG IN</h3><br />
+        <div id="head"></div>
         <div class="formContainer">
-          <div class="userName">
+            <div class="userName">
             <label class="userName" for="userName">USER NAME</label> <br />
             <input type="text" name="userName" id="userName" class="control" placeholder="User Name" required=""><br />
           </div>
@@ -95,7 +96,7 @@
             <input type="text" name="password" id="password" class="control" placeholder="password" required=""><br />
           </div>
           <div class="logIn">
-            <input class="myButton" type="submit" value="login">
+            <input onclick="logIn()" class="myButton" name="submit" value="login">
             <a href="#">register</a>
           </div>
           <p>or register with</p>

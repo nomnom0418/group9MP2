@@ -67,7 +67,7 @@ body{
   transform: translate(65px, 1.1px);
 }
 /*--------------------------login-----------------------*/
-.loginContainer a{
+.loginContainer button{
   position: absolute;
   font-size: .7rem;
   text-decoration: none;
@@ -81,10 +81,12 @@ body{
   transition: opacity .2s ease-in-out, transform 300ms ease-in-out;
   background-color: var(--linkColor);
   color: var(--fontColor);
+  transform: translateX(20px);
+  border: none;
 }
 .loginTransform{
   position: absolute;
-  transform: translate(40px, 1.1px);
+  transform: translate(60px, 1.1px);
   transition: opacity .2s ease-in-out, transform .3s ease-in-out;
   color: var(--fontColor);
 }
@@ -92,11 +94,11 @@ body{
 .loginContainer{
   position: relative;
   cursor: pointer;
-  width: 60px;
+  width: 80px;
 }
-.loginContainer:hover a{
+.loginContainer:hover button{
   opacity: 1;
-  transform: translate(30px,0px);
+  transform: translate(50px,0px);
 }
 .loginContainer:hover i{
   opacity: 0;
@@ -220,9 +222,10 @@ p{
 }
 /*----------------------form-----------------------*/
 form{
+  transform: translate(50%, 50%);
   position: fixed;
-  bottom: 25%;
-  right: 30%;
+  bottom: 50%;
+  right: 50%;
   background-color: var(--primaryColor);
   color: var(--fontColor);
   border-style: outset;
@@ -234,6 +237,7 @@ form{
   width: 28%;
   height: 60%;
   font-size: .8rem;
+  display: none;
 }
 .formContainer{
   padding-left:23%;
@@ -255,12 +259,16 @@ form{
   color: var(--fontColor);
   border-radius: .75rem;
   cursor: pointer;
+  text-align: center;
 }
 .logIn a{
   color: var(--fontColor);
 }
 .myButton :hover{
   background-color: black;
+}
+.control{
+  width: 70%;
 }
 /*----------------------media queries-----------------*/
 @media screen and (720px <= width <= 820px){
@@ -280,6 +288,9 @@ form{
   .img2{
     width: 9rem;
   }
+  form{
+    width: 35%;
+  }
 }
 @media screen and (620px <= width <= 719px){
   .img1{
@@ -291,7 +302,9 @@ form{
   .img2{
     height: 10rem;
   }
-  
+  form{
+    width: 40%;
+  }
 }
 @media screen and (521px <= width <= 619px){
   .img1{
@@ -313,7 +326,9 @@ form{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  
+  form{
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 520px){
@@ -360,5 +375,7 @@ form{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  
+  form{
+    width: 60%;
+  }
 }  
