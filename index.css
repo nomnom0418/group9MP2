@@ -1,0 +1,329 @@
+:root{
+  --linkColor: blueviolet;
+  --primaryColor: #e966a0;
+  --fontColor: #2b2730;
+  --secondaryColor: #6554af;
+  --thirdColor: #9575de;
+  --myLink: white;
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.myHeader{
+  display: flex;
+  height: 2rem;
+  background-color: var(--thirdColor);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.logoContainer img{
+  height: 1.5rem;
+  transform: translateY(-6px);
+}
+.duo{
+  display: flex;
+  transform: translateY(-10px);
+}
+
+/*--------------about us--------------------*/
+
+.aboutContainer a{
+  position: absolute;
+  font-size: .7rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 3px 3px 3px 3px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 200ms ease-in-out, transform 300ms ease-in-out;
+  background-color: var(--linkColor);
+  color: var(--myLink);
+}
+.aboutTransform{
+  position: absolute;
+  transform: translate(35px, 1.1px);
+  transition: opacity 400ms ease-in-out, transform .3s ease-in-out;
+  color: var(--myLink);
+}
+.aboutContainer{
+  position: relative;
+  cursor: pointer;
+  width: 82px;
+}
+.aboutContainer:hover a{
+  opacity: 1;
+  transform: translate(10px, 0px);
+}
+.aboutContainer:hover i{
+  opacity: 0;
+  transform: translate(65px, 1.1px);
+}
+/*--------------------------login-----------------------*/
+.loginContainer a{
+  position: absolute;
+  font-size: .7rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 3px 3px 3px 3px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease-in-out, transform 300ms ease-in-out;
+  background-color: var(--secondaryColor);
+  color: var(--myLink);
+}
+.loginTransform{
+  position: absolute;
+  transform: translate(40px, 1.1px);
+  transition: opacity .2s ease-in-out, transform .3s ease-in-out;
+  color: var(--myLink);
+}
+
+.loginContainer{
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+}
+.loginContainer:hover a{
+  opacity: 1;
+  transform: translate(30px,0px);
+}
+.loginContainer:hover i{
+  opacity: 0;
+  transform: translate(60px, 1.1px);
+}
+/*----------------body--------------*/
+h3{
+ text-align: center;
+ font-size: .9rem;
+ width: 100%;
+}
+.myBody{
+  margin: 0% 10%;
+  color: var(--fontColor);
+}
+.myBody div{
+  display: grid;
+  width: 100%;
+  font-size: .7rem;
+}
+.img1{
+   height: 8rem;
+   border-top-left-radius: 100px;
+   margin-right: 1rem;
+   box-shadow: 1px 1px 5px var(--fontColor);
+}
+.img2{
+  height: 8rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  margin-left: 1rem;
+  box-shadow: 1px 1px 5px var(--fontColor);
+}
+.img3{
+  height: 8rem;
+  border-bottom-left-radius: 100px;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px var(--fontColor);
+}
+.div1{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.div2{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+.div3{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+img{
+  margin-top: .9rem;
+}
+p{
+  text-align: justify;
+}
+.spanSmall{
+  display: none;
+}
+/*--------------------footer----------------------*/
+.myFooter{
+  display:grid;
+  height: 150px;
+  width: 95%;
+  margin: 2% 2.5%;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: .8px .8px 3px var(--fontColor);
+}
+
+.myFooter .firstInfo{
+  background-color: var(--secondaryColor);
+  line-height: 1rem;
+}
+.firstInfo{
+  display: flex;
+  color: aliceblue;
+  font-weight: lighter;
+  font-size: .6rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.firstInfo img{
+  height: 6em;
+  border-radius: 3em;
+  box-shadow: .8px .8px 3px var(--fontColor);
+}
+.myFooter .secondInfo{
+  background-color: var(--thirdColor);
+}
+.myFooter .thirdInfo{
+  background-color: var(--secondaryColor);
+}
+.fa-at{
+  color: rgb(80, 250, 80);
+}
+.fa-linkedin-in{
+  color: rgb(136, 197, 255);
+}
+.fa-phone{
+  color: orange;
+}
+/*----------------------form-----------------------*/
+form{
+  position: fixed;
+  bottom: 25%;
+  right: 30%;
+  background-color: rgb(207, 177, 214);
+  color: var(--fontColor);
+  border-style: outset;
+  border-style: inset;
+  border-radius: 8px;
+  border-width: 4px;
+  border-color: solid #6554af;
+  box-shadow: 1px 1px 2px #6554af;
+  width: 28%;
+  height: 60%;
+  font-size: .8rem;
+}
+.formContainer{
+  padding-left:23%;
+}
+.password{
+  margin: 9px 0px;
+}
+.logIn{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+}
+/*----------------------media queries-----------------*/
+@media screen and (720px <= width <= 820px){
+  .container{
+    width: 100%;
+  }
+  .img1, .img2, .img3{
+    width: 9rem;
+    
+  }
+  .img1{
+    height: 9rem;
+  }
+  .img3{
+    height: 8rem;
+  }
+  .img2{
+    width: 9rem;
+  }
+}
+@media screen and (620px <= width <= 719px){
+  .img1{
+    height: 10rem;
+  }
+  .img3{
+    height: 10rem;
+  }
+  .img2{
+    height: 10rem;
+  }
+  
+}
+@media screen and (521px <= width <= 619px){
+  .img1{
+    height: 11rem;
+  }
+  .img3{
+    height: 11rem;
+    width: 8rem;
+  }
+  .img2{
+    height: 11rem;
+    width: 7rem;
+  }
+  .myFooter{
+
+    height: 150px;
+    width: 70%;
+    margin: 1% 15%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+}
+
+@media screen and (max-width: 520px){
+  .div1, .div2, .div3{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .div2 div{
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .img1, .img2, .img3{
+    width: 95%;
+    
+  }
+  .paragraph1, .paragraph2, .paragraph3, .img1, .img2, .img3{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .img2{
+    border-bottom-right-radius: 6rem;
+    border-top-right-radius: 0px;
+  }
+  p{
+    width: 95%;
+  }
+  .spanLarge{
+    display: none;
+  }
+  .spanSmall{
+    display: block;
+    text-align: justify;
+    width: 95%;
+  }
+  .div3 span, .div2 span{
+    margin-top: 10px;
+  }
+  .myFooter{
+
+    height: 150px;
+    width: 70%;
+    margin: 1% 15%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+}  
