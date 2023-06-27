@@ -27,7 +27,6 @@ body{
 }
 .logoContainer img{
   height: 1.5rem;
-  transform: translateY(-6px);
 }
 .duo{
   display: flex;
