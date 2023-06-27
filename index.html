@@ -83,9 +83,9 @@
       <div class="secondInfo">2</div>
       <div class="thirdInfo">3</div>
 
-      <form id="myForm" action="submit" method="post">
+      <form class="loginForm" id="myForm" action="submit" method="post">
         <h3>LOG IN</h3><br />
-        <div id="head"></div>
+        <div class="alertColor" id="head"></div>
         <div class="formContainer">
             <div class="userName">
             <label class="userName" for="userName">USER NAME</label> <br />
@@ -96,14 +96,77 @@
             <input type="text" name="password" id="password" class="control" placeholder="password" required=""><br />
           </div>
           <div class="logIn">
-            <input onclick="logIn()" class="myButton" name="submit" value="login">
-            <a href="#">register</a>
+            <button onclick="logIn()" class="myButton" name="submit" value="login">submit</button>
+            <div id="registerButton" class="registerButton">register</div>
           </div>
           <p>or register with</p>
           <p>Facebook</p>
           <p>Gmail</p>
         </div> 
       </form>
+
+
+      <form id="registerForm" class="registerForm" action="" method="post">
+    
+        <div class="greet">Welcome to My System</div>
+        <div class="headText">Register Your Acount</div>
+        <div class="infoContainer">
+  
+          <div class="area2">
+            <div>First Name*</div>
+            <input type="text" name="firstName" id="firstName" required>
+          </div>
+          <div class="area2">
+            <div>Last Name*</div>
+            <input type="text" name="lastName" id="lastName" required>
+          </div>
+          <div class="area2">
+            <div>Birthday*</div>
+            <input type="date" name="birthday" id="birthday" required>
+          </div>
+          <div class="area5">
+            <div>Address*</div>
+            <textarea name="address" id="address" placeholder="1234 Main St" required></textarea>
+          </div>
+          <div class="area2">
+            <div>City*</div>
+            <input type="text" name="City" id="City" rows="3" cols="100" required>
+          </div>
+          <div class="area7">
+            <div>
+            <div>Province*</div>
+            <select name="province" required>
+              <option value="abra">Abra</option>
+              <option value="batangas">Batangas</option>
+              <option value="cavite">Cavite</option>
+              <option value="other">other province</option>
+            </select>
+            </div>
+            <div>
+            <div>Zip*</div>
+            <input type="text" name="Zip" id="Zip" required>
+            </div>
+          </div>
+          <div class="area2">
+            <div>Email*</div>
+            <input type="email" name="email" id="email" required>
+          </div>
+          <div class="area2">
+            <div>Password</div>
+            <input type="password" name="password">
+          </div>
+          <div class="area2">
+            <div>Confirm Password</div>
+            <input type="password" name="confirmPassword">
+          </div>
+          <div class="area12">
+            <input type="checkbox" name="subscribe">
+            <div>Subscribe for the latest news</div>
+          </div>
+        </div>
+      
+        <button type="submit" id="createAccountButton" value="Create Your Account " class="createAccountButton">Create Your Account </button>
+    </form>
     </div>
 
 

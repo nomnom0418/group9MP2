@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', updateImageSrc);
 });
 
-//form
+//login form
 const formButton = document.getElementById('formButton');
 const myForm = document.getElementById('myForm');
 
@@ -56,14 +56,14 @@ function logIn(){
   else if (myUserName == "" && myPassword == ""){
     remove();
     myPrompt = document.createElement("div");
-    myPrompt.classList = "myChildren warningEmpty";
+    myPrompt.classList = "myChildren warning";
     myPrompt.textContent = "please input username and password";
     myWarning.appendChild(myPrompt);
   }
   else{
     remove();
     myPrompt = document.createElement("div");
-    myPrompt.classList = "myChildren warningWrongPassword";
+    myPrompt.classList = "myChildren danger";
     myPrompt.textContent = "invalid username or password";
     myWarning.appendChild(myPrompt);
   }
@@ -74,3 +74,15 @@ function remove(){
     children[0].parentNode.removeChild(children[0]);
   }  
 }
+//register form
+const regiterButton = document.getElementById('registerButton');
+const registerForm = document.getElementById('registerForm');
+
+// Add click event listener to the button
+registerButton.addEventListener('click', function() {
+  if (registerForm.style.display === 'none') {
+    registerForm.style.display = 'block';
+  } else {
+    registerForm.style.display = 'none';
+  }
+});
