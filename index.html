@@ -84,6 +84,7 @@
       <div class="thirdInfo">3</div>
 
       <form class="loginForm" id="myForm" action="submit" method="post">
+        <div class="closeContainer"><i id="closeLogin" class="fa-regular fa-rectangle-xmark closeLogin"></i></div>
         <h3>LOG IN</h3><br />
         <div class="alertColor" id="head"></div>
         <div class="formContainer">
@@ -93,7 +94,7 @@
           </div>
           <div class="password">
             <label class="password" for="password">PASSWORD</label> <br />
-            <input type="text" name="password" id="password" class="control" placeholder="password" required=""><br />
+            <input type="password" name="password" id="password" class="control" placeholder="password" required=""><br />
           </div>
           <div class="logIn">
             <button onclick="logIn()" class="myButton" name="submit" value="login">submit</button>
@@ -107,8 +108,10 @@
 
 
       <form id="registerForm" class="registerForm" action="" method="post">
-    
-        <div class="greet">Welcome to My System</div>
+        <div class="welcomeTitle">
+          <div class="greet">Welcome to My System</div>
+          <i id="closeForm" class="fa-regular fa-rectangle-xmark"></i>
+        </div>
         <div class="headText">Register Your Acount</div>
         <div class="infoContainer">
   

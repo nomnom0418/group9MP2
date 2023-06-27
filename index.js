@@ -39,6 +39,11 @@ formButton.addEventListener('click', function() {
 let myWarning = document.getElementById("head");
 let children = myWarning.getElementsByClassName('myChildren');
 let myPrompt;
+let closeLogin = document.getElementById("closeLogin");
+
+closeLogin.addEventListener("click", function(){
+  myForm.style.display = "none";
+})
 function logIn(){
   let defaultUserName = "admin";
   let defaultPassword = "password";
@@ -77,7 +82,7 @@ function remove(){
 //register form
 const regiterButton = document.getElementById('registerButton');
 const registerForm = document.getElementById('registerForm');
-
+const closeForm = document.getElementById('closeForm');
 // Add click event listener to the button
 registerButton.addEventListener('click', function() {
   if (registerForm.style.display === 'none') {
@@ -86,3 +91,6 @@ registerButton.addEventListener('click', function() {
     registerForm.style.display = 'none';
   }
 });
+closeForm.addEventListener('click', function() {
+  registerForm.style.display = 'none';
+})

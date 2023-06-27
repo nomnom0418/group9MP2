@@ -225,7 +225,7 @@ p{
 .fa-phone{
   color: orange;
 }
-/*----------------------form-----------------------*/
+/*----------------------lolgin form-----------------------*/
 .success{
   background-color: var(--success);
   width: 40%;
@@ -303,6 +303,9 @@ p{
 .registerButton{
   cursor: pointer;
 }
+.closeContainer{
+  text-align: end;
+} 
 /*-----------register form--------------------------*/
 .registerForm{
   color: var(--fontColor);
@@ -388,6 +391,16 @@ button :hover{
   width: 50px;
   padding-left: 30%;
 }
+.welcomeTitle{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.fa-rectangle-xmark{
+  justify-self: end;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
 
 /*----------------------media queries-----------------*/
 @media screen and (720px <= width <= 820px){
@@ -407,7 +420,7 @@ button :hover{
   .img2{
     width: 9rem;
   }
-  form{
+  .loginForm{
     width: 35%;
   }
 }
@@ -421,7 +434,7 @@ button :hover{
   .img2{
     height: 10rem;
   }
-  form{
+  .loginForm{
     width: 40%;
   }
 }
@@ -445,7 +458,7 @@ button :hover{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  form{
+  .loginForm{
     width: 40%;
   }
 }
@@ -494,7 +507,7 @@ button :hover{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  form{
+  .loginForm{
     width: 60%;
   }
 }  
