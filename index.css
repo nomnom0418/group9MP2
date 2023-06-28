@@ -360,6 +360,13 @@ button :hover{
 .area2{
   height: 50px;
 }
+.country select{
+  width: 98%;
+  height: 25px;
+}
+.country select option{
+  font-size: .7rem;
+}
 .area2 input{
   width: 95%;
   height: 20px;

@@ -83,7 +83,7 @@
       <div class="secondInfo">2</div>
       <div class="thirdInfo">3</div>
 
-      <form class="loginForm" id="myForm" action="submit" method="post">
+      <form class="loginForm" id="myForm" action="#" method="post">
         <div class="closeContainer"><i id="closeLogin" class="fa-regular fa-rectangle-xmark closeLogin"></i></div>
         <h3>LOG IN</h3><br />
         <div class="alertColor" id="head"></div>
@@ -138,18 +138,20 @@
           <div class="area7">
             <div>
             <div>Province*</div>
-            <select name="province" required>
-              <option value="abra">Abra</option>
-              <option value="batangas">Batangas</option>
-              <option value="cavite">Cavite</option>
-              <option value="other">other province</option>
+            <select id="provinceSelect" name="province" required>
             </select>
             </div>
+            
             <div>
             <div>Zip*</div>
             <input type="text" name="Zip" id="Zip" required>
             </div>
           </div>
+          <div class="country">
+            <div >country*</div>
+            <select id="countrySelect" name="country" required>
+            </select>
+            </div>
           <div class="area2">
             <div>Email*</div>
             <input type="email" name="email" id="email" required>
