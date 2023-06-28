@@ -400,7 +400,9 @@ button :hover{
   margin-right: 5px;
   cursor: pointer;
 }
-
+.createAccountButton{
+  color: var(--fontColor);
+}
 /*----------------------media queries-----------------*/
 @media screen and (720px <= width <= 820px){
   .container{

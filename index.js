@@ -94,3 +94,4 @@ registerButton.addEventListener('click', function() {
 closeForm.addEventListener('click', function() {
   registerForm.style.display = 'none';
 })
+
