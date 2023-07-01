@@ -1,0 +1,68 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #EFF4F5;
+  --secondaryColor: #677688;
+  --thirdColor: #1a3950;
+  --myLink: #2da7dd; 
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
+
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  Roboto,Raleway;
+}
+.navContainer{
+  display: grid;
+  grid-template-columns: 30% 6% 12% 9% 8% 6% 20% 5%;
+  background-color: var(--thirdColor);
+  color: var(--fontColor);
+  height: 2rem;
+  align-items: center;
+  
+  text-align: center;
+}
+.logoContainer img{
+  height: 1.5rem;
+}
+.navMenu{
+  font-size: .7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.fa-solid{
+  position: absolute;
+  animation-name: round;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.fa-house{
+  top: 7px;
+  left:32.2%;
+}
+.fa-fire{
+  top: 7px;
+  left:41.2%;
+}
+.fa-list{
+  top: 7px;
+  left:52%;
+}
+.fa-box-archive{
+  top: 7px;
+  left:60.5%;
+}
+.fa-address-card{
+  top: 7px;
+  left:67.1%;
+}
+
+@keyframes round {
+  0%   {transform: rotate3d(.0, .1, .0, 360deg);}
+
+}

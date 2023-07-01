@@ -2,11 +2,13 @@ window.addEventListener('DOMContentLoaded', function() {
   let myImage1 = document.getElementById('myImg1');
   let myImage2 = document.getElementById('myImg2');
   let myImage3 = document.getElementById('myImg3');
+  
   function updateImageSrc() {
     if (window.matchMedia('(520px <= width <= 820px)').matches) {
       myImage1.src = 'blogImages/natureImage2.png'; // Change image for smaller screens
       myImage2.src = 'blogImages/foodImage2.png';
       myImage3.src = 'blogImages/techImage2.png';
+  
     } 
     else{
       myImage1.src = 'blogImages/natureImage1.png';
@@ -99,18 +101,18 @@ closeForm.addEventListener('click', function() {
 
 const selectCountry = document.getElementById('countrySelect');
 let xhr = new XMLHttpRequest()
-xhr.open('GET', 'https://restcountries.com/v3.1/all',true)
+xhr.open('GET', 'https://restcountries.com/v3.1/all')
 xhr.onload=function(){
-  if (xhr.status==200){
+  //if (xhr.status==200){
     let countries = JSON.parse(this.response)
     countries.forEach(country => {
       const option = document.createElement('option');
-      
-      option.text = country.name.common;   
+      option.value = country.name.common;
+      option.text = country.name.common;
       selectCountry.appendChild(option);   
     });
-    
- }
+  
+ //}
 }
 xhr.send()
 //countries.forEach(country => {
@@ -210,13 +212,13 @@ function updateProvinceOptions() {
   const selectedCountry = selectCountry.value;
   provinceSelect.innerHTML = "<option value=''>Select Province</option>";
 
- if(selectedCountry=="PH"){
-   for(let i=0; i < phProvinces.length; i++) {
+ if(selectedCountry=="Philippines"){
+   for(let i=0; i < phProvinces.length; i++){
      const option = document.createElement('option');
-     option.value = phProvinces[i];  
-     option.text = phProvinces[i];   
-     provinceSelect.appendChild(option);   
+     option.value = phProvinces[i];
+     option.text = phProvinces[i];
+     provinceSelect.appendChild(option);
     }
   }
 }
-countrySelect.addEventListener("change", updateProvinceOptions);
+selectCountry.addEventListener("change", updateProvinceOptions);
