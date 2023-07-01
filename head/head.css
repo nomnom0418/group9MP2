@@ -34,6 +34,7 @@ body{
   font-size: .7rem;
   font-weight: 300;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .fa-solid{
   position: absolute;
@@ -60,6 +61,10 @@ body{
 .fa-address-card{
   top: 7px;
   left:67.1%;
+}
+.con{
+  height: 17px;
+  cursor: pointer;
 }
 
 @keyframes round {
