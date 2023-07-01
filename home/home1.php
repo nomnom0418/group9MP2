@@ -7,9 +7,8 @@
   <title>HOME</title>
 </head>
 <body>
-  <?php include '../head/head.html';
+  <?php include_once '../head/head.html';
   ?>
-  <div id="MyNavBar"></div>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../head/head.js"></script>
   <script src="home.js"></script>

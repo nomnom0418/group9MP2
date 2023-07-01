@@ -52,23 +52,21 @@ function logIn(){
   let myUserName = document.getElementById("userName").value;
   let myPassword = document.getElementById("password").value;
 
-
+  remove();
   if (myUserName == defaultUserName && myPassword == defaultPassword){
-    remove();
     myPrompt = document.createElement("div");
     myPrompt.classList = "myChildren success";
     myPrompt.textContent = "Succesfully Login";
     myWarning.appendChild(myPrompt);
+    window.location.replace='http://localhost/myMP2/group9MP2/home/home1.php';
   }
   else if (myUserName == "" && myPassword == ""){
-    remove();
     myPrompt = document.createElement("div");
     myPrompt.classList = "myChildren warning";
     myPrompt.textContent = "please input username and password";
     myWarning.appendChild(myPrompt);
   }
   else{
-    remove();
     myPrompt = document.createElement("div");
     myPrompt.classList = "myChildren danger";
     myPrompt.textContent = "invalid username or password";
