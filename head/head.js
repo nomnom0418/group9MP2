@@ -35,4 +35,33 @@ $(document).ready(function(){
   $('.aboutContainer').mouseleave(function(){
     $('.about').show(500),$('.fa-address-card').hide(500);
   });
+
+  //burger----------------
+  $('#burgerCon').click(function(){
+    $(this).children().eq(1).toggle();
+    var rotationAngle = $(this).children().eq(0).data('rotation') ||0;
+    if (rotationAngle === 0) {
+      $(this).children().eq(0).css({
+        'transform': 'rotate(45deg)',
+        'top': "+=5px"
+      });
+      $(this).children().eq(2).css({
+        'transform': 'rotate(-45deg)',
+        'top': "-=6px"
+      });
+      rotationAngle = 45;
+    }else{
+      $(this).children().eq(0).css({
+        'transform': 'rotate(0deg)',
+        'top': '8px'
+      });
+      $(this).children().eq(2).css({
+        'transform': 'rotate(0deg)',
+        'top': '20px'
+      });
+      rotationAngle = 0;
+    }
+    $(this).children().eq(0).data('rotation', rotationAngle);
+  })
+
 })
