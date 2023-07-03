@@ -37,28 +37,38 @@ $(document).ready(function(){
   });
 
   //burger----------------
+  if ($(window).width() > 741) {
+  $('.burgerMenusContainer').hide();
+  }
   $('#burgerCon').click(function(){
     $(this).children().eq(1).toggle();
     var rotationAngle = $(this).children().eq(0).data('rotation') ||0;
     if (rotationAngle === 0) {
       $(this).children().eq(0).css({
         'transform': 'rotate(45deg)',
+        'transition-duration': '.3s',
         'top': "+=5px"
       });
       $(this).children().eq(2).css({
         'transform': 'rotate(-45deg)',
+        'transition-duration': '.3s',
         'top': "-=6px"
       });
+      $('.burgerMenusContainer').show();
       rotationAngle = 45;
     }else{
       $(this).children().eq(0).css({
         'transform': 'rotate(0deg)',
+        'transition-duration': '.3s',
         'top': '8px'
       });
       $(this).children().eq(2).css({
         'transform': 'rotate(0deg)',
+        'transition-duration': '.3s',
         'top': '20px'
       });
+      $('.burgerMenusContainer').hide();
+      
       rotationAngle = 0;
     }
     $(this).children().eq(0).data('rotation', rotationAngle);
