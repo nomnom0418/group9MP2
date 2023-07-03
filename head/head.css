@@ -46,35 +46,35 @@ body{
   animation-iteration-count: infinite;
 }
 
-.fa-house{
+.houseIcon{
   top: 7px;
   left:32.2%;
 }
 .homeContainer:hover{
   background-color: var(--ligtherthird);
 }
-.fa-fire{
+.fireIcon{
   top: 7px;
   left:41.2%;
 }
 .popularPostContainer:hover{
   background-color: var(--ligtherthird);
 }
-.fa-list{
+.listIcon{
   top: 7px;
   left:52%;
 }
 .categoriesContainer:hover{
   background-color: var(--ligtherthird);
 }
-.fa-box-archive{
+.archiveIcon{
   top: 7px;
   left:60.5%;
 }
 .archivesContainer:hover{
   background-color: var(--ligtherthird);
 }
-.fa-address-card{
+.cardIcon{
   top: 7px;
   left:67.1%;
 }
@@ -137,6 +137,9 @@ body{
   height: 200px;
   align-items: center;
 }
+.burgerIcons{
+  right: 92px;
+}
 .burgerHomeContainer:hover{
   background-color: var(--ligtherthird);
 }
@@ -154,6 +157,7 @@ body{
 }
 .bMenus{
   height: 25px;
+  cursor: pointer;
 }
 @keyframes round {
   100%   {

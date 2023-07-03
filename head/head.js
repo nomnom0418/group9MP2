@@ -64,4 +64,40 @@ $(document).ready(function(){
     $(this).children().eq(0).data('rotation', rotationAngle);
   })
 
+
+//for burger menus
+  $('.burgerHomeContainer').mouseenter(function(){
+    $('#burgerHomeText').hide(500),$('#burgerHomeIcon').show(500);
+  });
+  $('.burgerHomeContainer').mouseleave(function(){
+    $('#burgerHomeText').show(500),$('#burgerHomeIcon').hide(500);
+  });
+
+  $('.burgerPopularPostContainer').mouseenter(function(){
+    $('#burgerPopularPostText').hide(500),$('#burgerPopularPostIcon').show(500);
+  });
+  $('.burgerPopularPostContainer').mouseleave(function(){
+    $('#burgerPopularPostText').show(500),$('#burgerPopularPostIcon').hide(500);
+  });
+
+  $('.burgerCategoriesContainer').mouseenter(function(){
+    $('#burgerCategoriesText').hide(500),$('#burgerCategoriesIcon').show(500);
+  });
+  $('.burgerCategoriesContainer').mouseleave(function(){
+    $('#burgerCategoriesText').show(500),$('#burgerCategoriesIcon').hide(500);
+  });
+
+  $('.burgerArchivesContainer').mouseenter(function(){
+    $('#burgerArchivesText').hide(500),$('#burgerArchivesIcon').show(500);
+  });
+  $('.burgerArchivesContainer').mouseleave(function(){
+    $('#burgerArchivesText').show(500),$('#burgerArchivesIcon').hide(500);
+  });
+
+  $('.burgerAboutContainer').mouseenter(function(){
+    $('#burgerAboutText').hide(500),$('#burgerAboutIcon').show(500);
+  });
+  $('.burgerAboutContainer').mouseleave(function(){
+    $('#burgerAboutText').show(500),$('#burgerAboutIcon').hide(500);
+  });
 })
