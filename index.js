@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+/*window.addEventListener('DOMContentLoaded', function() {
   let myImage1 = document.getElementById('myImg1');
   let myImage2 = document.getElementById('myImg2');
   let myImage3 = document.getElementById('myImg3');
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // Call the function whenever the window is resized
   window.addEventListener('resize', updateImageSrc);
 });
-
+*/
 //login form
 const formButton = document.getElementById('formButton');
 const myForm = document.getElementById('myForm');
@@ -58,7 +58,7 @@ function logIn(){
     myPrompt.classList = "myChildren success";
     myPrompt.textContent = "Succesfully Login";
     myWarning.appendChild(myPrompt);
-    window.location.replace='http://localhost/myMP2/group9MP2/home/home1.php';
+    window.location.href='head/head.html';
   }
   else if (myUserName == "" && myPassword == ""){
     myPrompt = document.createElement("div");

@@ -121,39 +121,39 @@ h3{
 .myBody div{
   display: grid;
   width: 100%;
-  font-size: .7rem;
+  font-size: .9rem;
 }
 .img1{
-   height: 8rem;
+   width: 300px;
+   height: 9rem;
    border-top-left-radius: 100px;
    margin-right: 1rem;
    box-shadow: 1px 1px 5px var(--fontColor);
 }
 .img2{
-  height: 8rem;
+  height: 11rem;
+  width: 500px;
   border-bottom-right-radius: 4rem;
   border-top-right-radius: 4rem;
   margin-left: 1rem;
   box-shadow: 1px 1px 5px var(--fontColor);
 }
 .img3{
-  height: 8rem;
+  height:10rem;
+  width: 400px;
   border-bottom-left-radius: 100px;
   margin-right: 1rem;
   box-shadow: 1px 1px 5px var(--fontColor);
 }
-.div1{
-  
+.div1{  
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
-.div2{
-  
+.div2{  
   display: grid;
   grid-template-columns: 4fr 1fr;
 }
-.div3{
-  
+.div3{  
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
@@ -224,7 +224,7 @@ p{
 .fa-phone{
   color: orange;
 }
-/*----------------------lolgin form-----------------------*/
+/*----------------------login form-----------------------*/
 .success{
   background-color: var(--success);
   width: 40%;
@@ -353,6 +353,7 @@ p{
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  color: var(--fontColor);
 }
 button :hover{
   background-color: #a296d8;
@@ -407,62 +408,142 @@ button :hover{
   margin-right: 5px;
   cursor: pointer;
 }
-.createAccountButton{
-  color: var(--fontColor);
-}
 /*----------------------media queries-----------------*/
-@media screen and (720px <= width <= 820px){
+@media screen and (1119px <= width <= 1220px){
   .container{
     width: 100%;
   }
-  .img1, .img2, .img3{
-    width: 9rem;
-    
-  }
   .img1{
-    height: 9rem;
+    height: 10rem;
   }
   .img3{
-    height: 8rem;
+    height: 11rem;
   }
   .img2{
-    width: 9rem;
+    height: 12rem;
+  }
+  .loginForm{
+    width: 35%;
+  }
+  p{
+    font-size: .9rem;
+  }
+}
+@media screen and (1019px <= width <= 1120px){
+  .container{
+    width: 100%;
+  }
+  .img1{
+    height: 11rem;
+  }
+  .img3{
+    height: 12rem;
+  }
+  .img2{
+    height: 13rem;
+    width: 450px;
+  }
+  .loginForm{
+    width: 35%;
+  }
+  p{
+    font-size: .9rem;
+  }
+}
+@media screen and (919px <= width <= 1020px){
+  .container{
+    width: 100%;
+  }
+  .img1{
+    height: 12rem;
+  }
+  .img3{
+    height: 13rem;
+  }
+  .img2{
+    height: 14rem;
+    width: 420px;
+  }
+  .loginForm{
+    width: 35%;
+  }
+  p{
+    font-size: .8rem;
+  }
+}
+
+@media screen and (819px <= width <= 920px){
+  .container{
+    width: 100%;
+  }
+  .img1{
+    height: 12rem;
+  }
+  .img3{
+    height: 13rem;
+  }
+  .img2{
+    height: 14rem;
+    width: 400px;
   }
   .loginForm{
     width: 35%;
   }
 }
-@media screen and (620px <= width <= 719px){
-  .img1{
-    height: 10rem;
+
+@media screen and (400px <= width <= 820px){
+  .container{
+    width: 100%;
   }
-  .img3{
-    height: 10rem;
+  .div1, .div2, .div3{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .div2 div{
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .img1, .img2, .img3,p{
+    width: 100%;
+  }
+   .paragraph2, .paragraph3, .img1, .img2, .img3{
+    margin: .2rem;
+    padding: .2rem;
+  }
+  .paragraph1{
+    margin: 0;
+    padding: 2.rem;
   }
   .img2{
-    height: 10rem;
+    border-bottom-right-radius: 6rem;
+    border-top-right-radius: 0px;
   }
+  .spanLarge{
+    display: none;
+  }
+  .spanSmall{
+    display: block;
+    text-align: justify;
+    width: 95%;
+    color: #1a3950;
+  }
+  .div3 span, .div2 span{
+    margin-top: 10px;
+  }
+  .registerForm{
+    width: 80%;
+  }
+}
+@media screen and (620px <= width <= 719px){
   .loginForm{
     width: 40%;
   }
 }
 @media screen and (521px <= width <= 619px){
-  .img1{
-    height: 11rem;
-  }
-  .img3{
-    height: 11rem;
-    width: 8rem;
-  }
-  .img2{
-    height: 11rem;
-    width: 7rem;
-  }
   .myFooter{
-
     height: 150px;
     width: 70%;
-    margin: 1% 15%;
+    margin: 2rem 15%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
@@ -472,50 +553,14 @@ button :hover{
 }
 
 @media screen and (max-width: 520px){
-  .div1, .div2, .div3{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .div2 div{
-    grid-row: 1;
-    grid-column: 1;
-  }
-  .img1, .img2, .img3{
-    width: 95%;
-    
-  }
-  .paragraph1, .paragraph2, .paragraph3, .img1, .img2, .img3{
-    margin: 0;
-    padding: 0;
-  }
-  
-  .img2{
-    border-bottom-right-radius: 6rem;
-    border-top-right-radius: 0px;
-  }
-  p{
-    width: 95%;
-  }
-  .spanLarge{
-    display: none;
-  }
-  .spanSmall{
-    display: block;
-    text-align: justify;
-    width: 95%;
-  }
-  .div3 span, .div2 span{
-    margin-top: 10px;
-  }
-  .myFooter{
-
-    height: 150px;
-    width: 70%;
-    margin: 1% 15%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
   .loginForm{
     width: 60%;
   }
-}  
+  .myFooter{
+    height: 150px;
+    width: 70%;
+    margin: 2rem 15%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
