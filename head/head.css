@@ -4,6 +4,7 @@
   --fontColor: #EFF4F5;
   --secondaryColor: #677688;
   --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
   --myLink: #2da7dd; 
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
@@ -34,6 +35,9 @@ body{
   font-weight: 300;
   text-transform: uppercase;
   cursor: pointer;
+  text-align: center;
+  align-items: center;
+  padding-top: 5px;
 }
 .fa-solid{
   position: absolute;
@@ -41,31 +45,48 @@ body{
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+
 .fa-house{
   top: 7px;
   left:32.2%;
+}
+.homeContainer:hover{
+  background-color: var(--ligtherthird);
 }
 .fa-fire{
   top: 7px;
   left:41.2%;
 }
+.popularPostContainer:hover{
+  background-color: var(--ligtherthird);
+}
 .fa-list{
   top: 7px;
   left:52%;
+}
+.categoriesContainer:hover{
+  background-color: var(--ligtherthird);
 }
 .fa-box-archive{
   top: 7px;
   left:60.5%;
 }
+.archivesContainer:hover{
+  background-color: var(--ligtherthird);
+}
 .fa-address-card{
   top: 7px;
   left:67.1%;
 }
-.menus{
-  height: 17px;
-  cursor: pointer;
+.aboutContainer:hover{
+  background-color: var(--ligtherthird);
 }
-
+.menus{
+  height: 23px;
+  cursor: pointer;
+  margin-bottom: 7px;
+  border-radius: 4px;
+}
 .profile{
   display: flex;
 }
@@ -107,17 +128,37 @@ body{
   
 }
 .burgerMenusContainer{
-  margin-top: 2px;
+  display: grid;
+  margin-top: 1px;
   background-color: var(--thirdColor);
   width: 200px;
   float: right;
   color: var(--fontColor);
+  height: 200px;
+  align-items: center;
 }
-
-
+.burgerHomeContainer:hover{
+  background-color: var(--ligtherthird);
+}
+.burgerPopularPostContainer:hover{
+  background-color: var(--ligtherthird);
+}
+.burgerCategoriesContainer:hover{
+  background-color: var(--ligtherthird);
+}
+.burgerArchivesContainer:hover{
+  background-color: var(--ligtherthird);
+}
+.burgerAboutContainer:hover{
+  background-color: var(--ligtherthird);
+}
+.bMenus{
+  height: 25px;
+}
 @keyframes round {
-  0%   {transform: rotate3d(.0, .1, .0, 360deg);}
-
+  100%   {
+    transform: rotate3d(.0, .1, .0, 360deg);
+  }
 }
 /*-------------media query-------------*/
 @media screen and (max-width: 740px){
