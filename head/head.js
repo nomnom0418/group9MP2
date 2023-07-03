@@ -2,38 +2,38 @@ $(document).ready(function(){
   $('.fa-solid').hide();
  
   $('.homeContainer').mouseenter(function(){
-    $('.home').hide(500),$('.fa-house').show(500);
+    $('#homeText').hide(500),$('#homeIcon').show(500);
   });
   $('.homeContainer').mouseleave(function(){
-    $('.home').show(500),$('.fa-house').hide(500);
+    $('#homeText').show(500),$('#homeIcon').hide(500);
   });
   
   $('.popularPostContainer').mouseenter(function(){
-    $('.popularPost').hide(500),$('.fa-fire').show(500);
+    $('#popularPostText').hide(500),$('#popularPostIcon').show(500);
   });
   $('.popularPostContainer').mouseleave(function(){
-    $('.popularPost').show(500),$('.fa-fire').hide(500);
+    $('#popularPostText').show(500),$('#popularPostIcon').hide(500);
   });
   
   $('.categoriesContainer').mouseenter(function(){
-    $('.categories').hide(500),$('.fa-list').show(500);
+    $('#categoriesText').hide(500),$('#categoriesIcon').show(500);
   });
   $('.categoriesContainer').mouseleave(function(){
-    $('.categories').show(500),$('.fa-list').hide(500);
+    $('#categoriesText').show(500),$('#categoriesIcon').hide(500);
   });
 
   $('.archivesContainer').mouseenter(function(){
-    $('.archives').hide(500),$('.fa-box-archive').show(500);
+    $('#archivesText').hide(500),$('#archivesIcon').show(500);
   });
   $('.archivesContainer').mouseleave(function(){
-    $('.archives').show(500),$('.fa-box-archive').hide(500);
+    $('#archivesText').show(500),$('#archivesIcon').hide(500);
   });
 
   $('.aboutContainer').mouseenter(function(){
-    $('.about').hide(500),$('.fa-address-card').show(500);
+    $('#aboutText').hide(500),$('#aboutIcon').show(500);
   });
   $('.aboutContainer').mouseleave(function(){
-    $('.about').show(500),$('.fa-address-card').hide(500);
+    $('#aboutText').show(500),$('#aboutIcon').hide(500);
   });
 
   //burger----------------

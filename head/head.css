@@ -106,6 +106,15 @@ body{
   cursor: pointer;
   
 }
+.burgerMenusContainer{
+  margin-top: 2px;
+  background-color: var(--thirdColor);
+  width: 200px;
+  float: right;
+  color: var(--fontColor);
+}
+
+
 @keyframes round {
   0%   {transform: rotate3d(.0, .1, .0, 360deg);}
 
