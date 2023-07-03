@@ -15,7 +15,7 @@ body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:  Roboto,Raleway;
+  font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
 }
 .navContainer{
   display: grid;
@@ -118,7 +118,6 @@ body{
   position: absolute;
   right: 7.5%;
   top: 20px;
-  z-index: 99;
 }
 .burgerCon{
   height: 40px;
@@ -127,20 +126,24 @@ body{
   cursor: pointer;
   display: none;
   caret-color: transparent;
+  z-index: 99;
 }
 .burgerMenusContainer{
   display: grid;
   margin-top: 1px;
-  background-color: var(--thirdColor);
-  width: 200px;
+  background-color: #21435e transparent;
+  width: 120px;
   float: right;
   color: var(--fontColor);
   height: 200px;
   align-items: center;
   caret-color: transparent;
+  position: relative;
+  z-index: 99;
 }
 .burgerIcons{
   right: 92px;
+  padding-top: 5px;
 }
 .burgerHomeContainer:hover{
   background-color: var(--ligtherthird);
@@ -158,8 +161,14 @@ body{
   background-color: var(--ligtherthird);
 }
 .bMenus{
-  height: 25px;
+  height: 30px;
   cursor: pointer;
+}
+.hr{
+  height: 1px;
+  width: 100px;
+  background-color: var(--myLink);
+  justify-self: center;
 }
 @keyframes round {
   100%   {

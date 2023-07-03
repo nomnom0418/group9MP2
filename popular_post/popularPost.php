@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../head/head.css">
-  <title>POPULAR POST</title>
+  <link rel="stylesheet" href="../body/body.css">
+  <title>popular post</title>
 </head>
 <body>
-  <?php include '../head/head.html';
+  <?php 
+  include_once '../head/head.html';
+  include_once '../body/body.html';
   ?>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../head/head.js"></script>

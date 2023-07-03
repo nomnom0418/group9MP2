@@ -1,0 +1,61 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #EFF4F5;
+  --secondaryColor: #677688;
+  --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
+  --myLink: #2da7dd; 
+
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Roboto',Raleway,Arial, Helvetica, sans-serif;
+}
+.mainContainer{
+  background-color: var(--thirdColor);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 7% 10% 40% 40%;
+  position: fixed;
+  z-index: 0;
+}
+.picContainer{
+  background-color: var(--secondaryColor);
+}
+.infoContainer{
+  background-color: var(--myLink);
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.search{
+  width: 35%;
+  height: 30px;
+  align-self: center;
+  border: 1px solid;
+  border-color: var(--linkColor);
+  background-color: var(--thirdColor);
+  caret-color: var(--fontColor);
+  border-left: none;
+  outline: none;
+}
+.searchIcon{
+  width: 3%;
+  height: 32px;  
+  border: 1px solid;
+  border-color: var(--linkColor);
+  background-color: var(--thirdColor);
+  caret-color: transparent;
+  align-self: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-right: none;
+}
+.searchBar{
+  display: flex;
+  justify-content: center;
+}

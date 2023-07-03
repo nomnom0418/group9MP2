@@ -8,14 +8,14 @@
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
-
 }
 
 body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto',Raleway,Arial, Helvetica, sans-serif;
+  caret-color: transparent;
 }
 .myHeader{
   display: flex;
@@ -305,6 +305,12 @@ p{
 .closeContainer{
   text-align: end;
 } 
+input{
+  caret-color: var(--secondaryColor);
+}
+textarea{
+  caret-color: var(--secondaryColor);
+}
 /*-----------register form--------------------------*/
 .registerForm{
   color: var(--fontColor);
