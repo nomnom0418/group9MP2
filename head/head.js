@@ -37,9 +37,10 @@ $(document).ready(function(){
   });
 
   //burger----------------
-  if ($(window).width() > 741) {
-  $('.burgerMenusContainer').hide();
-  }
+  /*var menuDisplay = $('.burgerMenusContainer').css('display')
+  if ($(window).width() >= 741) {
+   menuDisplay = 'none';
+  }*/
   $('#burgerCon').click(function(){
     $(this).children().eq(1).toggle();
     var rotationAngle = $(this).children().eq(0).data('rotation') ||0;

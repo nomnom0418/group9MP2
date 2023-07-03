@@ -25,6 +25,7 @@ body{
   height: 2rem;
   align-items: center;
   text-align: center;
+  caret-color: transparent;
 }
 .logoContainer img{
   height: 1.5rem;
@@ -125,6 +126,7 @@ body{
   position: relative;
   cursor: pointer;
   display: none;
+  caret-color: transparent;
 }
 .burgerMenusContainer{
   display: grid;
@@ -135,6 +137,7 @@ body{
   color: var(--fontColor);
   height: 200px;
   align-items: center;
+  caret-color: transparent;
 }
 .burgerIcons{
   right: 92px;
@@ -164,6 +167,12 @@ body{
   }
 }
 /*-------------media query-------------*/
+@media screen and (width > 741px){
+  .burgerMenusContainer{
+    display:none;
+  }
+}
+  
 
 @media screen and (max-width: 740px){
   .menus{
