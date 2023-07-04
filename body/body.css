@@ -16,12 +16,12 @@ body{
 }
 .mainContainer{
   background-color: var(--thirdColor);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 7% 10% 40% 40%;
-  position: fixed;
+  grid-template-rows: 7% 5% 40% 40%;
+  position: absolute;
   z-index: 0;
 }
 .picContainer{
@@ -90,17 +90,109 @@ body{
 }
 .blogCategories{
   color: var(--fontColor);
-  display: grid;
-  grid-template-columns: 4% 7% 6% 6% 8% 13% 9% 4% 7% 12%;
-  margin: 5px 6%;
+  display: flex;
+  margin-left:  6%;
+  margin-right: 6%;
   text-align: center;
   grid-gap: 2px; 
+  flex-wrap: wrap;
 }
 .folder{
   font-size: 1em;
   background-color: var(--myLink);
-  height: 28px;
-  padding-top: 7px;
+  height: 20px;
   border-top-left-radius: 6px;
   caret-color: transparent;
+  cursor: pointer;
+  padding: 7px 5px ;
 }
+.folder:hover{
+  background-color: var(--secondaryColor);
+}
+.blogsContainer{
+  width: 88%;
+  height: 500px;
+  background-color: var(--myLink);
+  margin: 0 6%;
+  position: relative;
+  border-top-right-radius: 10px;
+}
+.blogSecondContainer{
+  width: 99.4%;
+  margin: 1px .3%;
+  height: 498px;
+  background-color: var(--thirdColor);
+  border-top-right-radius: 10px;
+}
+@media screen and (max-width: 920px){
+  .folder{
+    font-size: .9rem;
+  }
+}
+@media (width <= 700px){
+  .mainContainer{
+    grid-template-rows: 7% 8% 40% 40%;
+  }
+  .blogsContainer{
+    top: 20px;
+  }
+}
+/*phone----------------*/
+@media (width = 414px) and (height = 896px){
+  .mainContainer{
+    grid-template-rows: 7% 5.6% 40% 40%;
+  }
+}
+@media (width = 390px) and (height = 844px){
+  .folder{
+    font-size: .7em;
+  }
+}
+@media (width = 393px) and (height = 851px){
+  .folder{
+    font-size: .7em;
+  }
+  .blogsContainer{
+    top: 0px;
+  }
+}
+@media (width = 360px) and (height = 740px){
+  .folder{
+    font-size: .7em;
+    height: 14px;
+  }
+  .blogsContainer{
+    top: 0px;
+  }
+}
+@media (width = 820px) and (height = 1180px){
+  .blogsContainer{
+    top: -25px;
+  }
+}
+@media (width = 768px) and (height = 1024px){
+  .blogsContainer{
+    top: -20px;
+  }
+}
+@media (width = 912px) and (height = 1368px){
+  .blogsContainer{
+    top: -35px;
+  }
+}
+@media (width = 540px) and (height = 720px){
+  .blogsContainer{
+    top: 10px;
+  }
+}
+@media (width = 412px) and (height = 914px){
+  .blogsContainer{
+    top: 0px;
+  }
+}
+@media (width = 1280px) and (height = 800px){
+  .blogsContainer{
+    top: -7px;
+  }
+}
+
