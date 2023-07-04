@@ -88,3 +88,19 @@ body{
   display: flex;
   justify-content: center;
 }
+.blogCategories{
+  color: var(--fontColor);
+  display: grid;
+  grid-template-columns: 4% 7% 6% 6% 8% 13% 9% 4% 7% 12%;
+  margin: 5px 6%;
+  text-align: center;
+  grid-gap: 2px; 
+}
+.folder{
+  font-size: 1em;
+  background-color: var(--myLink);
+  height: 28px;
+  padding-top: 7px;
+  border-top-left-radius: 6px;
+  caret-color: transparent;
+}
