@@ -39,7 +39,7 @@ body{
   align-items: center;
   padding-top: 5px;
 }
-.fa-solid{
+.navIcon{
   position: absolute;
   animation-name: round;
   animation-duration: 2s;

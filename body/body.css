@@ -33,6 +33,7 @@ body{
   grid-column-end: 3;
 }
 .search{
+  position: relative;
   width: 35%;
   height: 30px;
   align-self: center;
@@ -42,18 +43,46 @@ body{
   caret-color: var(--fontColor);
   border-left: none;
   outline: none;
+  color: var(--fontColor);
+}
+.search::placeholder{
+  color: var(--linkColor);
+}
+.fa-magnifying-glass{
+  color: var(--fontColor);
+  padding-top: 7px;
+  display: block;
 }
 .searchIcon{
-  width: 3%;
+  position: relative;
+  width:35px;
   height: 32px;  
   border: 1px solid;
   border-color: var(--linkColor);
   background-color: var(--thirdColor);
   caret-color: transparent;
-  align-self: center;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   border-right: none;
+  align-self: center;
+  right:-20px;
+  z-index: 0;
+ }
+.searchIconRight{
+  width:50px;
+  height: 32px;  
+  border: 1px solid;
+  border-color: var(--linkColor);
+  background-color: var(--linkColor);
+  caret-color: transparent;
+  align-self: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-left: none;
+  text-align: center;
+}
+.leftSearchIcon{
+  padding-left: 16px;
 }
 .searchBar{
   display: flex;

@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('.fa-solid').hide();
+  $('.navIcon').hide();
+  $('.burgerIcons').hide();
  
   $('.homeContainer').mouseenter(function(){
     $('#homeText').hide(500),$('#homeIcon').show(500);
