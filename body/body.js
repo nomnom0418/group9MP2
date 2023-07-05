@@ -1,20 +1,38 @@
-createChild(120);
-
+createChild(50);
+//this is for creating children in the body
 function createChild(createdPost){
-  let parent=$('.blogsParent');
-  let newChild;
+  let blogParentPost=$('.blogsParent');
+  let picChild;
   for(let i=1; i<=createdPost; i++){
-  newChild += '<div class="createdChild"> new element</div>';
-  parent.html(newChild);
+  picChild += '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div></div></div>';
+  blogParentPost.html(picChild);
   }
-  let createdChild=$('.createdChild');
-  createdChild.css({
-    'height':'250px',
+  let blogCon=$('.blogContainer');
+  blogCon.css({
+    'display':'grid',
+    'gridTemplateRows':'170px 60px',
+    'height':'230px',
     'width':'350px',
     'backgroundColor':'white',
     'margin':'5px 5px'
   });
+  $('.blogPicture').css({
+    'backgroundColor':'lightblue',
+  });
+  $('.blogFooter').css({
+    'display':'grid',
+    'gridTemplateColumns':'50px 300px',
+    'backgroundColor':'gray',
+    'color':'white'
+  });
+  $('.creatorPic').css({
+    'backgroundColor':'lightred',
+  });
+  $('.blogInfo').css({
+    'backgroundColor':'lightgreen',
+  });
   
+ //this is for body height 
   let blogsContainerHeight = ((createdPost/3)*305);
   $('.blogsContainer').css({
     'height': blogsContainerHeight +"px"
