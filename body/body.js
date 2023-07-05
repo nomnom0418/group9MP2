@@ -1,4 +1,4 @@
-createChild(50);
+createChild(120);
 
 function createChild(createdPost){
   let parent=$('.blogsParent');
@@ -14,7 +14,16 @@ function createChild(createdPost){
     'backgroundColor':'white',
     'margin':'5px 5px'
   });
-  let bodyHeight = (createdPost/3)*305;
+  
+  let blogsContainerHeight = ((createdPost/3)*305);
+  $('.blogsContainer').css({
+    'height': blogsContainerHeight +"px"
+  });
+  let parentBlogsHeight = blogsContainerHeight-4;
+  $('.blogsParent').css({
+    'height': parentBlogsHeight +"px"
+  });
+  let bodyHeight = blogsContainerHeight +200;
   $('.mainContainer').css({
     'height': bodyHeight +"px"
   });
