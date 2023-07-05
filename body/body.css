@@ -132,19 +132,19 @@ body{
   }
 }
 @media (width <= 700px){
-  .mainContainer{
+  /*.mainContainer{
     grid-template-rows: 7% 8% 40% 40%;
-  }
+  }*/
   .blogsContainer{
-    top: 20px;
+    top: 35px;
   }
 }
 /*phone----------------*/
-@media (width = 414px) and (height = 896px){
+/*@media (width = 414px) and (height = 896px){
   .mainContainer{
     grid-template-rows: 7% 5.6% 40% 40%;
   }
-}
+}*/
 @media (width = 390px) and (height = 844px){
   .folder{
     font-size: .7em;
@@ -154,9 +154,6 @@ body{
   .folder{
     font-size: .7em;
   }
-  .blogsContainer{
-    top: 0px;
-  }
 }
 @media (width = 360px) and (height = 740px){
   .folder{
@@ -164,17 +161,17 @@ body{
     height: 14px;
   }
   .blogsContainer{
-    top: 0px;
+    top: 25px;
   }
 }
-@media (width = 820px) and (height = 1180px){
+/*@media (width = 820px) and (height = 1180px){
   .blogsContainer{
-    top: -25px;
+    top: 25px;
   }
 }
 @media (width = 768px) and (height = 1024px){
   .blogsContainer{
-    top: -20px;
+    top: 0px;
   }
 }
 @media (width = 912px) and (height = 1368px){
@@ -198,3 +195,4 @@ body{
   }
 }
 
+*/
