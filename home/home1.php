@@ -14,6 +14,7 @@
   ?>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../head/head.js"></script>
+  <script src="../body/body.js"></script>
   <script src="home.js"></script>
   
 </body>

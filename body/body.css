@@ -16,7 +16,6 @@ body{
 }
 .mainContainer{
   background-color: var(--thirdColor);
-  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 100%;
@@ -111,13 +110,18 @@ body{
 }
 .blogsContainer{
   width: 88%;
-  height: 500px;
+  height: 90%;
   background-color: var(--myLink);
   margin: 0 6%;
   position: relative;
   border-top-right-radius: 10px;
 }
-.blogSecondContainer{
+#text{
+  display: none;
+}
+.blogsParent{
+  display: flex;
+  flex-wrap: wrap;
   width: 99.4%;
   margin: 1px .3%;
   height: 498px;
