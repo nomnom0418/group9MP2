@@ -4,17 +4,18 @@ function createChild(createdPost){
   let blogParentPost=$('.blogsParent');
   let picChild;
   for(let i=1; i<=createdPost; i++){
-  picChild += '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div></div></div>';
+  picChild += '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div><div class="creatorPic"> creator </div></div><div class="blogInfo"> blog information</div></div></div>';
   blogParentPost.html(picChild);
   }
   let blogCon=$('.blogContainer');
   blogCon.css({
     'display':'grid',
-    'gridTemplateRows':'170px 60px',
-    'height':'230px',
+    'gridTemplateRows':'190px 60px',
+    'height':'250px',
     'width':'350px',
     'backgroundColor':'white',
-    'margin':'5px 5px'
+    'margin':'5px 5px',
+    'border-radius':'5px',
   });
   $('.blogPicture').css({
     'backgroundColor':'lightblue',
@@ -22,14 +23,15 @@ function createChild(createdPost){
   $('.blogFooter').css({
     'display':'grid',
     'gridTemplateColumns':'50px 300px',
-    'backgroundColor':'gray',
     'color':'white'
   });
   $('.creatorPic').css({
-    'backgroundColor':'lightred',
+    'cursor':'pointer',
+    'height':'50px',
+    'width':'50px',
   });
   $('.blogInfo').css({
-    'backgroundColor':'lightgreen',
+    'cursor':'pointer'
   });
   
  //this is for body height 

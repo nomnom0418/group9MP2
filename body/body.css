@@ -80,6 +80,7 @@ body{
   border-left: none;
   text-align: center;
 }
+
 .leftSearchIcon{
   padding-left: 16px;
 }
@@ -126,6 +127,22 @@ body{
   background-color: var(--thirdColor);
   border-top-right-radius: 10px;
 }
+/*child css-------------------------------*/
+.creatorPic{
+  border-radius: 25px;
+  background-color: rgb(248, 133, 133);
+  margin-top: 5px;
+}
+.blogFooter{
+  background-color: var(--thirdColor);
+}
+.blogInfo{
+  background-color: var(--thirdColor);
+  text-align: center;
+  padding-top: 5px;
+}
+
+/*media Query----------------------------*/
 @media screen and (max-width: 920px){
   .folder{
     font-size: .9rem;
