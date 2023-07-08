@@ -15,6 +15,9 @@ body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+ 
+}
+.myBody{
   font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
   background-color: var(--ligtherthird);
   color: var(--fontColor);
@@ -86,4 +89,18 @@ body{
 .delete{
   cursor: pointer;
   border-bottom: var(--thirdColor) 1px solid;
+}
+.division{
+  display:grid;
+  grid-template-columns: 300px 1fr;
+}
+@media (width < 800px){
+  .division{
+    grid-template-columns: 200px 1fr;
+  }
+}
+@media (width < 600px){
+  .division{
+    grid-template-columns: 100px 1fr;
+  }
 }

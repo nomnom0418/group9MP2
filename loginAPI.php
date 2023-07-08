@@ -41,12 +41,11 @@ if(isset($_POST["registrationData"])){
       $response["status"]="408";
       $response["description"]="please enter your password";
       $response["title"]="request timeout";
-    }
-   elseif($userInfo->newPassword !==null && $userInfo->confirmPassword !==null && $userInfo->newPassword === $userInfo->confirmPassword){
+   }elseif($userInfo->newPassword !==null && $userInfo->confirmPassword !==null && $userInfo->newPassword === $userInfo->confirmPassword){
     $response["status"]="200";
     $response["description"]="You are now registered";
     $response["title"]="registration success";
-  }else{
+   }else{
     $response["status"]="406";
     $response["description"]="password do not match";
     $response["title"]="not acceptable";

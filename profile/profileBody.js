@@ -5,10 +5,22 @@ createChild(6);
 function createChild(createdPost){
   let blogParentPost=$('#yourPost');
   let picChild="";
+  let firstBaseChild= "firstChilds"
+  let secondBaseChild= "secondChilds"
   for(let i=1; i<=createdPost; i++){
-  picChild = picChild + '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div><div class="editBlog"><div class="dot1"></div><div class="dot2"></div><div class="dot3"><div class="editDelete"><div class="edit">edit</div><div class="delete">delete</div></div></div></div></div></div>';
-  blogParentPost.html(picChild);
-  }
+    picChild = picChild + '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div><div class="editBlog"><div class="dot1"></div><div class="dot2"></div><div class="dot3"><div class="editDelete"><div class="edit">edit</div><div class="delete">delete</div></div></div></div></div></div>';
+    blogParentPost.html(picChild);
+    let editBlogClass = firstBaseChild + i;
+    let editDeleteClass = secondBaseChild + i;
+    $('.editBlog').addClass(editBlogClass);
+    $('.editDelete').addClass(editDeleteClass);
+
+    function closeEdit(){
+      $('.editBlog').click(function(){
+      
+      })
+    }  
+  }closeEdit()
   let blogCon=$('.blogContainer');
   blogCon.css({
     'display':'grid',
@@ -35,12 +47,8 @@ function createChild(createdPost){
   $('.blogInfo').css({
     'cursor':'pointer'
   });
-  closeEdit();
-  function closeEdit(){
-    $('.editBlog').click(function(){
-      $('.editDelete').show();
-    })
-  }  
+
+  $('.editDelete').hide();  
  //this is for body height 
   let blogsContainerHeight = ((createdPost/3)*305);
   $('.blogsContainer').css({
@@ -55,7 +63,5 @@ function createChild(createdPost){
     'height': bodyHeight +"px"
   });
 }
-closeEdit();
-$('.editDelete').hide();
 
 })

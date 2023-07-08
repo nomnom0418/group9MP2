@@ -14,15 +14,16 @@ body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: var(--thirdColor);
 }
 .sidebarContainer{
   background-color: var(--thirdColor);
   color: var(--fontColor);
   display: grid;
-  width: 20%;
+  width: 100%;
   font-family: Raleway,'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 100;
-  height: 100vh;
+  height: 100%;
   padding-top: .5em;
   font-size: .9em;
   grid-template-rows: 100px 40px 40px 40px 40px 40px 40px 40px;
@@ -47,7 +48,6 @@ a{
 
 @media (width < 600px){
   .sidebarContainer{
-    width: 30%;
     font-size: .8em;
   }
 }
