@@ -1,10 +1,12 @@
-createChild(50);
+
+$(document).ready(function(){
+createChild(6);
 //this is for creating children in the body
 function createChild(createdPost){
-  let blogParentPost=$('.blogsParent');
+  let blogParentPost=$('#yourPost');
   let picChild="";
   for(let i=1; i<=createdPost; i++){
-  picChild = picChild+ '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div></div></div>';
+  picChild = picChild + '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div><div class="editBlog"><div class="dot1"></div><div class="dot2"></div><div class="dot3"><div class="editDelete"><div class="edit">edit</div><div class="delete">delete</div></div></div></div></div></div>';
   blogParentPost.html(picChild);
   }
   let blogCon=$('.blogContainer');
@@ -33,8 +35,12 @@ function createChild(createdPost){
   $('.blogInfo').css({
     'cursor':'pointer'
   });
-  
-  
+  closeEdit();
+  function closeEdit(){
+    $('.editBlog').click(function(){
+      $('.editDelete').show();
+    })
+  }  
  //this is for body height 
   let blogsContainerHeight = ((createdPost/3)*305);
   $('.blogsContainer').css({
@@ -49,3 +55,7 @@ function createChild(createdPost){
     'height': bodyHeight +"px"
   });
 }
+closeEdit();
+$('.editDelete').hide();
+
+})

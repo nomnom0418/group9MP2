@@ -19,7 +19,7 @@ body{
 }
 .navContainer{
   display: grid;
-  grid-template-columns: 30% 6% 12% 9% 8% 6% 20% 5%;
+  grid-template-columns: 10% 20px 18%  6% 12% 9% 8% 6% 19% 5%;
   background-color: var(--thirdColor);
   color: var(--fontColor);
   height: 2rem;
@@ -27,9 +27,71 @@ body{
   text-align: center;
   caret-color: transparent;
 }
-.logoContainer img{
-  height: 1.5rem;
+
+.redLogo{
+  background-color: rgba(255, 0, 0, 0.7);
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 144px;
+  top: 5px;
+  border-radius: 50%;
+  animation-name: changeColor1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
+.greenLogo{
+  background-color: rgba(0, 255, 0, 0.7);
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 3px;
+  left: 132px;
+  border-radius: 50%;
+  animation-name: changeColor2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.blueLogo{
+  background-color: rgba(0, 0, 255, 0.7);
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 11px;
+  left: 134px;
+  border-radius: 50%;
+  animation-name: changeColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.redBack{
+  background-color: var(--myLink);
+  height: 21px;
+  width: 21px;
+  top: 4px;
+  left: 143px;
+  position: absolute;
+  border-radius: 50%;
+}
+.greenBack{
+  background-color: var(--myLink);
+  height: 21px;
+  width: 21px;
+  left: 130.2px;
+  top: 1px;
+  position: absolute;
+  border-radius: 50%;
+}
+.blueBack{
+  background-color: var(--myLink);
+  height: 21px;
+  width: 21px;
+  position: absolute;
+  top: 10px;
+  left: 132px;
+  border-radius: 50%;
+}
+
 .navMenu{
   font-size: .7rem;
   font-weight: 300;
@@ -84,13 +146,12 @@ body{
 .menus{
   height: 23px;
   cursor: pointer;
-  margin-bottom: 7px;
   border-radius: 4px;
 }
 .profile{
   display: flex;
 }
-.fa-user{
+.myProfile{
   position: absolute;
   top: 8px;
   font-size: .7rem;
@@ -131,7 +192,7 @@ body{
 .burgerMenusContainer{
   display: grid;
   margin-top: 1px;
-  background-color: #21435e transparent;
+  background-color: #21435ea1;
   width: 120px;
   float: right;
   color: var(--fontColor);
@@ -160,6 +221,9 @@ body{
 .burgerAboutContainer:hover{
   background-color: var(--ligtherthird);
 }
+.burgerProfileContainer:hover{
+  background-color: var(--ligtherthird);
+}
 .bMenus{
   height: 30px;
   cursor: pointer;
@@ -175,6 +239,40 @@ body{
     transform: rotate3d(.0, .1, .0, 360deg);
   }
 }
+@keyframes changeColor {
+  3%{
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  36%{
+    background-color: rgba(0, 128, 0, 0.7);
+  }
+  69%{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+}
+@keyframes changeColor1 {
+  36%{
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  69%{
+    background-color: rgba(0, 128, 0, 0.7);
+  }
+  3%{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+}
+@keyframes changeColor2 {
+69%{
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  3%{
+    background-color: rgba(0, 128, 0, 0.7);
+  }
+  36%{
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+}
+
 /*-------------media query-------------*/
 @media screen and (width > 741px){
   .burgerMenusContainer{

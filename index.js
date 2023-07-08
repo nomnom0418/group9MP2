@@ -25,10 +25,17 @@
 });
 */
 //login form
+/*
 const formButton = document.getElementById('formButton');
 const myForm = document.getElementById('myForm');
 
 // Add click event listener to the button
+
+
+//form funtionality
+let myWarning = document.getElementById("head");
+let children = myWarning.getElementsByClassName('myChildren');
+let myPrompt;*/
 formButton.addEventListener('click', function() {
   if (myForm.style.display === 'none') {
     myForm.style.display = 'block';
@@ -36,17 +43,12 @@ formButton.addEventListener('click', function() {
     myForm.style.display = 'none';
   }
 });
-
-//form funtionality
-let myWarning = document.getElementById("head");
-let children = myWarning.getElementsByClassName('myChildren');
-let myPrompt;
 let closeLogin = document.getElementById("closeLogin");
 
 closeLogin.addEventListener("click", function(){
   myForm.style.display = "none";
 })
-function logIn(){
+/*function logIn(){
   let defaultUserName = "admin";
   let defaultPassword = "password";
   let myUserName = document.getElementById("userName").value;
@@ -79,6 +81,7 @@ function remove(){
     children[0].parentNode.removeChild(children[0]);
   }  
 }
+*/
 //register form
 const registerButton = document.getElementById('registerButton');
 const registerForm = document.getElementById('registerForm');
@@ -103,7 +106,7 @@ xhr.open('GET', 'https://restcountries.com/v3.1/all')
 xhr.onload=function(){
   //if (xhr.status==200){
     let countries = JSON.parse(this.response)
-    countries.forEach(country => {
+      countries.forEach(country => {
       const option = document.createElement('option');
       option.value = country.name.common;
       option.text = country.name.common;
