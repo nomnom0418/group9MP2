@@ -288,26 +288,19 @@ p{
   color: orange;
 }
 /*----------------------login form-----------------------*/
-.success{
-  background-color: var(--success);
-  width: 40%;
-  transform: translateX(80%);
+.myAlert{
+  background-color: var(--thirdColor);
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
   border-radius: 3px;
   opacity: .9;
-}
-.warning{
-  background-color: var(--warning);
-  width: 80%;
-  transform: translateX(13%);
-  border-radius: 3px;
-  opacity: .9;
-}
-.danger{
-  background-color: var(--danger);
-  width: 70%;
-  transform: translateX(23%);
-  border-radius: 3px;
-  opacity: .9;
+  height: 1.5em;
+  text-align: center;
+  justify-content: center;
+  padding-top: 3px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 .loginForm{
   transform: translate(50%, 50%);
