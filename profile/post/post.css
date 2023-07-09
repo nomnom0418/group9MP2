@@ -1,0 +1,74 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #EFF4F5;
+  --secondaryColor: #677688;
+  --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
+  --myLink: #2da7dd; 
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
+
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
+}
+.parentDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.blogContainer{
+  display:grid;
+  grid-template-rows:220px 80px;
+  height:300px;
+  width:450px;
+  background-color:white;
+  margin:5px 5px;
+  border-radius:5px;
+}
+.creatorPic{
+  background-color: lightblue;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 40%;
+  margin-left: 2px;
+}
+.blogFooter{
+  display: grid;
+  grid-template-columns: 45px 395px 10px;
+  background-color: var(--thirdColor);
+  height: 80px;
+}
+.blogInfo{
+  background-color: var(--secondaryColor);
+  width: 100%;
+}
+.dot1, .dot2, .dot3{
+  background-color: var(--fontColor);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin-bottom: 1px;
+  caret-color: transparent;
+}
+.closeOpen{
+  background-color: var(--secondaryColor);
+  padding-top: 5px;
+}
+.editDelete{
+  position: relative;
+  width: 60px;
+  left: 87%;
+  top: -50px;
+  background-color: var(--ligtherthird);
+  color: var(--fontColor);
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+}

@@ -4,7 +4,7 @@ function createChild(createdPost){
   let blogParentPost=$('.blogsParent');
   let picChild="";
   for(let i=1; i<=createdPost; i++){
-  picChild = picChild+ '<div class="blogContainer"><div class="blogPicture">this is blog picture</div><div class="blogFooter"><div class="creatorPic"> creator </div><div class="blogInfo"> blog information</div></div></div>';
+  picChild = picChild+ '<div class="blogContainer'+i+'"><div class="blogPicture'+i+'">this is blog picture</div><div class="blogFooter'+i+'"><div class="creatorPic'+i+'"> creator </div><div class="blogInfo'+i+'"> blog information</div></div></div>';
   blogParentPost.html(picChild);
   }
   let blogCon=$('.blogContainer');
