@@ -24,6 +24,8 @@ body{
   padding-left: 2em;
   padding-top: 2em;
   caret-color: transparent;
+  position: relative;
+  z-index: 99;
 }
 .profileImage{
   height: 250px;
@@ -41,12 +43,12 @@ body{
   font-weight: bold;
 }
 
-/* your post ---------------------------*/
 .division{
   display:grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 22% 1fr;
 }
-@media (width < 800px){
+
+/* @media (width < 800px){
   .division{
     grid-template-columns: 200px 1fr;
   }
@@ -55,4 +57,4 @@ body{
   .division{
     grid-template-columns: 100px 1fr;
   }
-}
+} */

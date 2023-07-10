@@ -18,17 +18,20 @@ body{
 }
 .sidebarContainer{
   background-color: var(--thirdColor);
-  color: var(--fontColor);
+  color: var(--myLink);
   display: grid;
-  width: 100%;
+  width: 21.7%;
   font-family: Raleway,'Roboto', Arial, Helvetica, sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   height: 100%;
   padding-top: .5em;
   font-size: .9em;
   grid-template-rows: 100px 40px 40px 40px 40px 40px 40px 40px;
   caret-color: transparent;
   border-right: var(--myLink) 2px solid;
+  position: fixed;
+  top: 0;
+  z-index: 0;
 }
 .account{
   padding-left: 1em;
@@ -41,13 +44,19 @@ body{
   background-color: var(--ligtherthird);
   cursor: pointer;
 }
+
 a{
   color: var(--fontColor);
   height: 40px;
+  text-decoration: none;
+}
+.createBlog{
+  color: var(--myLink);
 }
 
 @media (width < 600px){
   .sidebarContainer{
     font-size: .8em;
+    grid-template-rows: 100px 40px 40px 80px 40px 40px 40px 40px;;
   }
 }

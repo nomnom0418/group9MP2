@@ -234,6 +234,9 @@ body{
   background-color: var(--myLink);
   justify-self: center;
 }
+a{
+  color: var(--fontColor);
+}
 @keyframes round {
   100%   {
     transform: rotate3d(.0, .1, .0, 360deg);

@@ -13,11 +13,11 @@ function createChild(createdPost){
     closeOpenArr.push($(".closeOpen"+i+""));
     editDeleteArr.push($(".editDelete"+i+""));
   }
-  for(let i=0; i<=closeOpenArr.length; i++){
+  for(let i=0; i<closeOpenArr.length; i++){
     closeOpenArr[i].click(function(){
       editDeleteArr[i].slideToggle(400);
     })
-  }
+}
 
  //this is for body height 
   let blogsContainerHeight = ((createdPost/3)*305);

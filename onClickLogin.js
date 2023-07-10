@@ -1,4 +1,4 @@
-let userLogIn_API = "loginAPI.php";
+let userLogIn_API = "index/loginAPI.php";
 
 function logIn(){
   let loginRequest ={

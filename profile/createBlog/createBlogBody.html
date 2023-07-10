@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="createBlog.css">
+  <title>create</title>
+
+</head>
+<body>
+  <div class="createBlogContainer">
+    <h2>Create a blog</h2>
+    <div>
+      <div class="category">Cathegory: 
+        <select name="Cathegory" id="category" class="categoryInput">
+          <option value="nature">Nature</option>
+          <option value="food">Food</option>
+          <option value="tech">Technology</option>
+          <option value="fassion">Fassion</option>
+          <option value="health&fitnness">Health & Fitness</option>
+          <option value="lifestyle">Lifestyle</option>
+          <option value="DIY">DIY</option>
+          <option value="sports">Sports</option>
+          <option value="entertainment">Entertainment</option>
+        </select>
+      </div>
+      <div class="title">Title: <input type="text" class="titleInput"></div>
+    </div>
+    <div class="introduction">Introduction <br /> <textarea name="introduction" id="introduction" cols="30" rows="3" class="introductionInput"></textarea></div>
+    <div class="content">Content <br /><textarea name="content" id="content" cols="1000" rows="10" class="contentInput"></textarea></div>
+    <div class="uploadImage">upload your image</div>
+  </div>
+  <script src="createBlog.js"></script>
+</body>
+</html>
