@@ -250,7 +250,7 @@ a{
     background-color: rgba(0, 128, 0, 0.7);
   }
   69%{
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(26, 26, 53, 0.7);
   }
 }
 @keyframes changeColor1 {

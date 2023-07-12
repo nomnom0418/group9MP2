@@ -50,6 +50,9 @@ a{
   height: 40px;
   text-decoration: none;
 }
+.yourInfo{
+  color: var(--myLink);
+}
 .createBlog{
   color: var(--myLink);
 }
