@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="blogImages/logo2.jpg">
   <title>blogging platform</title>
-  <link rel="stylesheet" href="index/index.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <div class="container">
@@ -98,8 +98,8 @@
         <div class="alertColor" id="head"></div>
         <div class="formContainer">
             <div class="userName">
-            <label class="userName" for="userName">USER NAME</label> <br />
-            <input type="text" name="userName" id="userName" class="control" placeholder="User Name" required=""><br />
+            <label class="email" for="email">EMAIL</label> <br />
+            <input type="text" name="email" id="email" class="control" placeholder="Email" required=""><br />
           </div>
           <div class="password">
             <label class="password" for="password">PASSWORD</label> <br />
@@ -127,11 +127,11 @@
   
           <div class="area2">
             <div>First Name*</div>
-            <input type="text" name="firstName" id="firstName" required>
+            <input type="text" name="firstName" id="fName" required>
           </div>
           <div class="area2">
             <div>Last Name*</div>
-            <input type="text" name="lastName" id="lastName" required>
+            <input type="text" name="lastName" id="lName" required>
           </div>
           <div class="area2">
             <div>Birthday*</div>
@@ -148,7 +148,7 @@
           <div class="area7">
             <div>
             <div>Province*</div>
-            <select id="provinceSelect" name="province" required>
+            <select id="province" name="province" required>
             </select>
             </div>
             
@@ -159,16 +159,16 @@
           </div>
           <div class="country">
             <div >country*</div>
-            <select id="countrySelect" name="country" required>
+            <select id="country" name="country" required>
             </select>
             </div>
           <div class="area2">
             <div>Email*</div>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="Email" required>
           </div>
           <div class="area2">
             <div>Password</div>
-            <input type="password" id="newPassword">
+            <input type="password" id="pass">
           </div>
           <div class="area2">
             <div>Confirm Password</div>
@@ -186,9 +186,9 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
- <script src="index/index.js"></script>
- <script src="onClickLogin.js"></script>
-
+  <script src="js/index.js"></script>
+  <script src="js/onClickLogin.js"></script>
+  <script src="js/routes.js"></script>
   </div>
   
  

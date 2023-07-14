@@ -1,0 +1,93 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #EFF4F5;
+  --secondaryColor: #677688;
+  --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
+  --myLink: #2da7dd; 
+
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Roboto',Raleway,Arial, Helvetica, sans-serif;
+}
+h2{
+  font-weight: 400;
+  padding-left: 20px;
+}
+.createBlogContainer{
+  background-color: var(--thirdColor);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows:  50px 100px 15% 40% 20px;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  color: var(--fontColor);
+  height: 100%;
+}
+.category{
+  margin-top:20px;
+  margin-left: 20px;
+}
+.categoryInput{
+  width: 20%;
+  height: 30px;
+  outline: var(--myLink);
+  margin-left: 10px;
+}
+.titleInput{
+  width: 60%;
+  height: 30px;
+  outline: var(--myLink);
+}
+.title{
+  margin-top:20px;
+  margin-left: 20px;
+}
+.introduction{
+  margin-top:20px;
+  margin-left: 20px;
+}
+.introductionInput{
+  width: 70%;
+  outline: var(--myLink);
+  margin-left: 0px;
+}
+.content{
+  margin-top:20px;
+  margin-left: 20px;
+}
+.contentInput{
+  width: 70%;
+  outline: var(--myLink);
+  margin-left: 0px;
+}
+input{
+  font-size: 1em;
+  color: var(--secondaryColor);
+}
+textarea{
+  font-size: 1.3em;
+  color: var(--secondaryColor);
+}
+select{
+  color: var(--secondaryColor);
+}
+.uploadImage{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 140px;
+}
+.uploadImage:hover{
+  cursor: pointer;
+  color: var(--myLink);
+}
+.division{
+  display:grid;
+  grid-template-columns: 22% 1fr;
+}
