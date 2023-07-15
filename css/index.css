@@ -1,13 +1,15 @@
 :root{
-  --linkColor: #2DA7DD;
+  
   --primaryColor: #89A7AB;
   --fontColor: #EFF4F5;
-  --secondaryColor: #677688;
+  --secondaryColor: #2b2c2e;
   --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
   --myLink: #2da7dd; 
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
+
 }
 
 body{
@@ -20,7 +22,7 @@ body{
 .myHeader{
   display: flex;
   height: 2rem;
-  background-color: var(--thirdColor);
+  background-color: var(--secondaryColor);
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -145,7 +147,7 @@ body{
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease-in-out, transform 300ms ease-in-out;
-  background-color: var(--linkColor);
+  background-color: var(--secondaryColor);
   color: var(--fontColor);
   transform: translateX(20px);
   border: none;
@@ -176,6 +178,7 @@ h3{
  font-size: 1.5rem;
  width: 80%;
  margin-left: 10%;
+ color: var(--secondaryColor);
 }
 .myBody{
   margin: 0% 10%;
@@ -230,7 +233,7 @@ p{
   display: none;
 }
 .paragraph1{
-  background-color: var(--primaryColor);
+  background-color: var(--thirdColor);
   padding: .6rem .6rem;
   border-radius: 6px;
 }
@@ -240,7 +243,7 @@ p{
   border-radius: 6px;
 }
 .paragraph3{
-  background-color: var(--primaryColor);
+  background-color: var(--thirdColor);
   padding: .6rem .6rem;
   border-radius: 6px;
 }
@@ -307,7 +310,7 @@ p{
   position: fixed;
   bottom: 50%;
   right: 50%;
-  background-color: var(--primaryColor);
+  background-color: var(--secondaryColor);
   color: var(--fontColor);
   border-style: outset;
   border-style: inset;
@@ -333,7 +336,7 @@ p{
   align-items: center;
 }
 .myButton{
-  background-color: var(--linkColor);
+  background-color: var(--secondaryColor);
   border: none;
   height: 1.5rem;
   width: 4rem;
@@ -345,8 +348,8 @@ p{
 .logIn a{
   color: var(--fontColor);
 }
-.myButton :hover{
-  background-color: black;
+.myButton:hover{
+  background-color: var(--myLink);
 }
 .control{
   width: 70%;
@@ -357,6 +360,9 @@ p{
 }
 .registerButton{
   cursor: pointer;
+}
+.registerButton:hover{
+  color: var(--myLink);
 }
 .closeContainer{
   text-align: end;
@@ -377,7 +383,7 @@ h4{
   bottom: 50%;
   right: 50%;
   transform: translate(50%, 50%);
-  background-color: var(--primaryColor);
+  background-color: var(--secondaryColor);
   border-style: outset;
   border-style: inset;
   border-radius: 8px;
@@ -419,15 +425,18 @@ h4{
   border-radius: 4px;
   cursor: pointer;
   color: var(--fontColor);
+  transition: .3s;
 }
-button :hover{
-  background-color: #a296d8;
+.createAccountButton:hover{
+  font-size: 1.2em;
+  background-color: var(--myLink);
 }
+
 .area2{
   height: 50px;
 }
 .country select{
-  width: 98%;
+  width: 97%;
   height: 25px;
 }
 .country select option{
@@ -593,27 +602,33 @@ button :hover{
 
 @media screen and (280px <= width <= 820px){
   .container{
-    width: 100vw;
+    width: 100%;
+    
   }
   .div1, .div2, .div3{
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1.3fr .7fr;
+
   }
   .div2 div{
     grid-row: 1;
     grid-column: 1;
+    
   }
-  .img1, .img2, .img3,p{
-    width: 95%;
+  .img1, .img2, .img3{
+    width: 90%;
+    height: 280px;
+  
   }
-   .paragraph2, .paragraph3, .img1, .img2, .img3{
-    margin: .2rem;
-    padding: .2rem;
+  p{
+    width: 90%;
+  
   }
-  .paragraph1{
-    margin: 0;
-    padding: .2rem;
+  .paragraph1, .paragraph2, .paragraph3, .img1, .img2, .img3{
+    margin: .2rem 4%;
+    padding: .2rem ;
   }
+  
   .img2{
     border-bottom-right-radius: 6rem;
     border-top-right-radius: 0px;
@@ -627,8 +642,11 @@ button :hover{
     width: 95%;
     color: #1a3950;
   }
-  .div3 span, .div2 span{
+  .div3 span, .div2 span, .div1 span{
     margin-top: 10px;
+    margin-left: 7%;
+    width: 85%;
+    text-align: center;
   }
   .registerForm{
     width: 80%;
@@ -666,7 +684,6 @@ button :hover{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  .container{
-    width: 520px;
-  }
-}
+  
+  
+} 

@@ -35,6 +35,7 @@ body{
 }
 .account{
   padding-left: 1em;
+  font-size: 1.3em;
 }
 .sideBarHome, .yourInfo, .manageYourAccount,.createBlog, .logout{
   padding-top: 12px;

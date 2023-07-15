@@ -1,5 +1,3 @@
-
-
 function logIn(){
   let loginRequest ={
     "email":$("#email").val(),
@@ -9,16 +7,16 @@ function logIn(){
     "url":userLogIn_API,
     "type":"POST",
     "data":"userLog="+JSON.stringify(loginRequest),
-     "success":function(response){
-      console.log(response)
-      let parseResponse=JSON.parse(response);
-      $("#myAlert").html(parseResponse.description);
+    "success":function(response){
+    console.log(response);
+    let parseResponse=JSON.parse(response);
+    $("#myAlert").html(parseResponse.description);
     
-     let addCss = $("#myAlert");
+    let addCss = $("#myAlert");
      if(parseResponse.status==200){
       addCss.css("color","yellowgreen");
       addCss.addClass("myAlert");
-      window.location.href="pages/home1.php";
+      window.location.href="pages/home/home1.php";
      }else if(parseResponse.status==406){
       addCss.css("color","red");
       addCss.addClass("myAlert")
@@ -32,7 +30,7 @@ function logIn(){
      }
   });
  }
-
+ 
 function createAccount(){
   let getInformation ={
     "fName":$("#fName").val(),
@@ -47,17 +45,22 @@ function createAccount(){
     "pass":$("#pass").val(),
     "confirmPassword":$("#confirmPassword").val()
   }
+  
   $.ajax({
     "url":userRegistration_API,
     "type":"POST",
     "data":"registrationData="+JSON.stringify(getInformation),
-    "success":function(response){
-      console.log(response);
-     let parseResponse=JSON.parse(response);
-     $("#registerFormAlert").html(parseResponse.description);
-     let rAlert=$("#registerFormAlert");
-    
-     if(parseResponse.status==409){
+    "success":function(responses){
+    console.log(responses);
+    let parseResponse=JSON.parse(responses);
+    $("#registerFormAlert").html(parseResponse.description);
+
+    let rAlert=$("#registerFormAlert");
+     if(parseResponse.status==406){
+      rAlert.css("color","orange");
+      rAlert.addClass("myAlert")
+     }
+     else if(parseResponse.status==409){
       rAlert.css("color","orange");
       rAlert.addClass("myAlert")
      }
@@ -74,5 +77,25 @@ function createAccount(){
       alert("error");
     }
   })
-
+}
+function getProfile(){
+  $.ajax({
+    "url":GETLOGIN_API,
+    "type":"POST",
+    "data": { getLoggedUser: true },
+    "success":function(response){
+    console.log(response);
+    let parseResponse=JSON.parse(response);
+    console.log(parseResponse);
+    let userData=parseResponse;
+    $("#accountNumber").text("Account No:  " + userData.data[0]);
+    $("#userName").text(userData.data[2]);
+    $("#emailInfo").text(userData.data[1]);
+    // $('.account').html(parseResponse.description);
+    
+    },
+    "error" : function(xhr,status,error){
+      alert("error");
+    }
+  });
 }

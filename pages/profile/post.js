@@ -1,4 +1,4 @@
-createChild(9);
+createChild(6);
 //this is for creating children in the body
 function createChild(createdPost){
   let blogParentPost=$('.parentDiv');

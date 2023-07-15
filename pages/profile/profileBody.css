@@ -27,6 +27,14 @@ body{
   position: relative;
   z-index: 99;
 }
+.prPic{
+  font-size: .5em;
+}
+label{
+  position: relative;
+  bottom: -50px;
+}
+
 .profileImage{
   height: 250px;
   width: 250px;

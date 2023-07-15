@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="sidebar.css">
   <title>Document</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     </div>
     <div>
       <?php
-        include_once "createBlogBody.html"
+        include_once "profileManage.html"
       ?>
     </div>
   </div>
