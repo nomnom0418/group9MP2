@@ -78,24 +78,3 @@ function createAccount(){
     }
   })
 }
-function getProfile(){
-  $.ajax({
-    "url":GETLOGIN_API,
-    "type":"POST",
-    "data": { getLoggedUser: true },
-    "success":function(response){
-    console.log(response);
-    let parseResponse=JSON.parse(response);
-    console.log(parseResponse);
-    let userData=parseResponse;
-    $("#accountNumber").text("Account No:  " + userData.data[0]);
-    $("#userName").text(userData.data[2]);
-    $("#emailInfo").text(userData.data[1]);
-    // $('.account').html(parseResponse.description);
-    
-    },
-    "error" : function(xhr,status,error){
-      alert("error");
-    }
-  });
-}

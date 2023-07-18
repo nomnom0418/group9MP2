@@ -57,6 +57,7 @@ if (isset($_POST['registrationData'])){
         $isInserted = $connection->query($sql);
   
         if ($isInserted) {
+          
           $responses = createResponse(201, "Created", "Account Successfully Created");
           } else {
           $responses = createResponse(300, "Error", "Error while saving user");

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="profileManage.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="textTitle">Update your Information</div>
+    <div class="inputCon">
+      
+      <div class="rowOdd col2">
+        <div>
+          <div class="userName pad" id="UserName"></div>
+          <div class="inputContainer">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="newInputs">
+              <input type="text" id="newUserName" class="inputs">             
+            </div>
+            <div class="okBtn">OK</div>
+          </div>
+          
+        </div>
+        <div class="updateUserName updateBtn">update</div>
+      </div>
+      
+      <div class="rowEven col2">
+        <div>
+          <div class="fName pad" id="fName"></div>
+          <input type="text" id="newfName" class="inputs">
+        </div>  
+        <div class="updateName updateBtn">update</div>
+      </div>
+      
+      <div class="rowOdd col2">
+        <div>
+          <div class="phoneNumber pad" id="phoneNumber"></div>
+          <input type="number" id="newPhoneNumber" class="inputs">
+        </div>
+        <div class="updatePhoneNumber updateBtn">update</div>
+      </div>
+
+      <div class="rowEven col2">
+        <div>
+          <div class="birthday pad" id="birthday"></div>
+          <input type="date" id="newBirthday" class="inputs">
+        </div>
+        <div class="updateBirthday updateBtn">update</div>
+      </div>
+      
+      <div class="rowOdd col2">
+        <div>
+          <div class="address pad" id="address"></div>
+          <div class="inputs">
+            <textarea name="" id="newAddress" cols="30" rows="2"></textarea>
+            <select name="country" id="newCountry"></select>
+            <select name="province" id="newProvince"></select>
+            <select name="city" id="newCity"></select>
+            <input type="zip" id="newZip">
+          </div>
+        </div>
+        <div class="updateAddress updateBtn">update</div>
+      </div>
+      
+      <div class="rowEven col2">
+        <div>
+          <div class="email pad" id="email"></div>
+          <input type="email" id="newEmail" class="inputs">
+        </div>
+        <div class="updateEmail updateBtn">update</div>
+      </div>
+      
+      <div class="rowOdd col2">
+        <div>
+          <div class="password pad" id="password"></div>
+          
+          <div class="inputs">
+            <input type="password" id="oldPassword">
+            <input type="password" id="newPass">
+            <input type="password" id="confirmNewPass">
+          </div> 
+        </div>
+        <div class="updatePassword updateBtn">update</div>
+      </div>
+    </div>
+    <div class="even">
+      <div class="cDate" id="cDate"></div>
+      <div><button type="button" onclick="updateProfile()"></button></div>
+    </div>
+      
+  </div>    
+
+</body>
+
+</html>

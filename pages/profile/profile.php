@@ -38,6 +38,7 @@
   <script src="../../js/routes.js"></script>
   
   <script src="../../js/onClickLogin.js"></script>
+  <script src="../../js/profile.js"></script>
   <script>
     getProfile();
   </script>

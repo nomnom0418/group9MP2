@@ -42,7 +42,7 @@ function store(){
   }
   $.ajax({
     "url":userLogIn_API,
-    "type":"Get",
+    "type":"POST",
     "data":"store=" + JSON.stringify(record),
     "success":function(response){
     console.log(response);
@@ -67,15 +67,15 @@ function update(){
                 "pass":$("#pass").val(),
                 "confirmPassword":$("#confirmPassword").val()
   }
-  let id = $("#id").val
-  let updateRecord = {
+  let id = $("#id").val();
+  let updateRecordRrquest = {
     "id" : id,
     "record" : record
   }
   $.ajax({
     "url":userLogIn_API,
-    "type":"Get",
-    "data":"update=" + JSON.stringify(updateRecord),
+    "type":"POST",
+    "data":"update=" + JSON.stringify(updateRecordRequest),
     "success":function(response){
     console.log(response);
     let parseResponse=JSON.parse(response);
@@ -90,8 +90,8 @@ function destroy(){
   let idRequest = {"id" : $("#id").val()};
   $.ajax({
     "url":userLogIn_API,
-    "type":"Get",
-    "data":"Show=" + JSON.stringify(idRequest),
+    "type":"POST",
+    "data":"destroy=" + JSON.stringify(idRequest),
     "success":function(response){
     console.log(response);
     let parseResponse=JSON.parse(response);
