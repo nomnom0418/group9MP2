@@ -119,8 +119,7 @@ function updatePassword(){
 
 function callId(){
   let userId = $("#accountNumber").html();
-updateProfileImage(userId);
-showProfileImage(userId);
+  updateProfileImage(userId);
 }
 
 function updateProfileImage(userId){
@@ -153,7 +152,7 @@ function updateProfileImage(userId){
 $(document).ready(function(){
   let userId = $("#accountNumber").html();
   showProfileImage(userId);   
-  console.log(userId);
+  
   function showProfileImage(id){
   $.ajax({
     type: "GET", 

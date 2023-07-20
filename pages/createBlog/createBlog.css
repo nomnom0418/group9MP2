@@ -20,15 +20,14 @@ h2{
 }
 .createBlogContainer{
   background-color: var(--thirdColor);
-  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 100vw;
   grid-template-rows:  50px 100px 15% 40% 20px;
   position: absolute;
   z-index: 0;
   overflow: hidden;
   color: var(--fontColor);
-  height: 100%;
+  
 }
 .category{
   margin-top:20px;
@@ -54,7 +53,7 @@ h2{
   margin-left: 20px;
 }
 .introductionInput{
-  width: 70%;
+  width: 95%;
   outline: var(--myLink);
   margin-left: 0px;
 }
@@ -63,7 +62,7 @@ h2{
   margin-left: 20px;
 }
 .contentInput{
-  width: 70%;
+  width: 95%;
   outline: var(--myLink);
   margin-left: 0px;
 }
@@ -79,15 +78,72 @@ select{
   color: var(--secondaryColor);
 }
 .uploadImage{
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 140px;
+  display: none;
 }
-.uploadImage:hover{
-  cursor: pointer;
-  color: var(--myLink);
+.uploadImg{
+  padding-left: 5px;
 }
 .division{
   display:grid;
   grid-template-columns: 22% 1fr;
+}
+.uploadBlog{
+  height: 25px;
+  width: 3em;
+}
+.imgLabel{
+  background-color: var(--primaryColor);
+  height: 40px;
+  width: 40px;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 20px;
+  border-radius: 8px;
+  color: var(--ligtherthird);
+  cursor: pointer;
+  caret-color: transparent;
+  box-shadow: 1px 1px 3px var(--myLink);
+}
+label{
+  cursor: pointer;
+  
+}
+.labelText{
+  color: var(--fontColor);
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.labelText:hover{
+  color: var(--myLink);
+}
+.labelCon{
+  display: flex;
+  justify-content: space-between;
+}
+.imgLabel:hover{
+  color: var(--myLink);
+}
+.uploadBlog{
+  width: 50%;
+  height: 35px;
+  background-color: var(--secondaryColor);
+  color: var(--fontColor);
+  border: none;
+  box-shadow: 1px 1px 3px var(--myLink);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.uploadBlog:hover{
+  color: var(--myLink);
+  background-color: var(--ligtherthird)
+}
+.con{
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  position: relative;
+  bottom: -10px;
+  height: fit-content;
+  align-items: end;
+  
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="createBlog.css">
+  <link rel="stylesheet" href="createBlog.css">  
   <title>create</title>
 
 </head>
@@ -26,9 +26,21 @@
       </div>
       <div class="title" id="title">Title: <input type="text" class="titleInput"></div>
     </div>
-    <div class="introduction" id="intro">Introduction <br /> <textarea name="introduction" id="introduction" cols="30" rows="3" class="introductionInput"></textarea></div>
-    <div class="content" id="content">Content <br /><textarea name="content" id="content" cols="1000" rows="10" class="contentInput"></textarea></div>
-    <div class="uploadImage" id="upload">upload your image <input type="file"></div>
+    <div class="introduction" id="intro">Introduction: <br /> <textarea name="introduction" id="introduction" cols="30" rows="3" class="introductionInput"></textarea></div>
+    <div class="content" id="content">Content: <br /><textarea name="content" id="content" cols="1000" rows="10" class="contentInput"></textarea></div>
+    <div class="con">
+      <div class="imgLabel">
+        <div class="labelCon">
+          <label for="uploadImg" class="uploadImg">
+            <i class="fa-solid fa-upload"></i>
+          </label>
+            <div class="labelText">upload image</div>
+        </div>
+      </div>
+    <button class="uploadBlog" onclick="uploadBlog()">Upload Your Blog</button>  
+    </div>
+    <div class="uploadImage"><input type="file" id="uploadImg"></div>
+    
   </div>
   
 </body>
