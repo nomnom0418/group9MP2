@@ -2,7 +2,7 @@
 session_start();
 include "config.php";
 
-if (isset($_POST['updatedUserData'])) { 
+if (isset($_POST['updatedUserData'])){
 
     $updateRequest = json_decode($_POST['updatedUserData']);
     $response = array();
@@ -24,7 +24,7 @@ if (isset($_POST['updatedUserData'])) {
     
     $sql = "UPDATE " . TBL_USERINFO . " SET userName = '$newUserName', fName = '$newFirstName', lName = '$newLastName', phoneNumber = '$newPhoneNumber',
           birthday = '$newBirthday', address = '$newAddress', country = '$newCountry', province = '$newProvince', city = '$newCity',
-          zip = '$newZip', email = '$newEmail', pass = '$newPass' WHERE userId = $userId";
+          zip = '$newZip', email = '$newEmail' WHERE userId = $userId";
 
     if ($connection->query($sql) === true) {
         $_SESSION['logged-in-user'][1] = $newUserName;
@@ -33,7 +33,7 @@ if (isset($_POST['updatedUserData'])) {
         $_SESSION['logged-in-user'][4] = $newPhoneNumber;
         $_SESSION['logged-in-user'][5] = $newBirthday;
         $_SESSION['logged-in-user'][6] = $newAddress;
-        $_SESSION['logged-in-user'][7] = $newcountry;
+        $_SESSION['logged-in-user'][7] = $newCountry;
         $_SESSION['logged-in-user'][8] = $newProvince;
         $_SESSION['logged-in-user'][9] = $newCity;
         $_SESSION['logged-in-user'][10] = $newZip;
@@ -44,7 +44,6 @@ if (isset($_POST['updatedUserData'])) {
     } else {
         $response = createResponse(500, "Error", "Failed to update user information");
     }
-
-    echo json_encode($response);
 }
+
 ?>

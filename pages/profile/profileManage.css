@@ -99,7 +99,12 @@ body{
   width: 300px;
   border-radius: 6px;
   box-shadow: 1px 1px 3px var(--myLink);
+  display: none;
 }
+.displayBlock{
+  display: block;
+}
+
 .xmark{
   position: relative;
   left: 287px;
@@ -123,11 +128,50 @@ body{
   width: 100px;
   text-align: center;
   padding-top: 5px;
+  padding-bottom: 5px;
   cursor: pointer;
   border-radius: 6px;
   margin-left: 35%;
   margin-top: 40%;
+  background-color: var(--ligtherthird);
+  color: var(--fontColor);
+  box-shadow: 1px 1px 1px var(--myLink);
 }
 .okBtn:hover{
   background-color: var(--myLink);
+}
+.inputGrid{
+  position: relative;
+  display: grid;
+  height: 160px;
+  gap: 5px;
+  top: -20px;
+  outline: none;
+}
+.inputGrid select{
+  height: 25px;
+  border-radius: 4px;
+  outline: none;
+}
+.gridInput .okBtn{
+  position: relative;
+  top: -120px;
+}
+.inputGrid input{
+  height: 25px;
+  border-radius: 4px;
+  outline: none;
+}
+.textCenter{
+  text-align: center;
+}
+.displayMsg{
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  background-color: var(--ligtherthird);
+}
+.nameBnt{
+  position: relative;
+ top: -90px; 
 }

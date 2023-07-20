@@ -27,7 +27,6 @@ if (isset($_POST['userLog'])) {
           $user['lName'],
           $user['phoneNumber'],
           $user['birthday'],
-          $user['gender'],
           $user['address'],
           $user['country'],
           $user['province'],

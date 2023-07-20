@@ -11,19 +11,20 @@
 
   <div class="container">
     <div class="textTitle">Update your Information</div>
+    <div class="displayMsg"></div>
     <div class="inputCon">
       
       <div class="rowOdd col2">
         <div>
           <div class="userName pad" id="UserName"></div>
-          <div class="inputContainer">
+          <div class="inputContainer unDisplay">
             <i class="fa-solid fa-circle-xmark xmark"></i>
+           <div class="textCenter"> enter your new Username </div>
             <div class="newInputs">
-              <input type="text" id="newUserName" class="inputs">             
+              <input type="text" id="newUserName" class="inputs" value="">             
             </div>
-            <div class="okBtn">OK</div>
+            <button class="button okBtn" onclick="updateProfile()">update</button>
           </div>
-          
         </div>
         <div class="updateUserName updateBtn">update</div>
       </div>
@@ -31,23 +32,45 @@
       <div class="rowEven col2">
         <div>
           <div class="fName pad" id="fName"></div>
-          <input type="text" id="newfName" class="inputs">
-        </div>  
-        <div class="updateName updateBtn">update</div>
+          <div class="inputContainer displayNameUpdate">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">update your name</div>
+            <div class="newInputs">
+              <input type="text" id="newfName" class="inputs">
+              <input type="text" id="newlName" class="inputs">
+            </div>
+            <button class="button okBtn nameBnt" onclick="updateProfile()">update</button>
+          </div>  
+        </div>
+        <div class="updateName updateBtn ">update</div>
       </div>
       
       <div class="rowOdd col2">
         <div>
           <div class="phoneNumber pad" id="phoneNumber"></div>
-          <input type="number" id="newPhoneNumber" class="inputs">
+          <div class="inputContainer displayPhoneUpdate">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">new phone number</div>
+            <div class="newInputs">
+              <input type="number" id="newPhoneNumber" class="inputs">
+            </div>
+            <button class="button okBtn" onclick="updateProfile()">update</button>
+          </div>      
         </div>
         <div class="updatePhoneNumber updateBtn">update</div>
       </div>
-
+      
       <div class="rowEven col2">
         <div>
           <div class="birthday pad" id="birthday"></div>
-          <input type="date" id="newBirthday" class="inputs">
+          <div class="inputContainer displayUpdateBirthday">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">birthday</div>
+            <div class="newInputs">
+              <input type="date" id="newBirthday" class="inputs">
+            </div>
+            <button class="button okBtn" onclick="updateProfile()">update</button>
+          </div>         
         </div>
         <div class="updateBirthday updateBtn">update</div>
       </div>
@@ -55,21 +78,34 @@
       <div class="rowOdd col2">
         <div>
           <div class="address pad" id="address"></div>
-          <div class="inputs">
-            <textarea name="" id="newAddress" cols="30" rows="2"></textarea>
-            <select name="country" id="newCountry"></select>
-            <select name="province" id="newProvince"></select>
-            <select name="city" id="newCity"></select>
-            <input type="zip" id="newZip">
+          <div class="inputContainer  gridInput displayAddressUpdate">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">new address</div>
+            <div class="inputs inputGrid ">
+              <textarea name="" id="newAddress" cols="30" rows="2"></textarea>
+              <select name="country" id="newCountry"></select>
+              <select name="province" id="newProvince"></select>
+              <select name="city" id="newCity"></select>
+              <input type="zip" id="newZip">
+            </div>
+            <button class="button okBtn" onclick="updateProfile()">update</button>
           </div>
-        </div>
+        </div>      
         <div class="updateAddress updateBtn">update</div>
       </div>
+      
       
       <div class="rowEven col2">
         <div>
           <div class="email pad" id="email"></div>
-          <input type="email" id="newEmail" class="inputs">
+          <div class="inputContainer displayEmailUpdate">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">new email</div>
+            <div class="newInputs">
+              <input type="email" id="newEmail" class="inputs">
+            </div>
+            <button class="button okBtn" onclick="updateProfile()">update</button>
+          </div>
         </div>
         <div class="updateEmail updateBtn">update</div>
       </div>
@@ -77,19 +113,23 @@
       <div class="rowOdd col2">
         <div>
           <div class="password pad" id="password"></div>
-          
-          <div class="inputs">
-            <input type="password" id="oldPassword">
-            <input type="password" id="newPass">
-            <input type="password" id="confirmNewPass">
-          </div> 
+          <div class="inputContainer gridInput displayPasswordUpdate">
+            <i class="fa-solid fa-circle-xmark xmark"></i>
+            <div class="textCenter">new address</div>
+            <div class="inputs inputGrid">
+              <input type="password" id="oldPassword">
+              <input type="password" id="newPass">
+              <input type="password" id="confirmNewPass">
+            </div>
+            <button class="button okBtn" onclick="updatePassword()">update</button>
+          </div>
         </div>
         <div class="updatePassword updateBtn">update</div>
       </div>
     </div>
+
     <div class="even">
       <div class="cDate" id="cDate"></div>
-      <div><button type="button" onclick="updateProfile()"></button></div>
     </div>
       
   </div>    

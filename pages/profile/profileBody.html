@@ -10,14 +10,24 @@
 <body>
   <div class="myBody">
   <div class="textInfo"  id="userName">Your info</div>
-  <div class="profileImage" id="profileImage">
-    <label for="fileInput">
-      <i class="fas fa-upload"></i> 
-    <div class="prPic"> update your picture </div>
-    </label>
+  
+  <div class="profileImage">
+    <img  id="profileImage" src="#" alt="profile image"> 
+    <div class="labelDiv">
+      <label for="profileImageBnt" class="fileInputLabel">
+        <i class="fas fa-upload"></i> 
+      </label>
+    </div>
+    <input type="file" id="profileImageBnt" style="display: none;">
+    <div class="labelOk">
+      <label for="profilePicBnt" class="okLabel"> 
+        <i class="fa-solid fa-circle-check"></i>
+      </label>
+    </div>
+    <button onclick="callId()" class="profilePic" id="profilePicBnt"></button>
   </div>
-  <input type="file" id="fileInput" style="display: none;">
-
+  
+ 
   <div class="emailInfo" id="emailInfo">mail@gmail.com</div>
 
   <div class="yourPost" id="Post"></div>
@@ -29,3 +39,4 @@
   
 </body>
 </html>
+

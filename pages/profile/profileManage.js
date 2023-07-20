@@ -1,32 +1,37 @@
-function update(){
-  let record = {"fName":$("#fName").val(),
-                "lName":$("#lName").val(),
-                "phoneNumber":$("#phoneNumber").val(),
-                "birthday":$("#birthday").val(),
-                "address":$("#address").val(),
-                "city":$("#city").val(),
-                "province":$("#province").val(),
-                "zip":$("#zip").val(),
-                "country":$("#country").val(),
-                "email":$("#Email").val(),
-                "pass":$("#pass").val(),
-                "confirmPassword":$("#confirmPassword").val()
-  }
-  let id = $("#id").val;
-  let updateRecord = {
-    "id" : id,
-    "record" : record
-  }
-  $.ajax({
-    "url":USERUPDATE_API,
-    "type":"POST",
-    "data":"updateUser=" + JSON.stringify(record),
-    "success":function(response){
-    console.log(response);
-    let parseResponse=JSON.parse(response);
-    },
-    "error" : function(xhr,status,error){
-      alert("error");
-    }  
+$(document).ready(function() {
+  $('.updateUserName').click(function(){
+    $('.unDisplay').slideToggle(200);
   })
-}
+  $('.updateName').click(function(){
+    $('.displayNameUpdate').slideToggle(200);
+  })
+  $('.updatePhoneNumber').click(function(){
+    $('.displayPhoneUpdate').slideToggle(200);
+  })
+  $('.updateBirthday').click(function(){
+    $('.displayUpdateBirthday').slideToggle(200);
+  })
+  $('.updateAddress').click(function(){
+    $('.displayAddressUpdate').slideToggle(200);
+  })
+  $('.updateEmail').click(function(){
+    $('.displayEmailUpdate').slideToggle(200);
+  })
+  $('.updatePassword').click(function(){
+    $('.displayPasswordUpdate').slideToggle(200);
+  })
+  $('.xmark').click(function(){
+    $('.inputContainer').slideUp(200);
+  })
+  $('.okBtn').click(function(){
+    $('.inputContainer').slideUp(200);
+  })
+  $('.fileInputLabel').click(function(){
+    $('.labelDiv').css('display','none');
+    $('.labelOk').css('display','block');
+  })
+  $('.okLabel').click(function(){
+    $('.labelOk').css('display','none');
+    $('.labelDiv').css('display','block');
+  })
+});

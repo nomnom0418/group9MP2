@@ -30,15 +30,50 @@ body{
 .prPic{
   font-size: .5em;
 }
-label{
-  position: relative;
-  bottom: -50px;
+.labelDiv{
+  position: absolute;
+  bottom: 70px;
+  left: 240px;
+  background-color: var(--fontColor);
+  height: 27px;
+  width: 30px;
+  border-radius: 50%;
+  padding-top: 3px;
 }
-
+.okLabel{
+  font-size: 1.5rem;
+  justify-self: center;
+}
+.labelOk{
+  position: absolute;
+  bottom: 70px;
+  left: 240px;
+  height: 30px;
+  width: 28px;
+  background-color: var(--fontColor);
+  border-radius: 50%;
+  color: var(--thirdColor);
+  padding-left: 2px;
+  padding-top: 1px;
+  display: none;
+}
+.okLabel:hover{
+  cursor: pointer;
+  color: var(--myLink);
+}
+.fileInputLabel{
+  position: relative;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #1a3950;
+}
+.fileInputLabel:hover{
+  color: var(--myLink);
+}
 .profileImage{
   height: 250px;
   width: 250px;
-  background-color: var(--primaryColor);
+  background-color: var(--myLink);
   border-radius: 50%;
 }
 .textInfo{
@@ -55,7 +90,21 @@ label{
   display:grid;
   grid-template-columns: 22% 1fr;
 }
-
+.profilePic{
+  height: 2em;
+  width: 3em;
+  display: none;
+}
+img{
+  height: 235px;
+  width: 235px;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  left: 3%;
+  transform: translateX(50%);
+  transform: translateY(-50%);
+}
 /* @media (width < 800px){
   .division{
     grid-template-columns: 200px 1fr;

@@ -39,6 +39,7 @@
   
   <script src="../../js/onClickLogin.js"></script>
   <script src="../../js/profile.js"></script>
+  <script src="profileManage.js"></script>
   <script>
     getProfile();
   </script>
