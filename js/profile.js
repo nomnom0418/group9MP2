@@ -137,7 +137,7 @@ function updateProfileImage(userId){
     processData: false,
     contentType: false,
     success: function(response) {
-      console.log("image uploaded successfully");  
+      console.log(response);  
       
     },
     error: function(xhr, status, error){

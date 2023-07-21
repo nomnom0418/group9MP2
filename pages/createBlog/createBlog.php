@@ -13,7 +13,7 @@
   <div class="division">
     <div>
       <?php
-        include_once "../profile/sidebar.html";
+        include_once "sidebar.html";
       ?>
     </div>
     <div>

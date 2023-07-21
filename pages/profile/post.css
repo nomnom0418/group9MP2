@@ -36,33 +36,56 @@ h3{
   background-color: var(--ligtherthird);
   top: -10px;
 }
+.images{
+  height:250px;
+  width: 450px;
+  border-radius: 5px;
+  
+}
 .blogContainer{
   display:grid;
-  grid-template-rows:220px 80px;
-  height:300px;
+  grid-template-rows:220px auto;
   width:450px;
   background-color:white;
   margin:5px 5px;
   border-radius:5px;
   box-shadow: 1px 1px 3px var(--myLink);
 }
+.blogTitle{
+  text-align: center;
+  font-size: .9em;
+  margin: 0px 1px;
+  margin-left: 45px;
+  margin-right: 2px;
+}
 .creatorPic{
   background-color: lightblue;
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   margin-top: 40%;
-  margin-left: 2px;
+  margin-left: 1px;
+  position: relative;
+  top: -20px;
+  box-shadow: 1px 1px 3px var(--myLink);
 }
 .blogFooter{
   display: grid;
-  grid-template-columns: 45px 395px 10px;
+  grid-template-columns: 1px 439px 10px;
   background-color: var(--thirdColor);
-  height: 80px;
+  height: auto;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px ;
+  padding-bottom: 4px;
 }
 .blogInfo{
   background-color: var(--secondaryColor);
   width: 100%;
+}
+.intro{
+  text-align: justify;
+  font-size: .9em;
+  margin-left: 5px;
 }
 .dot1, .dot2, .dot3{
   background-color: var(--fontColor);
@@ -73,27 +96,30 @@ h3{
   caret-color: transparent;
 }
 .closeOpen{
-  background-color: var(--secondaryColor);
+  
   padding-top: 5px;
+  height: 25px;
+
 }
 .editDelete{
   position: relative;
   width: 60px;
-  left: 87%;
-  top: -50px;
+  left: -65px;
+  top: -30px;
   background-color: var(--ligtherthird);
   color: var(--fontColor);
   border-radius: 5px;
   text-align: center;
   display: none;
-  box-shadow: var(--linkColor) 2px 2px;
+  box-shadow: 1px 1px 3px var(--myLink);
 }
 .edit:hover{
   cursor: pointer;
-  
+  color: var(--myLink);
 }
 .delete:hover{
   cursor: pointer;
+  color: var(--myLink);
 }
 @media(width < 600px){
  .blogContainer{
@@ -112,5 +138,11 @@ h3{
   border-radius: 50%;
   margin-top: 10%;
   margin-left: 2px;
+}
+.images{
+  height:160px;
+  width: 250px;
+  border-radius: 5px;
+  
 }
 }

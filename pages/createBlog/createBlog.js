@@ -11,7 +11,7 @@ function uploadBlog(){
   formData.append("intro", $('#intro').val());
   formData.append("content", $('#content').val());
   formData.append("upload", $('#uploadImg')[0].files[0]);
-  console.log($('#uploadImg')[0].files[0]);
+  
   $.ajax({
     url: "../../api/blog.php", 
     type: "POST", 

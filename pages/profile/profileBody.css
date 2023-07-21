@@ -34,11 +34,15 @@ body{
   position: absolute;
   bottom: 70px;
   left: 240px;
-  background-color: var(--fontColor);
+  background-color: var(--myLink);
   height: 27px;
   width: 30px;
   border-radius: 50%;
   padding-top: 3px;
+  color: var(--fontColor);
+}
+.labelDiv:hover{
+  background-color: var(--thirdColor);
 }
 .okLabel{
   font-size: 1.5rem;
@@ -95,7 +99,7 @@ body{
   width: 3em;
   display: none;
 }
-img{
+.pImage{
   height: 235px;
   width: 235px;
   border-radius: 50%;
