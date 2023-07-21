@@ -2,7 +2,8 @@
 include "config.php";
 $response = array();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($_POST["userId"]) && isset($_POST["category"]) && isset($_POST["title"]) && isset($_POST["intro"]) && isset($_POST["content"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($_POST["userId"]) &&
+ isset($_POST["category"]) && isset($_POST["title"]) && isset($_POST["intro"]) && isset($_POST["content"])) {
 
     $file = $_FILES["upload"];
     $userId = $_POST["userId"];
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
     $content = $_POST["content"];
 
     $uploadOk = 1;
-  
+    
     $check = getimagesize($file["tmp_name"]);
     if ($check === false) {
         $response["error"] = "File is not an image.";
@@ -32,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
 
     if ($uploadOk) {
         $imageData = file_get_contents($file["tmp_name"]);
-
-        
-        $sql = "INSERT INTO `tbl_bloginfo`(`category`, `title`, `content`, `upload`, `imgName`, `userId`, `intro`) 
-                VALUES ('[$category]','[$title]','[$content]','[$file]','[$imgData]','[$userId]','[$intro]')";
+    
+        $sql = "INSERT INTO `tbl_bloginfo` (`category`, `title`, `content`, `upload`, `imgName`, `userId`, `intro`) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $connection->prepare($sql);
-        $stmt->bind_param("si", $imageData, $userId);
+        $stmt->bind_param("sssssis", $category, $title, $content, $imageData, $file["name"], $userId, $intro);
+
 
         if ($stmt->execute()) {
             $response["success"] = "successful.";
@@ -53,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
     $response["error"] = "Invalid request or missing 'profileImage' or 'userId' field in the request.";
 }
 
-// Return the response as JSON
 echo json_encode($response);
 
 ?>
