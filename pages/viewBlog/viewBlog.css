@@ -1,0 +1,32 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #EFF4F5;
+  --secondaryColor: #677688;
+  --thirdColor: #1a3950;
+  --ligtherthird: #21435e;
+  --myLink: #2da7dd; 
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.blogBody{
+  height: 100vh;
+  width: 100vw;
+
+}
+img{
+  height: 500px;
+  width: 500px;
+  background-color: blue;
+}
+.thisBody{
+  height: 300px;
+  width: 200px;
+  background-color: red;
+}

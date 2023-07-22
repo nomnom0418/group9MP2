@@ -3,4 +3,6 @@ const userRegistration_API = "api/registration.php";
 const GETLOGIN_API = "../../api/login.php";
 const USERPROFILE_API = " ../../api/loggedUserProfile.php";
 const UPDATEPASSWORD_API = "../../api/updatePass.php";
-const UPLOADBLOG_API = "/../api/blog.php";
+const UPLOADBLOG_API = "../../api/blog.php";
+const DELETEBLOG_API = "../../api/deleteBlog.php";
+const VIEWBLOG_API = "../../api/viewBlog.php";

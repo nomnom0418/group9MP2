@@ -36,14 +36,15 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../../js/routes.js"></script>
-  
+  <script src="../viewBlog/viewBlog.js"></script>
   <script src="../../js/onClickLogin.js"></script>
   <script src="../../js/profile.js"></script>
   <script src="profileManage.js"></script>
+  <script src="post.js"></script>
   <script>
     getProfile();
   </script>
-  <script src="post.js"></script>
+  
   
 </body>
 </html>

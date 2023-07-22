@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
 
 
         if ($stmt->execute()) {
-            $response["success"] = "successful.";
+            $response=createResponse(200, "success", "successfully created");
       
             
         } else {
-            $response["error"] = "Error updating profile image: " . $stmt->error;
+            $response = createResponse(300, "error", "Error while saving");
         }
 
         $stmt->close();

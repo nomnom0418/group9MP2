@@ -52,7 +52,7 @@ $(document).ready(function() {
             let intro = entry.intro;
             let profilePic = "data:image/jpeg;base64," + entry.profilePic;
 
-            picChild = picChild + '<div class="blogContainer blogContainer' + i + '"><div class="blogPicture blogPicture' + i + '"><img class="images" src="' + imageSrc + '"></div><div class="blogFooter blogFooter' + i + '"><img src="'+ profilePic +'" class="creatorPic creatorPic' + i + '"><div><div class="blogTitle blogTitle' + i + '">'+ title +'</div><div class="intro">'+ intro +'</div></div> <div class="closeOpen closeOpen' + i + '"><div class="dot1"></div><div class="dot2"></div><div class="dot3"></div><div class="editDelete editDelete' + i + '"><div class="edit edit' + i + '">edit</div><div class="delete delete' + i + '">delete</div></div></div> </div></div>';
+            picChild = picChild + '<div class="blogContainer blogContainer' + i + '"><div class="blogPicture blogPicture' + i + '"><img class="images" src="' + imageSrc + '"></div><div class="blogFooter blogFooter' + i + '"><img src="'+ profilePic +'" class="creatorPic creatorPic' + i + '"><div><button type="button" onclick="viewBlog(' + blogId + ')" class="viewBlog"></button><div class="blogTitle blogTitle' + i + '">'+ title +'</div><div class="intro">'+ intro +'</div></div> <div class="closeOpen closeOpen' + i + '"><div class="dot1"></div><div class="dot2"></div><div class="dot3"></div><div class="editDelete editDelete' + i + '"><div class="edit edit' + i + '">edit</div><button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button></div></div> </div></div>';
             blogParentPost.html(picChild);
           }
 
@@ -85,3 +85,46 @@ $(document).ready(function() {
     });
   } 
 }); 
+
+function deleteBlog(blogId){
+  let confirmResult = confirm("are you sure you want to delete this blog?");
+  if (confirmResult){
+    let deleteBlogId = {
+      "blogId":blogId
+    }
+    $.ajax({
+      url: DELETEBLOG_API,
+      type: "GET",
+      data: "deleteBlog="+JSON.stringify(deleteBlogId),
+      success: function(response) {
+    
+        console.log(response);
+        let parseResponse=JSON.parse(response);
+        if (parseResponse.status == 200){
+          alertElement(parseResponse.description)
+          $(".deleteAlert").css("color","red");
+        }
+        else{
+          alertElement(parseResponse.description)
+          element.css("color","red");
+        }
+        },
+        "error" : function(xhr,status,error){
+          alert("error");
+        }  
+      })
+  }else{
+    console.log("its not deleted");
+
+  }
+}
+
+function alertElement(message) {
+  var element = $(".deleteAlert");
+    element.css("display","block");  
+   
+    element.html(message);
+  setTimeout(function () {
+    element.fadeOut();
+  }, 3000);
+}
