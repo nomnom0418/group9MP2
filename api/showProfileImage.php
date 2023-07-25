@@ -2,29 +2,18 @@
 include "config.php";
 
 if (isset($_GET["userId"])) {
-  $userId = $_GET["userId"];
-
-  $sql = "SELECT `profilePic` FROM `TBL_USERINFO` WHERE `userId` = ?";
-  $stmt = $connection->prepare($sql);
-  $stmt->bind_param("i", $userId);
-  $stmt->execute();
-  $stmt->store_result();
-
-  if ($stmt->num_rows > 0) {
-    $stmt->bind_result($imageData);
-    $stmt->fetch();
-
-    if ($imageData) {
-      $base64Image = base64_encode($imageData);
-      echo json_encode(array("imageData" => $base64Image));
-    } else {
-      echo json_encode(array("imageData" => ""));
-    }
-  } else {
-    echo json_encode(array("imageData" => ""));
+  $userId = json_decode($_GET["userId"]);
+  $sql = "SELECT * FROM `TBL_USERINFO` WHERE userId = '$userId->userId'";
+  $result = $connection->query($sql);
+  
+  $userData=array();
+  while($row = $result->fetch_assoc()){
+    array_push($userData, $row);
   }
-
-  $stmt->close();
-  $connection->close();
-}
-?>
+  $imageFile=$userData[0]['profilePic'];
+  $imageData=base64_encode($imageFile);
+  $userData[0]['profilePic']=$imageData;
+  
+  $response = createResponse(200,"ok","ok",$userData);
+  echo json_encode($response);
+  }

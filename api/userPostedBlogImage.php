@@ -29,10 +29,9 @@ if (isset($_GET["userId"])) {
         );
         $responseData[] = $entry;
     }
-
-    echo json_encode($responseData);
-
-    $stmt->close();
-    $connection->close();
+    
+    $response = createResponse(200,"ok","ok",$responseData);
+    echo json_encode($response);
+  
 }
 ?>

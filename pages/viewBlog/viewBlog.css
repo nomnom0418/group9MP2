@@ -1,32 +1,93 @@
 :root{
   --linkColor: #2DA7DD;
   --primaryColor: #89A7AB;
-  --fontColor: #EFF4F5;
+  --fontColor: #2a3638;
   --secondaryColor: #677688;
-  --thirdColor: #1a3950;
-  --ligtherthird: #21435e;
+  --thirdColor: #e2e7ec;
+  --ligtherthird: #f6f8fa;
   --myLink: #2da7dd; 
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
+
 }
 body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: var(--thirdColor);
 }
-.blogBody{
-  height: 100vh;
-  width: 100vw;
-
+.blgImg{
+  height: auto;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
 }
-img{
-  height: 500px;
-  width: 500px;
-  background-color: blue;
+.blogTextContainer{
+  position: absolute;
+  height: auto;
+  width: 30%;
+  top: 50px;
+  background-color: #1a3950ce;
+  z-index: 9;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
 }
-.thisBody{
-  height: 300px;
-  width: 200px;
-  background-color: red;
+.blogTitle{
+  font-size: 1.3rem;
+  height: auto;
+  width: auto;
+  text-align: center;
+  color: var(--fontColor);
+}
+.blogContent{
+  font-size: 1rem;
+  height: auto;
+  width: auto;
+  text-align: left;
+  color: var(--fontColor);
+}
+.heading{
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+}
+.backBnt{
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  z-index: 99;
+}
+.arr2{
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  animation-name: arrnimation1;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+.arr1{
+  animation-name: arrnimation2;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+@keyframes arrnimation1 {
+  0% {
+      opacity: 1;
+     }
+ 50% {
+ 
+      opacity: 0;
+     }
+}
+@keyframes arrnimation2 {
+  0% {
+      opacity: 0;
+     }
+ 50% {
+ 
+      opacity: 1;
+     }
 }

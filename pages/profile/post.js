@@ -1,26 +1,4 @@
-// createChild(6);
-//this is for creating children in the body
-// function createChild(createdPost){
-//   let blogParentPost=$('.parentDiv');
-//   let picChild="";
-//   for(let i=1; i<=createdPost; i++){
-//   picChild = picChild+ '<div class="blogContainer blogContainer'+i+'"><div class="blogPicture blogPicture'+i+'"></div><div class="blogFooter blogFooter'+i+'"><div class="creatorPic creatorPic'+i+'"></div><div class="blogInfo blogInfo'+i+'"></div> <div class="closeOpen closeOpen'+i+'"><div class="dot1"></div><div class="dot2"></div><div class="dot3"></div></div> </div><div class="editDelete editDelete'+i+'"><div class="edit edit'+i+'">edit</div><div class="delete delete'+i+'">delete</div></div></div>';
-//   blogParentPost.html(picChild);
-//   }
-//   let closeOpenArr = [];
-//   let editDeleteArr= [];
-//   for(let i=1; i<=createdPost; i++){
-//     closeOpenArr.push($(".closeOpen"+i+""));
-//     editDeleteArr.push($(".editDelete"+i+""));
-//   }
-//   for(let i=0; i<closeOpenArr.length; i++){
-//     closeOpenArr[i].click(function(){
-//       editDeleteArr[i].slideToggle(400);
-//     })
-// }
 
- 
-// }
 
 $(document).ready(function() {
   let userId = $("#accountNumber").html();
@@ -29,19 +7,18 @@ $(document).ready(function() {
   function userPostedBlogData(id) {
     $.ajax({
       type: "GET",
-      url: "../../api/userPostedBlogImage.php",
+      url: BLOGDATA_API,
       data: { userId: id },
       dataType: "json",
       success: function(response) {
-      console.log(response);
-      let blogNum = response.length;
-
+      let blogNum = response.data.length;
+      $('.coverPhoto').attr('src', "data:image/jpeg;base64," + response.data[0].imageData);
         if (blogNum > 0) {
           let blogParentPost = $('.parentDiv');
           let picChild = "";
-
-          for (let i = 0; i < blogNum; i++) {
-            let entry = response[i];
+          
+          for (let i = 0; i <= blogNum; i++) {
+            let entry = response.data[i];
 
             let blogId = entry.blogId;
             let imageSrc = "data:image/jpeg;base64," + entry.imageData;
@@ -51,9 +28,35 @@ $(document).ready(function() {
             let creation_date = entry.creation_date;
             let intro = entry.intro;
             let profilePic = "data:image/jpeg;base64," + entry.profilePic;
-
-            picChild = picChild + '<div class="blogContainer blogContainer' + i + '"><div class="blogPicture blogPicture' + i + '"><img class="images" src="' + imageSrc + '"></div><div class="blogFooter blogFooter' + i + '"><img src="'+ profilePic +'" class="creatorPic creatorPic' + i + '"><div><button type="button" onclick="viewBlog(' + blogId + ')" class="viewBlog"></button><div class="blogTitle blogTitle' + i + '">'+ title +'</div><div class="intro">'+ intro +'</div></div> <div class="closeOpen closeOpen' + i + '"><div class="dot1"></div><div class="dot2"></div><div class="dot3"></div><div class="editDelete editDelete' + i + '"><div class="edit edit' + i + '">edit</div><button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button></div></div> </div></div>';
+            
+            
+            picChild = picChild +     '<div class="blogContainer blogContainer' + i + '">' + 
+                                        '<a href="../viewBlog/viewBlog.php?id=' + blogId + '">' + 
+                                          '<div class="blogPicture blogPicture' + i + '">'+
+                                            '<img id="'+ blogId +'" class="images" src="' + imageSrc + '">'+
+                                          '</div>'+
+                                        '</a>' + 
+                                        '<div class="blogFooter blogFooter' + i + '">'+
+                                          '<img src="'+ profilePic +'" class="creatorPic creatorPic' + i + '">'+
+                                          '<div>'+
+                                            '<div class="blogTitle blogTitle' + i + '">'+ title +'</div>'+
+                                            '<div class="intro">'+ intro +'</div>'+
+                                          '</div>'+
+                                          '<div class="closeOpen closeOpen' + i + '">'+
+                                            '<div class="dot1"></div>'+
+                                            '<div class="dot2"></div>'+
+                                            '<div class="dot3"></div>'+
+                                            '<div class="editDelete editDelete' + i + '">'+
+                                              '<div class="edit edit' + i + '">edit</div>'+
+                                              '<button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button>'+
+                                            '</div>'+
+                                          '</div>'+
+                                        '</div>'+
+                                      '</div>'+
+                                  
             blogParentPost.html(picChild);
+        
+           
           }
 
           let closeOpenArr = [];
@@ -63,10 +66,11 @@ $(document).ready(function() {
             editDeleteArr.push($(".editDelete" + i + ""));
           }
           for (let i = 0; i <= closeOpenArr.length; i++) {
-            closeOpenArr[i].click(function() {
+            closeOpenArr[i].on('click',function() {
               editDeleteArr[i].slideToggle(400);
             });
           }
+          
           
           
           // $("#profileImage").attr("src", imageSrc);
@@ -128,3 +132,4 @@ function alertElement(message) {
     element.fadeOut();
   }, 3000);
 }
+

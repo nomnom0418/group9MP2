@@ -4,9 +4,9 @@ function getProfile(){
     "type":"POST",
     "data": { getLoggedUser: true },
     "success":function(response){
-    console.log(response);
+    
     let parseResponse=JSON.parse(response);
-    console.log(parseResponse);
+  
     let userData=parseResponse;
     $("#accountNumber").text(userData.data[0]);
     $("#userName").text(userData.data[1]);
@@ -56,12 +56,10 @@ let updatedUserData = {
   };
 
 $.ajax({
-  url: "../../api/updateProfile.php",
+  url: UPDATEPROFILE_API,
   type: "POST",
   data: "updatedUserData="+JSON.stringify(updatedUserData),
   success: function(response) {
-
-    console.log(response); 
     var parsedResponse=JSON.parse(response);
     if (parsedResponse.status === 200) {
       $('.displayMsg').css('color','yellowgreen');
@@ -86,12 +84,10 @@ function updatePassword(){
   };
   
   $.ajax({
-    url: "../../api/updatePass.php",
+    url: UPDATEPASSWORD_API,
     type: "POST",
     data: "userUpdate="+JSON.stringify(userUpdate),
     success: function(response) {
- 
-    console.log(response); 
     
     var parsedResponse=JSON.parse(response);
     
@@ -130,6 +126,7 @@ function updateProfileImage(userId){
       let formData = new FormData();
       formData.append("profileImage", file);
       formData.append("userId", userId);
+      console.log(formData)
   $.ajax({
     url: "../../api/updateImage.php",
     type: "POST",
@@ -137,8 +134,6 @@ function updateProfileImage(userId){
     processData: false,
     contentType: false,
     success: function(response) {
-      console.log(response);  
-      
     },
     error: function(xhr, status, error){
       alert("error");
@@ -150,30 +145,56 @@ function updateProfileImage(userId){
 }
 
 $(document).ready(function(){
-  let userId = $("#accountNumber").html();
-  showProfileImage(userId);   
-  
-  function showProfileImage(id){
+  let id = $("#accountNumber").html();
+    let userId={
+      'userId':id
+    }
   $.ajax({
+    url: SHOWPROFILEIMAGE_API, 
     type: "GET", 
-    url: "../../api/showProfileImage.php", 
-    data: { userId: id },
-    dataType: "json",
+    data: "userId="+JSON.stringify(userId),
     success: function (response) {
-      console.log(id)
-      if (response.imageData) {
       
-        $("#profileImage").attr("src", "data:image/jpeg;base64," + response.imageData);
-      } else {
-        
-        $("#profileImage").attr("src", "path_to_default_image.jpg");
-      }
+      let parsedResponse=JSON.parse(response);
+      
+      let userData=(parsedResponse.data);
+      
+      let profileImage = "data:image/jpeg;base64," + userData[0].profilePic;
+      
+      $("#profileImage").attr("src", profileImage);
+      
     },
     error: function (xhr, status, error) {
       
-      
-      $("#profileImage").attr("src", "path_to_default_image.jpg"); 
     },
   });
-  }
-})
+
+  $('.sideBarHome').hover(function(){
+    $('.sideHome').css('visibility','visible');
+  }, function() {
+    $('.sideHome').css('visibility','hidden');
+  })
+  $('.yourInfo').hover(function(){
+    $('.sideProfile').css('visibility','visible');
+  }, function() {
+    $('.sideProfile').css('visibility','hidden');
+  })
+  $('.manageYourAccount').hover(function(){
+    $('.sideManage').css('visibility','visible');
+  }, function() {
+    $('.sideManage').css('visibility','hidden');
+  })
+  $('.createBlog').hover(function(){
+    $('.sideCreate').css('visibility','visible');
+  }, function() {
+    $('.sideCreate').css('visibility','hidden');
+  })
+  $('.logout').hover(function(){
+    $('.sideLogout').css('visibility','visible');
+  }, function() {
+    $('.sideLogout').css('visibility','hidden');
+  })
+  
+});
+
+

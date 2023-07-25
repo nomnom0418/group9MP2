@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"]) && i
 
     $file = $_FILES["profileImage"];
     $userId = $_POST["userId"];
-
+    
     $uploadOk = 1;
 
     $check = getimagesize($file["tmp_name"]);
@@ -32,10 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"]) && i
     if ($uploadOk) {
         $imageData = file_get_contents($file["tmp_name"]);
 
-
         $sql = "UPDATE `TBL_USERINFO` SET `profilePic` = ? WHERE `userId` = ?";
         $stmt = $connection->prepare($sql);
-        $stmt->bind_param("bi", $imageData, $userId);
+        $stmt->bind_param("si", $imageData, $userId);
 
         if ($stmt->execute()) {
             $response["success"] = "Profile image updated successfully.";
@@ -51,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"]) && i
     $response["error"] = "Invalid request or missing 'profileImage' or 'userId' field in the request.";
 }
 
-// Return the response as JSON
 echo json_encode($response);
 
 ?>

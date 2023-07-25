@@ -1,15 +1,14 @@
 :root{
   --linkColor: #2DA7DD;
   --primaryColor: #89A7AB;
-  --fontColor: #EFF4F5;
+  --fontColor: #2a3638;
   --secondaryColor: #677688;
-  --thirdColor: #1a3950;
-  --ligtherthird: #21435e;
+  --thirdColor: #e2e7ec;
+  --ligtherthird: #f6f8fa;
   --myLink: #2da7dd; 
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
-
 }
 body{
   padding: 0;

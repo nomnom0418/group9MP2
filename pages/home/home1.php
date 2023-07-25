@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/head.css">
-  <link rel="stylesheet" href="../../css/body.css">
+  <link rel="stylesheet" href="body.css">
   <title>HOME</title>
 </head>
 <body>
-  <?php 
-  include_once '../head.html';
-  include_once '../body.html';
+  <div class="heading">
+    <?php
+      include_once '../head.html';
+    ?>
+  </div>
+  <?php
+  include_once 'body.html';
   ?>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+  <script src="../../js/routes.js"></script>
   <script src="../../js/head.js"></script>
-  <script src="../../js/body.js"></script>
+  <script src="body.js"></script>
   <script src="home.js"></script>
   
 </body>

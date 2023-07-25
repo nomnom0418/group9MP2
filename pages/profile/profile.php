@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@0,100;0,200;0,400;1,200&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="createBlog.css">
+  
   <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="profileBody.css">
   <link rel="stylesheet" href="post.css">
@@ -16,23 +16,28 @@
 </head>
 <body>
   <div class="division">
-    <div>
+    <div class="indexNine">
       <?php
       include_once'sidebar.html';
       ?>
     </div>
-    <div>
-      <div>
+    <div class="bodyDivision">
+      <div class="indexx">
         <?php
         include_once'profileBody.html';
         ?>
       </div>
-      <div>
+      <div class="indexx">
       <?php
         include_once'post.html';
         ?>
       </div>
     </div>
+  </div>
+  <div class="sideSide">
+  <?php
+   include_once'sideText.html';
+  ?>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../../js/routes.js"></script>
@@ -41,6 +46,7 @@
   <script src="../../js/profile.js"></script>
   <script src="profileManage.js"></script>
   <script src="post.js"></script>
+  
   <script>
     getProfile();
   </script>

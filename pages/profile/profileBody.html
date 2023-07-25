@@ -9,27 +9,30 @@
 </head>
 <body>
   <div class="myBody">
-  <div class="textInfo"  id="userName">Your info</div>
-  
-  <div class="profileImage">
-    <img  id="profileImage" src="#" alt="profile image" class="pImage"> 
-    <div class="labelDiv">
-      <label for="profileImageBnt" class="fileInputLabel">
-        <i class="fas fa-upload"></i> 
-      </label>
+    <div ><img class="coverPhoto" src="" alt=""></div>
+    
+    <div class=" midContainer">
+      <div class="profileImage">
+        <img  id="profileImage" src="" alt="profile image" class="pImage"> 
+        <div class="labelDiv">
+          <label for="profileImageBnt" class="fileInputLabel">
+            <i class="fa-solid fa-camera-retro"></i>
+          </label>
+        </div>
+        <input type="file" id="profileImageBnt" style="display: none;">
+        <div class="labelOk">
+          <label for="profilePicBnt" class="okLabel"> 
+            <i class="fa-solid fa-circle-check"></i>
+          </label>
+        </div>
+        <button onclick="callId()" class="profilePic" id="profilePicBnt"></button>
+      </div>
+      
+      <div class="nameMail">
+        <div class="textInfo"  id="userName"></div>
+        <div class="emailInfo" id="emailInfo">mail@gmail.com</div>
+      </div>
     </div>
-    <input type="file" id="profileImageBnt" style="display: none;">
-    <div class="labelOk">
-      <label for="profilePicBnt" class="okLabel"> 
-        <i class="fa-solid fa-circle-check"></i>
-      </label>
-    </div>
-    <button onclick="callId()" class="profilePic" id="profilePicBnt"></button>
-  </div>
-  
- 
-  <div class="emailInfo" id="emailInfo">mail@gmail.com</div>
-
   <div class="yourPost" id="Post"></div>
   
   </div>
