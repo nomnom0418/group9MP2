@@ -1,30 +1,32 @@
 <?php
 include "config.php";
+session_start();
 $response = array();
 
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"]) && isset($_POST["userId"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"])) {
 
     $file = $_FILES["profileImage"];
-    $userId = $_POST["userId"];
+    $userId = $_SESSION['logged-in-user']['userId'];
     
     $uploadOk = 1;
 
     $check = getimagesize($file["tmp_name"]);
     if ($check === false) {
-        $response["error"] = "File is not an image.";
+        $error["error"] = "File is not an image.";
+        $response=createResponse(401,'invalid',$error["error"]);
         $uploadOk = 0;
     }
-
-
     if ($file["size"] > 500000) {
-        $response["error"] = "Sorry, your file is too large.";
+        $error["error"] = "Sorry, your file is too large.";
+        $response=createResponse(406,'not acceptable',$error["error"]);
         $uploadOk = 0;
     }
     $imageFileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
 
     if ($imageFileType !== "jpg" && $imageFileType !== "png" && $imageFileType !== "jpeg" && $imageFileType !== "gif") {
-        $response["error"] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $error["error"] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $response=createResponse(406,'not acceptable',$error["error"]);
         $uploadOk = 0;
     }
 
@@ -37,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["profileImage"]) && i
         $stmt->bind_param("si", $imageData, $userId);
 
         if ($stmt->execute()) {
-            $response["success"] = "Profile image updated successfully.";
-            $response["userId"] = $userId;
+            $response=createResponse(200,'success','update success');
             
         } else {
-            $response["error"] = "Error updating profile image: " . $stmt->error;
+            $response=createResponse(400,'error','update error');
+            
         }
 
         $stmt->close();

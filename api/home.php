@@ -15,12 +15,11 @@ include "config.php";
     $imageFile=$blogData[$i]['upload'];
     $imageData=base64_encode($imageFile);
     $blogData[$i]['upload']=$imageData;
-
     $profileImg=$blogData[$i]['profilePic'];
     $imgProfile=base64_encode($profileImg);
     $blogData[$i]['profilePic']=$imgProfile;
+    
   }
- 
   $response = createResponse(200,"ok","ok",$blogData);
   echo json_encode($response);
 ?>

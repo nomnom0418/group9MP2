@@ -26,12 +26,5 @@ $(document).ready(function() {
   $('.okBtn').click(function(){
     $('.inputContainer').slideUp(200);
   })
-  $('.fileInputLabel').click(function(){
-    $('.labelDiv').css('display','none');
-    $('.labelOk').css('display','block');
-  })
-  $('.okLabel').click(function(){
-    $('.labelOk').css('display','none');
-    $('.labelDiv').css('display','block');
-  })
+  
 });

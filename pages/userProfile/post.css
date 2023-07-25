@@ -18,7 +18,6 @@ body{
   font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
   background-color: var(--thirdColor);
   color: var(--fontColor);
-  position: relative;
 }
 h3{
   font-weight: 400;
@@ -31,30 +30,36 @@ h3{
   position: relative;
   display: grid;
   grid-template-columns: 40% 40%;
-  margin-left: 13%;
+  margin-left: 8%;
   height: auto;
   gap: 10px;
-  bottom: -60px;
+  bottom: -100px;
 
 }
 .secondDiv{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 50px 50px 50px 50px 50px 50px 50px ;
-  position: sticky;
-  top: 100px;
 }
-.stikk{
+.sticky{
+  display: grid;
+  grid-template-rows: 150px auto;
   position: sticky;
-  top: 100px;
+  top: -100px;
 }
+.topSticky{
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  
+}
+
 .parentDiv{
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
   z-index: 99;
   background-color: var(--thirdColor);
-  top: 50px;
+  top: -550px;
 }
 
 .images{

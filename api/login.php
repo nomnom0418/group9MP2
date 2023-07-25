@@ -21,20 +21,7 @@ if (isset($_POST['userLog'])) {
       if ($loginRequest->email === $user['email'] && $loginRequest->password === $user['pass']) {
         $response = createResponse(200, "Succesful", "Successful");
         $_SESSION['logged-in-user']=array(
-          $user['userId'],
-          $user['userName'],
-          $user['fName'],
-          $user['lName'],
-          $user['phoneNumber'],
-          $user['birthday'],
-          $user['address'],
-          $user['country'],
-          $user['province'],
-          $user['city'],
-          $user['zip'],
-          $user['email'],
-          $user['pass'],
-          $user['creation_date']
+         'userId'=> $user['userId'],
         );
       } else {
         $response = createResponse(406, "Error", "Wrong Password please try again");

@@ -1,0 +1,158 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #2a3638;
+  --secondaryColor: #677688;
+  --thirdColor: #e2e7ec;
+  --ligtherthird: #f6f8fa;
+  --transparent: #2a363870;
+  --myLink: #2da7dd; 
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
+
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ 
+}
+.myBody{
+  font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
+  background-color: var(--thirdColor);
+  color: var(--fontColor);
+  caret-color: transparent;
+
+}
+.coverPhoto{
+  height: 420px;
+  width: 80%;
+  background-color: #2a3638;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px var(--transparent);
+
+}
+.prPic{
+  font-size: .5em;
+}
+.labelDiv{
+  position: absolute;
+  bottom: 15px;
+  left: 160px;
+  background-color: var(--ligtherthird);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding-top: 3px;
+  color: var(--ligtherthird);
+  font-size: 1.4em;
+}
+.labelDiv:hover{
+  background-color: var(--thirdColor);
+}
+.fa-camera-retro{
+  
+  margin-top: 7px;
+}
+.labelOk{
+  position: absolute;
+  bottom: 17px;
+  left: 159px;
+  height: 38px;
+  width: 36px;
+  background-color: var(--thirdColor);
+  border-radius: 50%;
+  color: var(--success);
+  padding-left: 4px;
+  padding-top: 4px;
+  font-size: 2em;
+  display: none;
+}
+.okLabel:hover{
+  cursor: pointer;
+  color: var(--myLink);
+}
+.fileInputLabel{
+  position: relative;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #1a3950;
+}
+.fileInputLabel:hover{
+  color: var(--myLink);
+}
+.profileImage{
+  height: 220px;
+  width: 220px;
+  background-color: var(--thirdColor);
+  border-radius: 50%;
+  position: relative;
+  top:-110px;
+  left: 10%;
+  
+}
+.midContainer{
+  display: flex;
+  height: 250px;
+  width: 80%;
+  background-color: var(--thirdColor);
+  position: relative;
+  top:0px;
+  left: 2%;
+}
+.nameMail{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  position: relative;
+  left: 10%;
+}
+.textInfo{
+  font-size: 1.7em;
+  margin-bottom: .3em;
+}
+.emailInfo{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.division{
+  height: auto;
+  display:grid;
+  grid-template-columns: 4.4% 1fr;
+}
+.bodyDivision{
+ display: grid;
+ grid-template-rows: 500px auto;
+
+}
+.profilePic{
+  height: 2em;
+  width: 3em;
+  display: none;
+}
+.pImage{
+  height: 205px;
+  width: 205px;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  left: 3%;
+  transform: translateX(50%);
+  transform: translateY(-50%);
+}
+
+ @media (width < 800px){
+  .division{
+    grid-template-columns: 6% 1fr;
+  }
+}
+/* @media (width < 600px){
+  .division{
+    grid-template-columns: 100px 1fr;
+  }
+} */ 

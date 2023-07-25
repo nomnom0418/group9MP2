@@ -35,7 +35,4 @@ function viewBlog(id){
   const urlParams = new URLSearchParams(window.location.search);
   const blogId = urlParams.get('id');
   viewBlog(blogId);
-})
-
-
-
+  })
