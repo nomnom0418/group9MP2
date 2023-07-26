@@ -51,3 +51,31 @@ function uploadBlog(){
       element.fadeOut();
     }, 3000);
   }
+  $(document).ready(function(){
+    $('.sideBarHome').hover(function(){
+      $('.sideHome').css('visibility','visible');
+    }, function() {
+      $('.sideHome').css('visibility','hidden');
+    })
+    $('.yourInfo').hover(function(){
+      $('.sideProfile').css('visibility','visible');
+    }, function() {
+      $('.sideProfile').css('visibility','hidden');
+    })
+    $('.manageYourAccount').hover(function(){
+      $('.sideManage').css('visibility','visible');
+    }, function() {
+      $('.sideManage').css('visibility','hidden');
+    })
+    $('.createBlog').hover(function(){
+      $('.sideCreate').css('visibility','visible');
+    }, function() {
+      $('.sideCreate').css('visibility','hidden');
+    })
+    $('.logout').hover(function(){
+      $('.sideLogout').css('visibility','visible');
+    }, function() {
+      $('.sideLogout').css('visibility','hidden');
+    })
+  
+  })

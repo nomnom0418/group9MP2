@@ -1,12 +1,13 @@
 <?php
 include "config.php";
-
+session_start();
+$userId = $_SESSION['logged-in-user']['userId'];
 if (isset($_POST['userUpdate'])) { 
 
     $givenInfo = json_decode($_POST['userUpdate']);
     $response = array();
   
-    $sql = "SELECT * FROM " . TBL_USERINFO . " WHERE userId = '" . $givenInfo->userId . "'";
+    $sql = "SELECT * FROM " . TBL_USERINFO . " WHERE userId = '" . $userId . "'";
     $results = $connection->query($sql);
     
     $oldInfos = array();
@@ -29,7 +30,7 @@ if (isset($_POST['userUpdate'])) {
       $response = createResponse(406, "mot acceptable","new password does not match");
     }
     elseif($givenInfo->givenOldPass===$oldPass && $givenInfo->givenPass === $givenInfo->givenConfirmNewPass){
-      $sql = "UPDATE  `TBL_USERINFO`  SET `pass` = '$givenInfo->givenPass' WHERE `userId` = '$givenInfo->userId'";
+      $sql = "UPDATE  `TBL_USERINFO`  SET `pass` = '$givenInfo->givenPass' WHERE `userId` = '$userId'";
       $isInserted = $connection->query($sql);
       if($isInserted){
         $response = createResponse(200, "SUCCESS","password updated");

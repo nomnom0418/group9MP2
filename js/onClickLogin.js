@@ -17,7 +17,7 @@ function logIn(){
       addCss.css("color","yellowgreen");
       addCss.addClass("myAlert");
       window.location.href="pages/home/home1.php";
-     }else if(parseResponse.status==406){
+     }else if(parseResponse.status==401){
       addCss.css("color","red");
       addCss.addClass("myAlert")
      }else{

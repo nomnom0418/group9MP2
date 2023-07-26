@@ -1,13 +1,11 @@
 <?php
 session_start();
 include "config.php";
-
+$userId = $_SESSION['logged-in-user']['userId'];
 if (isset($_POST['updatedUserData'])){
 
     $updateRequest = json_decode($_POST['updatedUserData']);
     $response = array();
-
-    $userId = $_SESSION['logged-in-user'][0];
     
     $newUserName = $updateRequest->userName;
     $newFirstName = $updateRequest->fName;
@@ -20,7 +18,7 @@ if (isset($_POST['updatedUserData'])){
     $newCity = $updateRequest->city;
     $newZip = $updateRequest->zip;
     $newEmail = $updateRequest->email;
-    $newPass = $updateRequest->pass;
+
     
     $sql = "UPDATE " . TBL_USERINFO . " SET userName = '$newUserName', fName = '$newFirstName', lName = '$newLastName', phoneNumber = '$newPhoneNumber',
           birthday = '$newBirthday', address = '$newAddress', country = '$newCountry', province = '$newProvince', city = '$newCity',
@@ -38,7 +36,8 @@ if (isset($_POST['updatedUserData'])){
         $_SESSION['logged-in-user'][9] = $newCity;
         $_SESSION['logged-in-user'][10] = $newZip;
         $_SESSION['logged-in-user'][11] = $newEmail;
-        $_SESSION['logged-in-user'][12] = $newPass;
+        
+    
 
         $response = createResponse(200, "Success", "User information updated successfully");
     } else {
@@ -46,4 +45,32 @@ if (isset($_POST['updatedUserData'])){
     }
 }
 
+
+if (isset($_POST['bio'])){
+    $userBio = json_decode($_POST['bio']);
+    $sql = "SELECT * FROM " . TBL_BIO . " WHERE userId = '" . $userId . "'";
+    $isExisted = $connection->query($sql);
+   
+    if($isExisted){
+        $sql="UPDATE `tbl_bio` SET `elem`='$userBio->elem',`high`='$userBio->high',`college`='$userBio->college',`work`='$userBio->work',`fav`='$userBio->fav',`hob`='$userBio->hob',`sport`='$userBio->sport',`status`='$userBio->status' WHERE `userId`=$userId";
+        $isUpdated = $connection->query($sql);
+        if($isUpdated){
+        $response=createResponse(200,"ok","your bio is updated");
+        }
+    }
+
+    else{
+        $sql="INSERT INTO `TBL_BIO`(`elem`, `high`, `college`, `work`, `fav`, `hob`, `sport`, `status`, `userId`)
+        VALUES ('{$userBio->elem}','{$userBio->high}','{$userBio->college}','{$userBio->work}','{$userBio->fav}','{$userBio->hob}','{$userBio->sport}','{$userBio->status}',$userId)";
+        $isInserted = $connection->query($sql);
+        if($isInserted){
+            $response=createResponse(200,"success","your bio is uploaded");
+        }
+        else{
+            $response=createResponse(400,"error","system error");
+        }
+        
+    }
+    echo json_encode($response);
+}
 ?>

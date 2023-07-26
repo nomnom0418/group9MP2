@@ -20,11 +20,12 @@ function viewBlog(id){
     let bodyElement = "<img class='blgImg' src= '"+ blogImg +"'></img>"+
                       "<div class='blogTextContainer'>"+
                         "<div class='blogTitle'><h4>'"+ blogTitle +"'</h4></div>"+
-                        "<div class='blogContent'>'"+ blogContent +"'</div>"+
+                        "<div class='blogContent'></div>"+
                       "</div>";
 
     $('.blogBody').html(bodyElement)
     $('.blgImg').css('height',window.innerHeight);
+    $('.blogContent').html(blogContent);
     }
   })
 }

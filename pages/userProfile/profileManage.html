@@ -10,7 +10,7 @@
 <body>
 
   <div class="container">
-    <div class="textTitle">Update your Information</div>
+    <div class="textTitle"><h4>Update your Information</h4></div>
     <div class="displayMsg"></div>
     <div class="inputCon">
       
@@ -82,13 +82,19 @@
             <i class="fa-solid fa-circle-xmark xmark"></i>
             <div class="textCenter">new address</div>
             <div class="inputs inputGrid ">
-              <textarea name="" id="newAddress" cols="30" rows="2"></textarea>
-              <select name="country" id="newCountry"></select>
-              <select name="province" id="newProvince"></select>
-              <select name="city" id="newCity"></select>
-              <input type="zip" id="newZip">
+              address<textarea name="" id="newAddress" cols="30" rows="2"></textarea>
+              country <select name="country" id="newCountry">
+                        <option value="country">Phillippines</option>
+              </select>
+              province<select name="province" id="newProvince">
+                        <option value="province">Cavite</option>
+              </select>
+              city<select name="city" id="newCity">
+                    <option value="city">Trece Martirez</option>
+              </select>
+              zip<input type="zip" id="newZip">
             </div>
-            <button class="button okBtn" onclick="updateProfile()">update</button>
+            <button class="button addOkBtn" onclick="updateProfile()">update</button>
           </div>
         </div>      
         <div class="updateAddress updateBtn">update</div>
@@ -115,11 +121,11 @@
           <div class="password pad" id="password"></div>
           <div class="inputContainer gridInput displayPasswordUpdate">
             <i class="fa-solid fa-circle-xmark xmark"></i>
-            <div class="textCenter">new address</div>
+            <div class="textCenter">update password</div>
             <div class="inputs inputGrid">
-              <input type="password" id="oldPassword">
-              <input type="password" id="newPass">
-              <input type="password" id="confirmNewPass">
+              old password<input type="password" id="oldPassword">
+              new password<input type="password" id="newPass">
+              confirm password<input type="password" id="confirmNewPass">
             </div>
             <button class="button okBtn" onclick="updatePassword()">update</button>
           </div>
@@ -133,7 +139,27 @@
     </div>
       
   </div>    
-
+  <div class="aboutText"><h4>about you</h4></div>
+  <div class="bioContainer">
+    Elementary school:
+    <input class="moreInfo" type="text" id="elementary">
+    High school:
+    <input class="moreInfo" type="text" id="highSchool">
+    College:
+    <input class="moreInfo" type="text" id="college">
+    Current job:
+    <input class="moreInfo" type="text" id="work">
+    Your favorites:
+    <input class="moreInfo" type="text" id="favorites">
+    Your Hobbies:
+    <input class="moreInfo" type="text" id="hobbies">
+    Sports:
+    <input class="moreInfo" type="text" id="sports">
+    Status:
+    <input class="moreInfo" type="text" id="status">
+    
+  </div>
+  <button onclick="sendBio()" class="bioBtn" type="button">submit my info</button>
 </body>
 
 </html>

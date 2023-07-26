@@ -212,6 +212,21 @@ function deleteBlog(blogId){
   }
 }
 
+function logout(){
+  $.ajax({
+    "url":LOGOUT_API,
+    "type":"POST",
+    "data":"logout",
+    "success":function(response){
+    console.log(response);
+    let parseResponse=JSON.parse(response);
+    },
+    "error" : function(xhr,status,error){
+      alert("error");
+    }  
+  })
+}
+
 function alertElement(message) {
   var element = $(".deleteAlert");
     element.css("display","block");  

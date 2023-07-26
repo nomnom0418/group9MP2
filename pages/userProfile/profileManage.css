@@ -1,7 +1,9 @@
 :root{
   --linkColor: #2DA7DD;
+  --light: #c3e5f3;
   --primaryColor: #89A7AB;
   --fontColor: #2a3638;
+  --transparent: #2a363883;
   --secondaryColor: #677688;
   --thirdColor: #e2e7ec;
   --ligtherthird: #f6f8fa;
@@ -9,7 +11,6 @@
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
-
 }
 body{
   padding: 0;
@@ -19,15 +20,16 @@ body{
   caret-color: transparent;
   background-color: var(--thirdColor);
 }
+
 .container{
   margin-top: 20px;
 }
 .division{
   display:grid;
-  grid-template-columns: 22% 1fr;
+  grid-template-columns: 6% 1fr;
 }
 .textTitle{
-  color: var(--fontColor);
+  
   text-align: center;
   height: 4em;
 }
@@ -36,21 +38,24 @@ body{
   gap: 20px;
 }
 .inputCon{
+  position: relative;
   display: grid;
   gap: 5px;
+  left: -50%;
+  transform: translateX(60%);
 }
 .rowOdd{
-  background-color: var(--secondaryColor);
   
-  width: 95%;
+  background-color: #89a7ab8a;
+  width: 70%;
   margin-left: 1%;
-  box-shadow:  1px 1px 3px var(--myLink);
+  box-shadow:  1px 1px 3px var(--transparent);
 }
 .rowEven{
   background-color: var(--thirdColor);
-  width: 95%;
+  width: 70%;
   margin-left: 1%;
-  box-shadow:  1px 1px 3px var(--myLink);
+  box-shadow:  1px 1px 3px var(--transparent);
 }
 .rowOdd,.rowEven{
  font-size: 1.1rem; 
@@ -66,7 +71,7 @@ body{
 }
 .updateBtn{
   border-radius: 5px;
-  color: var(--myLink);
+  color: var(--fontColor);
   margin-right: 1em;
   margin-top: 5px;
   height: 1em;
@@ -77,8 +82,9 @@ body{
   cursor: pointer;
 }
 .updateBtn:hover{
-  background-color: var(--myLink);
-  color: var(--secondaryColor);
+  background-color: var(--secondaryColor);
+  color: var(--thirdColor);
+  box-shadow: 1px 1px 1px var(--transparent);
 }
 .pad{
   margin-top: 10px;
@@ -88,18 +94,21 @@ body{
   display: flex;
   justify-content: space-between;
 }
+
 .inputContainer{
   position: absolute;
+ 
+  top: 10%;
+  right: 65%;
   transform: translateY(30%);
   transform: translateX(50%);
-  top: 30%;
-  right: 40%;
   background-color: var(--secondaryColor);
   height: 300px;
   width: 300px;
   border-radius: 6px;
   box-shadow: 1px 1px 3px var(--myLink);
   display: none;
+  z-index: 99;
 }
 .displayBlock{
   display: block;
@@ -132,10 +141,24 @@ body{
   cursor: pointer;
   border-radius: 6px;
   margin-left: 35%;
-  margin-top: 40%;
+  margin-top: 50%;
   background-color: var(--ligtherthird);
   color: var(--fontColor);
-  box-shadow: 1px 1px 1px var(--myLink);
+  box-shadow: 1px 1px 1px var(--transparent);
+}
+.addOkBtn{
+  height: 27px;
+  width: 100px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 35%;
+  margin-top: 35%;
+  background-color: var(--ligtherthird);
+  color: var(--fontColor);
+  box-shadow: 1px 1px 1px var(--transparent);
 }
 .okBtn:hover{
   background-color: var(--myLink);
@@ -175,3 +198,58 @@ body{
   position: relative;
   top: -90px; 
 }
+.displayPasswordUpdate{
+  height: 350px;
+}
+
+.displayAddressUpdate{
+  height: 400px;
+}
+#newAddress{
+  height:20px
+}
+.cDate{
+  position: relative;
+  right: -10%;
+}
+.bioContainer{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  width: 70%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-55%);
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.aboutText{
+  position: relative;
+  left: 50%;
+  transform: translateX(-40px);
+}
+.moreInfo{
+  height: 2.5em;
+  font-size: 1em;
+  caret-color: #2a3638;
+  outline: none;
+  box-shadow: 1px 1px 3px var(--transparent);
+  border: none;
+}
+.bioBtn{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  margin-bottom: 40px;
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  background-color: var(--primaryColor);
+  border: none;
+  box-shadow: 1px 1px 3px var(--transparent);
+  cursor: pointer;
+}
+

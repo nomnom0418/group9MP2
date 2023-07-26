@@ -1,7 +1,9 @@
 :root{
   --linkColor: #2DA7DD;
+  --light: #c3e5f3;
   --primaryColor: #89A7AB;
   --fontColor: #2a3638;
+  --transparent: #2a363883;
   --secondaryColor: #677688;
   --thirdColor: #e2e7ec;
   --ligtherthird: #f6f8fa;
@@ -36,30 +38,13 @@ h3{
   bottom: -100px;
 
 }
-.secondDiv{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 50px 50px 50px 50px 50px 50px 50px ;
-}
-.sticky{
-  display: grid;
-  grid-template-rows: 150px auto;
-  position: sticky;
-  top: -100px;
-}
-.topSticky{
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  
-}
-
 .parentDiv{
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
   z-index: 99;
   background-color: var(--thirdColor);
-  top: -550px;
+  top: -730px;
 }
 
 .images{
@@ -88,7 +73,7 @@ h3{
   margin-top: 40%;
   margin-left: 1px;
   position: relative;
-  top: -30px;
+  top: -40px;
   box-shadow: 1px 1px 3px var(--myLink);
 }
 .blogFooter{
@@ -168,6 +153,25 @@ h3{
   margin-left: 60px;
   cursor: pointer;
 }
+
+/*------moreinfo------------*/
+.secondDiv{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+.sticky{
+  display: grid;
+  grid-template-rows: 150px auto;
+  position: sticky;
+  top: -140px;
+}
+.topSticky{
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  
+}
+
 
 
 @media(width < 1300px){

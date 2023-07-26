@@ -18,9 +18,11 @@ body{
   background-color: var(--thirdColor);
 }
 .blgImg{
-  height: auto;
-  width: 100%;
+  width: 65%;
+  margin-top: 20px;
   position: fixed;
+  height: 400px;
+  right: 10px;
   z-index: 0;
 }
 .blogTextContainer{

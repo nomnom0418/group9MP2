@@ -9,8 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@0,100;0,200;0,400;1,200&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="post.css">
   <link rel="stylesheet" href="userProfileBody.css">
-  
-  <link rel="stylesheet" href="../sidebar/sidebar.css">
+  <link rel="stylesheet" href="../sideBar/sidebar.css">
   <title>user profile</title>
 </head>
 <body>

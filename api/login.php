@@ -16,15 +16,21 @@ if (isset($_POST['userLog'])) {
         array_push($users, $row);
     
     }
-    $response = createResponse(401, "error","accountdoesnt exist");
+    $response = createResponse(401, "error","account doesnt exist");
     foreach($users as $user){
-      if ($loginRequest->email === $user['email'] && $loginRequest->password === $user['pass']) {
+      if ($loginRequest->email === $user['email'] && $loginRequest->password != $user['pass']) {
+        $response = createResponse(401, "error", "incorrect password");
+        $_SESSION['logged-in-user']=array(
+         'userId'=> $user['userId'],
+        );
+      } 
+      else if ($loginRequest->email === $user['email'] && $loginRequest->password === $user['pass']) {
         $response = createResponse(200, "Succesful", "Successful");
         $_SESSION['logged-in-user']=array(
          'userId'=> $user['userId'],
         );
       } else {
-        $response = createResponse(406, "Error", "Wrong Password please try again");
+        $response = createResponse(406, "Error", "you are banned");
       }
     }
     echo json_encode($response);

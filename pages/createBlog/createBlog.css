@@ -1,12 +1,15 @@
 :root{
   --linkColor: #2DA7DD;
   --primaryColor: #89A7AB;
-  --fontColor: #EFF4F5;
+  --fontColor: #2a3638;
   --secondaryColor: #677688;
-  --thirdColor: #1a3950;
-  --ligtherthird: #21435e;
+  --thirdColor: #e2e7ec;
+  --ligtherthird: #f6f8fa;
+  --transparent: #2a363870;
   --myLink: #2da7dd; 
-
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
 }
 body{
   padding: 0;
@@ -85,13 +88,16 @@ select{
 }
 .division{
   display:grid;
-  grid-template-columns: 22% 1fr;
+  grid-template-columns: 4.7% 1fr;
 }
 .uploadBlog{
   height: 25px;
   width: 3em;
 }
 .imgLabel{
+  position: relative;
+  left: 90%;
+  bottom: -50px;
   background-color: var(--primaryColor);
   height: 40px;
   width: 40px;
@@ -154,4 +160,15 @@ label{
   transform: translateY(-50%);
   transform: translateX(-50%);
   display: none;
+}
+
+@media(width<800px){
+  .division{
+    grid-template-columns: 5.9% 1fr;
+  }
+}
+@media(width<600px){
+  .division{
+    grid-template-columns: 6% 1fr;
+  }
 }

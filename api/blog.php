@@ -10,7 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
     $category = $_POST["category"];
     $title = $_POST["title"];
     $intro = $_POST["intro"];
-    $content = $_POST["content"];
+    $contents = $_POST["content"];
+
+    $sanitizedInput = htmlspecialchars($contents);
+    $formattedInput = nl2br($sanitizedInput);
+    $content = $formattedInput;
 
     $uploadOk = 1;
     

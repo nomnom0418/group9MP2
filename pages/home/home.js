@@ -41,61 +41,34 @@ $(document).ready(function() {
         let bodyHeight =0;
         let screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         let screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        if (screenWidth > 1230){
-          blogsContainerHeight = ((blogData.length/2)*500);
-          $('.blogsContainer').css({
-            'height': blogsContainerHeight +"px"
-          });
-          parentBlogsHeight = blogsContainerHeight-4;
-          $('.blogsParent').css({
-            'height': parentBlogsHeight +"px"
-          });
-          bodyHeight = blogsContainerHeight +200;
-          $('.mainContainer').css({
-            'height': bodyHeight +"px"
-          });
-        }else if (screenWidth==912 && screenHeight==1368) {
-          blogsContainerHeight = ((passNumber/1)*280);
-          $('.blogsContainer').css({
-            'height': blogsContainerHeight +"px"
-          });
-          parentBlogsHeight = blogsContainerHeight-4;
-          $('.blogsParent').css({
-            'height': parentBlogsHeight +"px"
-          });
-          bodyHeight = blogsContainerHeight +495;
-          $('.mainContainer').css({
-            'height': bodyHeight +"px"
-          });
-
-          
-        }else if (screenWidth<=1230 && screenWidth>=824) {
-          blogsContainerHeight = ((blogData.length)*280);
-          $('.blogsContainer').css({
-            'height': blogsContainerHeight +"px"
-          });
-          parentBlogsHeight = blogsContainerHeight-4;
-          $('.blogsParent').css({
-            'height': parentBlogsHeight +"px"
-          });
-          bodyHeight = blogsContainerHeight +200;
-          $('.mainContainer').css({
-            'height': bodyHeight +"px"
-          });
-
-          } else{
-          blogsContainerHeight = (blogData.length*280);
-          $('.blogsContainer').css({
-            'height': blogsContainerHeight +"px"
-          });
-          parentBlogsHeight = blogsContainerHeight-4;
-          $('.blogsParent').css({
-            'height': parentBlogsHeight +"px"
-          });
-          bodyHeight = blogsContainerHeight +200;
-          $('.mainContainer').css({
-            'height': bodyHeight +"px"
-          });
+        
+        if (screenWidth >= 1214){
+          blogsContainerHeight = ((blogData.length/2)*450);
+         $('.blogsContainer').css({
+           'height': blogsContainerHeight +"px"
+         });
+         parentBlogsHeight = blogsContainerHeight-4;
+         $('.blogsParent').css({
+           'height': parentBlogsHeight +"px"
+         });
+         bodyHeight = blogsContainerHeight +400;
+         $('.mainContainer').css({
+           'height': bodyHeight +"px"
+         });
+        }
+        else if (screenWidth <= 1213){
+          blogsContainerHeight = ((blogData.length)*450);
+         $('.blogsContainer').css({
+           'height': blogsContainerHeight +"px"
+         });
+         parentBlogsHeight = blogsContainerHeight-4;
+         $('.blogsParent').css({
+           'height': parentBlogsHeight +"px"
+         });
+         bodyHeight = blogsContainerHeight +400;
+         $('.mainContainer').css({
+           'height': bodyHeight +"px"
+         });
         }
       },
       "error" : function(xhr,status,error){

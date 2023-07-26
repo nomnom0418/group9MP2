@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@0,100;0,200;0,400;1,200&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="../sideBar/sidebar.css">
   <link rel="stylesheet" href="profileManage.css">
   
   
@@ -16,9 +16,9 @@
 </head>
 <body>
   <div class="division">
-    <div>
+    <div class="sideBar">
       <?php
-        include_once "../profile/sidebar.html"
+        include_once "../sideBar/sidebar.html"
       ?>
     </div>
     <div>
@@ -27,10 +27,13 @@
       ?>
     </div>
   </div>
+  <?php
+  include_once "../sideBar/sideText.html"
+  ?>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../../js/routes.js"></script>
-  <script src="../../js/profile.js"></script>
+  
   <script src="profileManage.js"></script>
-  <script>getProfile()</script>
+  
 </body>
 </html>
