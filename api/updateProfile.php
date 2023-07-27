@@ -49,17 +49,23 @@ if (isset($_POST['updatedUserData'])){
 if (isset($_POST['bio'])){
     $userBio = json_decode($_POST['bio']);
     $sql = "SELECT * FROM " . TBL_BIO . " WHERE userId = '" . $userId . "'";
-    $isExisted = $connection->query($sql);
+    $result = $connection->query($sql);
    
+    $isExisted = false;
+    while ($row = $result->fetch_assoc()) {
+       $isExisted = true;
+     }
+
     if($isExisted){
         $sql="UPDATE `tbl_bio` SET `elem`='$userBio->elem',`high`='$userBio->high',`college`='$userBio->college',`work`='$userBio->work',`fav`='$userBio->fav',`hob`='$userBio->hob',`sport`='$userBio->sport',`status`='$userBio->status' WHERE `userId`=$userId";
         $isUpdated = $connection->query($sql);
         if($isUpdated){
+
         $response=createResponse(200,"ok","your bio is updated");
         }
     }
 
-    else{
+    if(!$isExisted){
         $sql="INSERT INTO `TBL_BIO`(`elem`, `high`, `college`, `work`, `fav`, `hob`, `sport`, `status`, `userId`)
         VALUES ('{$userBio->elem}','{$userBio->high}','{$userBio->college}','{$userBio->work}','{$userBio->fav}','{$userBio->hob}','{$userBio->sport}','{$userBio->status}',$userId)";
         $isInserted = $connection->query($sql);
@@ -73,4 +79,7 @@ if (isset($_POST['bio'])){
     }
     echo json_encode($response);
 }
+
+
+
 ?>

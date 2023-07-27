@@ -7,7 +7,7 @@ $(document).ready(function() {
     "success":function(response){
     
     let parseResponse=JSON.parse(response);
-      console.log(parseResponse.data);
+      
     let userData=parseResponse;
     $("#accountNumber").text(userData.data[0]);
     $("#userName").text(userData.data[1]);
@@ -41,7 +41,7 @@ $(document).ready(function() {
   });
 
 
-
+  
 
   $('.updateUserName').click(function(){
     $('.unDisplay').slideToggle(200);
@@ -196,11 +196,11 @@ function updateProfile(){
       success: function(response) {
         var parsedResponse=JSON.parse(response);
         if (parsedResponse.status === 200) {
-          $('.displayMsg').css('color','yellowgreen');
-          $('.displayMsg').html(parsedResponse.description);
+          $('.bioResponse').css('color','yellowgreen');
+          $('.bioResponse').html(parsedResponse.description);
          } else {
-          $('.displayMsg').html(parsedResponse.description);
-            console.error(parsedResponse.description);
+          $('.bioResponse').css('color','red');
+          $('.bioResponse').html(parsedResponse.description);
          }
       },
       error: function(xhr, status, error) {

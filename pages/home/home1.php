@@ -19,7 +19,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
   <script src="../../js/routes.js"></script>
   <script src="../../js/head.js"></script>
-  <script src="body.js"></script>
   <script src="home.js"></script>
   
 </body>

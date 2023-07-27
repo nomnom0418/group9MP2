@@ -1,0 +1,77 @@
+:root{
+  --linkColor: #2DA7DD;
+  --primaryColor: #89A7AB;
+  --fontColor: #2a3638;
+  --secondaryColor: #677688;
+  --thirdColor: #e2e7ec;
+  --ligtherthird: #f6f8fa;
+  --transparent: #2a363870;
+  --myLink: #2da7dd; 
+  --warning: rgba(252, 222, 89, .7);
+  --danger: rgba(252, 89, 89, .7);
+  --success: rgba(89, 252, 103, .7);
+
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ 
+}
+.myBody{
+  font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
+  background-color: var(--thirdColor);
+  color: var(--fontColor);
+  caret-color: transparent;
+}
+.container{
+  position: absolute;
+  width: 70%;
+  display: grid;
+  grid-template-rows: 10px auto;
+  gap: 10%;
+  background-color: red;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.greet{
+  height: 1.5em;
+  position: absolute;
+
+  margin-top: 20px; 
+  justify-content: center;
+  background-color: #2a3638;
+  width: 130px;
+  left: 50%;
+  transform: translateX(-50px);
+}
+.greetText{
+  font-size: 1.5em;
+  padding-left: 160px;
+  position: absolute;
+  transform: translateX(-55%);
+  top: -180px;
+  
+}
+.name{
+  font-size: 2em;
+  color: var(--secondaryColor);
+  position: absolute;
+  top: -170px;
+  transform: translateX(40%);
+}
+.botText{
+  font-family: 'dancing Script', Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: -100px;
+  transform: translateX(14%);
+}
+.botCon{
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.picCon{
+  height: 150px;
+  width: 150px;
+}

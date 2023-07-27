@@ -1,7 +1,8 @@
 <?php
 include "config.php";
 
-
+if(isset($_GET['Index'])){
+  $blogCount = $_GET['Index'];
   $sql = "SELECT b.`blogId`, b.`upload`, b.`category`, b.`title`, b.`creation_date`, b.`intro`, u.`profilePic`, u.`userId`
           FROM `TBL_BLOGINFO` AS b
           JOIN `TBL_USERINFO` AS u
@@ -18,8 +19,13 @@ include "config.php";
     $profileImg=$blogData[$i]['profilePic'];
     $imgProfile=base64_encode($profileImg);
     $blogData[$i]['profilePic']=$imgProfile;
-    
   }
-  $response = createResponse(200,"ok","ok",$blogData);
+  $data=array();
+  for($i = $blogCount; $i < $blogCount +4; $i++){
+    array_push($data, $blogData[$i]);
+  }
+
+  $response = createResponse(200,"ok","ok",$data);
   echo json_encode($response);
+}
 ?>

@@ -93,6 +93,28 @@ $(document).ready(function(){
   })
 
 
+  $.ajax({
+    "url":GETBIO_API,
+    "type":"GET",
+    "data": { getbio: true },
+    "success":function(response){
+      let parseResponse=JSON.parse(response);
+      let bio = parseResponse.data;
+
+      $('#work').html(bio[0].work);
+      $('#college').html(bio[0].college);
+      $('#high').html(bio[0].high);
+      $('#elem').html(bio[0].elem);
+      $('#address').html(bio[0].address);
+      $('#fav').html(bio[0].fav);
+      $('#hob').html(bio[0].hob);
+      $('#sport').html(bio[0].sport);
+      $('#status').html(bio[0].status);
+
+    }
+  })
+
+
   $('.sideBarHome').hover(function(){
     $('.sideHome').css('visibility','visible');
   }, function() {

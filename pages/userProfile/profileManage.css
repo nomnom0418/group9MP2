@@ -26,7 +26,7 @@ body{
 }
 .division{
   display:grid;
-  grid-template-columns: 6% 1fr;
+  grid-template-columns: 4% 1fr;
 }
 .textTitle{
   
@@ -251,5 +251,14 @@ body{
   border: none;
   box-shadow: 1px 1px 3px var(--transparent);
   cursor: pointer;
+}
+.bioResponse{
+  width: 100%;
+  background-color: var(--ligtherthird);
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+
+
 }
 

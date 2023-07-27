@@ -16,3 +16,6 @@ const USERBLOGS_API = "../../api/userBlogs.php";
 const UPDATEPROFILEIMAGE_API = "../../api/updateImage.php";
 const LOGOUT_API = "../../api/logout.php";
 const SENDBIO_API = "../../api/updateProfile.php";
+const GETBIO_API = "../../api/getBio.php";
+const UPDATEPASSWORD_API = "../../api/updatePass.php";
+const VIEWUSERS_API = "../../api/viewUsers.php";

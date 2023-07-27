@@ -145,10 +145,17 @@ body{
   transform: translateX(50%);
   transform: translateY(-50%);
 }
-
+span{
+  margin-left: 5px;
+}
+.bioCon{
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+}
  @media (width < 800px){
   .division{
-    grid-template-columns: 6% 1fr;
+    grid-template-columns: 5% 1fr;
   }
 }
 /* @media (width < 600px){

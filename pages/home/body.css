@@ -23,10 +23,11 @@ body{
   display: grid;
   height: 100%;
   grid-template-columns: 100vw;
-  grid-template-rows: 50px 70px 70px 40% 40%;
+  grid-template-rows: 50px 70px 70px auto 100px;
   position: absolute;
   z-index: 0;
   overflow: hidden;
+  height: auto;
 }
 .infoContainer{
   background-color: var(--myLink);
@@ -122,6 +123,7 @@ body{
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
+  height: auto;
 }
 #text{
   display: none;
@@ -134,6 +136,7 @@ body{
   background-color: var(--thirdColor);
   border-top-right-radius: 10px;
   justify-content: space-around;
+  height: auto;
 }
 .heading{
   position: fixed;
@@ -147,7 +150,7 @@ body{
   grid-template-rows: 250px auto;
   height: auto;
   width: 500px;
-  margin: 5px 5px;
+  margin: 20px 5px;
   border-radius: 5px;
   caret-color: transparent;
   border-radius: 6px;
@@ -167,13 +170,16 @@ body{
   background-color: var(--thirdColor);
   display: grid;
   grid-template-columns: 1px 1fr;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .blogInfo{
   background-color: var(--primaryColor);
-  padding-top: 5px;
   display: grid;
   width: 500px;
-  grid-template-rows: 20px auto;
+  grid-template-rows: auto auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .blogPicture{
   background-color: var(--myLink);
@@ -189,7 +195,7 @@ body{
 }
 .intro{
   text-align: justify;
-  margin: 5px 5px;
+  margin: 0px  15px;
 }
 .arrow{
   height: 2px;
