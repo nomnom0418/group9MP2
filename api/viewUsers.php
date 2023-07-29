@@ -5,8 +5,8 @@ if (isset($_GET["userId"])) {
   $userId = json_decode($_GET["userId"]);
   $sql = "SELECT *
           FROM `TBL_USERINFO` AS a
-          JOIN `TBL_BLOGINFO` AS b ON a.`userId` = b.`userId`
-          JOIN `TBL_BIO` AS c ON a.`userId` = b.`userId`
+          JOIN `TBL_BLOGINFO` AS b ON  b.`userId` = a.`userId`
+          JOIN `TBL_BIO` AS c ON b.`userId` = a.`userId`
           WHERE a.userId = $userId->userId";
   
   $result = $connection->query($sql);

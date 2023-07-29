@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["upload"]) && isset($
         $uploadOk = 0;
     }
 
-    if ($file["size"] > 1000000) {
+    if ($file["size"] > 5000000) {
         $response["error"] = "Sorry, your file is too large.";
         $uploadOk = 0;
     }

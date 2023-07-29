@@ -8,6 +8,7 @@
   --thirdColor: #e2e7ec;
   --ligtherthird: #f6f8fa;
   --myLink: #2da7dd; 
+  --boxColor: #89a7ab8a;
   --warning: rgba(252, 222, 89, .7);
   --danger: rgba(252, 89, 89, .7);
   --success: rgba(89, 252, 103, .7);
@@ -102,7 +103,7 @@ body{
   right: 65%;
   transform: translateY(30%);
   transform: translateX(50%);
-  background-color: var(--secondaryColor);
+  background-color: var(--primaryColor);
   height: 300px;
   width: 300px;
   border-radius: 6px;
@@ -204,6 +205,7 @@ body{
 
 .displayAddressUpdate{
   height: 400px;
+  top: -60px;
 }
 #newAddress{
   height:20px
@@ -222,6 +224,8 @@ body{
   align-items: center;
   gap: 10px;
   border-radius: 10px;
+  background-color: var(--boxColor);
+  padding: 20px 20px;
   z-index: 1;
 }
 

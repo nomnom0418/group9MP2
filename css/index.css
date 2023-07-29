@@ -607,11 +607,24 @@ h4{
     width: 400px;
   }
   .loginForm{
-    width: 35%;
+    width: 40%;
   }
 }
 
 @media screen and (280px <= width <= 820px){
+  .loginForm{
+    width: 45%;
+  }
+  .registerForm{
+    right: 50%;
+    transform: translate(50%, 50%);
+    height: 600px;
+
+  }
+  .infoContainer{
+   
+    grid-template-columns: 1fr;
+  }
   .container{
     width: 100%;
     
@@ -668,7 +681,7 @@ h4{
 }
 @media screen and (620px <= width <= 719px){
   .loginForm{
-    width: 40%;
+    width: 50%;
   }
 }
 @media screen and (521px <= width <= 619px){
@@ -680,7 +693,7 @@ h4{
     grid-template-rows: 1fr 1fr 1fr;
   }
   .loginForm{
-    width: 40%;
+    width: 60%;
   }
 }
 

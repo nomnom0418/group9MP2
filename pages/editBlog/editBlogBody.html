@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../profile/sidebar.css">
   <title>create</title>
 
 </head>
@@ -12,7 +11,7 @@
     <h2>Create a blog</h2>
     <div>
       <div class="category">Category: </div>
-        <select name="Cathegory" id="category" class="categoryInput">
+        <select name="Cathegory" id="editCategory" class="categoryInput">
           <option value="nature">Nature</option>
           <option value="food">Food</option>
           <option value="tech">Technology</option>
@@ -25,10 +24,10 @@
         </select>
       
       <div class="title">Title:</div>
-     <input type="text" class="titleInput" id="title"></div>
+     <input type="text" class="titleInput" id="editTitle"></div>
     
-    <div class="introduction">Introduction: <br /> <textarea name="introduction" cols="30" rows="3" class="introductionInput"  id="intro"></textarea></div>
-    <div class="content">Content: <br /><textarea name="content" id="content" cols="1000" rows="10" class="contentInput"  id="content"></textarea></div>
+    <div class="introduction">Introduction: <br /> <textarea name="introduction" cols="30" rows="3" class="introductionInput"  id="editIntro"></textarea></div>
+    <div class="content">Content: <br /><textarea name="content" cols="1000" rows="10" class="contentInput"  id="editContent"></textarea></div>
     <div class="con">
       <div class="imgLabel">
         <div class="labelCon">
@@ -38,11 +37,12 @@
             <div class="labelText">upload image</div>
         </div>
       </div>
-    <button class="uploadBlog" onclick="uploadBlog()">Upload Your Blog</button>  
+    <button class="uploadBlog" onclick="updateIteration(1,5,'category','title','intro','content','upload',0)">Upload Your Blog</button>  
     </div>
-    <div class="uploadImage"><input type="file" id="uploadImg"></div>
+    <div class="uploadImage"><input type="file" id="editImg"></div>
     
   </div>
   <div class="myAlertElement"> my alert</div>
+  <div id="blogId"></div>
 </body>
 </html>

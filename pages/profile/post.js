@@ -46,13 +46,15 @@ $(document).ready(function() {
                                             '<div class="dot1"></div>'+
                                             '<div class="dot2"></div>'+
                                             '<div class="dot3"></div>'+
-                                            '<div class="editDelete editDelete' + i + '">'+
-                                              '<div class="edit edit' + i + '">edit</div>'+
-                                              '<button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button>'+
+                                            '<a href="../editBlog/editBlog.php?id=' + blogId + '">' +
+                                              '<div class="editDelete editDelete' + i + '">'+
+                                                '<div class="edit edit' + i + '">edit</div>'+
+                                                '<button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button>'+
+                                              '</div>'+
+                                            '</a>'
                                             '</div>'+
                                           '</div>'+
                                         '</div>'+
-                                      '</div>'+
                                   
             blogParentPost.html(picChild);
         

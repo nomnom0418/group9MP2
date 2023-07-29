@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  $('.navIcon').hide();
-  $('.burgerIcons').hide();
+
+$('.navIcon').hide();
+$('.burgerIcons').hide();
 //this is for navbar menu animation
 enterLeave($('.homeContainer'),$('#homeText'),$('#homeIcon'))
 enterLeave($('.popularPostContainer'),$('#popularPostText'),$('#popularPostIcon'))
@@ -57,5 +58,11 @@ function enterLeave(enterLeave,text,icon){
     }
     $(this).children().eq(0).data('rotation', rotationAngle);
   })
+  $('#profile').click(function(){
+    window.location="../userProfile/userProfile.php?id=";
+  })
+  $('.homeContainer').click(function(){
+    window.location="../home/home1.php";
+  })  
 })
 

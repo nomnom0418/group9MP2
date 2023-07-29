@@ -33,7 +33,9 @@ $(document).ready(function(){
                                       '<div class="dot2"></div>'+
                                       '<div class="dot3"></div>'+
                                       '<div class="editDelete editDelete' + i + '">'+
-                                        '<div class="edit edit' + i + '">edit</div>'+
+                                        '<a href="../editBlog/editBlog.php?id=' + blogId + '">' + 
+                                          '<div class="edit edit' + i + '">edit</div>'+
+                                        '</a>'+
                                         '<button onclick="deleteBlog('+ blogId +')" type="button" class="delete delete' + i + '">delete</button>'+
                                       '</div>'+
                                     '</div>'+
@@ -76,16 +78,18 @@ $(document).ready(function(){
     let userName = userData[0].userName;
     let fName = userData[0].fName;
     let lName = userData[0].lName;
-    let adddress = userData[0].city;
+    let country = userData[0].country;
+    let address = userData[0].city;
     let email = userData[0].email;
-    let creation = userData[0].creation_date;
+    let created_date = userData[0].created_date;
     let profilePic = "data:image/jpeg;base64," + userData[0].profilePic;
-
-    $('.pImage').attr('src', profilePic);
+    
     $('.textInfo').html(userName);
     $('.emailInfo').html(email);
     $('.account').html(userId)
+    $('.pImage').attr('src', profilePic);
     $('.creatorPic').attr('src', profilePic);
+    $('#address').html(address);
     },
     "error" : function(xhr,status,error){
       alert("error");

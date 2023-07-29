@@ -52,7 +52,7 @@ if (isset($_POST['registrationData'])){
      if($isExisted){
         $responses = createResponse(409, "Conflict", "email allready exist");
       } else {
-        $sql = "INSERT INTO `tbl_userinfo`(`fName`, `lName`, `birthday`, `address`, `city`,`province`,`zip`,`country`,`email`,`pass`)
+        $sql = "INSERT INTO `TBL_USERINFO`(`fName`, `lName`, `birthday`, `address`, `city`,`province`,`zip`,`country`,`email`,`pass`)
         VALUES ('{$registerRequest->fName}','{$registerRequest->lName}','{$registerRequest->birthday}','{$registerRequest->address}','{$registerRequest->city}','{$registerRequest->province}','{$registerRequest->zip}','{$registerRequest->country}','{$registerRequest->email}','{$registerRequest->pass}')";
         $isInserted = $connection->query($sql);
   
@@ -66,4 +66,5 @@ if (isset($_POST['registrationData'])){
 
     }
     echo json_encode($responses);
-}
+  }
+  ?>

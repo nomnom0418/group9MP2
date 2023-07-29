@@ -1,39 +1,37 @@
 $(document).ready(function() {
-
-  $.ajax({
+  
+    $.ajax({
     "url":USERPROFILE_API,
     "type":"POST",
     "data": { getLoggedUser: true },
     "success":function(response){
-    
     let parseResponse=JSON.parse(response);
-      
     let userData=parseResponse;
-    $("#accountNumber").text(userData.data[0]);
-    $("#userName").text(userData.data[1]);
-    $("#emailInfo").text(userData.data[11]);
+    let userD=userData.data;
+    let userName=userD[0].userName;
+    let fName=userD[0].fName;
+    let lName=userD[0].lName;
+    let address=userD[0].address;
+    let birthday=userD[0].birthday;
+    let city=userD[0].city;
+    let country=userD[0].country;
+    let creation_date=userD[0].creation_date;
+    let email=userD[0].email;
+    let phoneNumber=userD[0].phoneNumber;
+    let province=userD[0].province;
+    let zip=userD[0].zip;
     
-    $("#UserName").text("Username: " + userData.data[1]);
-    $("#fName").text("Name: " + userData.data[2] +" "+ userData.data[3]);
-    $("#phoneNumber").text("Phone Number: " + userData.data[4]);
-    $("#birthday").text("Birth Date: " + userData.data[5]); 
-    $("#address").text("Address: " + userData.data[6])+", "+ (userData.data[9]) +", "+ (userData.data[8]) +", "+ (userData.data[7]) +", zip code :"+(userData.data[10]) ;
-    $("#email").text("Email: " + userData.data[11]);
-    $("#password").text("Password: " + userData.data[12]);
-    $("#cDate").text("creation date: " + userData.data[13]);
+    if(userData.status==200){
+      $('#userName').html("User Name: " + userName);
+      $('#fName').html("Name: " + fName +" "+ lName);
+      $('#phoneNumber').html("Phone Number: " + phoneNumber);
+      $('#birthday').html("Birthday: " + birthday);
+      $('#address').html("Address: " + address +", "+ city +", "+ province +", "+ country + "(" + zip + ")");
+      $('#email').html("email: " + email);
+      $('#cDate').html("creation date: " + creation_date);
+      $('#password').html("Change your Password?");
+    }
 
-    $('#newUserName').val(userData.data[1]);
-    $('#newfName').val(userData.data[2]);
-    $('#newlName').val(userData.data[3]);
-    $('#newPhoneNumber').val(userData.data[4]);
-    $('#newBirthday').val(userData.data[5]);
-    $('#newAddress').val(userData.data[6]);
-    $('#newCountry').val(userData.data[9]);
-    $('#newProvince').val(userData.data[8]);
-    $('#newCity').val(userData.data[7]);
-    $('#newZip').val(userData.data[10]);
-    $('#newEmail').val(userData.data[11]);
-    
     },
     "error" : function(xhr,status,error){
       alert("error");
@@ -99,42 +97,79 @@ $(document).ready(function() {
 
 });
 
-
-
-function updateProfile(){
-  let updatedUserData = {
-    "userName":$("#newUserName").val(),
-    "fName":$("#newfName").val(),
-    "lName":$("#newlName").val(),
-    "phoneNumber":$("#newPhoneNumber").val(),
-    "birthday":$("#newBirthday").val(),
-    "address":$("#newAddress").val(),
-    "country":$("#newCountry").val(),
-    "province":$("#newProvince").val(),
-    "city":$("#newCity").val(),
-    "zip":$("#newZip").val(),
-    "email":$("#newEmail").val(),
-    };
-  
-  $.ajax({
-    url: UPDATEPROFILE_API,
-    type: "POST",
-    data: "updatedUserData="+JSON.stringify(updatedUserData),
-    success: function(response) {
-      var parsedResponse=JSON.parse(response);
-      if (parsedResponse.status === 200) {
-        $('.displayMsg').css('color','yellowgreen');
-        $('.displayMsg').html(parsedResponse.description);
-       } else {
-        $('.displayMsg').html(parsedResponse.description);
-          console.error(parsedResponse.description);
-       }
-    },
-    error: function(xhr, status, error) {
-      alert("error");
-    }
-  });
+function addDelayedIteration(iteration, maxIterations, data1, data2, data3, data4, data5, itval) {
+  if (iteration <= maxIterations){
+      if(iteration==1){
+        updateProfile(itval,data1);
+      }
+      if(iteration==2){
+        updateProfile(itval,data2);
+      }
+      if(iteration==3){
+        updateProfile(itval,data3);
+      }
+      if(iteration==4){
+        updateProfile(itval,data4);
+      }
+      if(iteration==5){
+        updateProfile(itval,data5);
+      }
+      itval++;
+      iteration++;
+    setTimeout(function(){
+      addDelayedIteration(iteration, maxIterations,data1, data2, data3, data4, data5, itval);
+    }, 1000); 
   }
+}
+function delayedIteration(iteration, maxIterations, data1, data2, itval) {
+  if (iteration <= maxIterations){
+      if(iteration==1){
+        updateProfile(itval,data1);
+      }
+      if(iteration==2){
+        updateProfile(itval,data2);
+      }
+      itval++;
+      iteration++;
+    setTimeout(function(){
+      delayedIteration(iteration, maxIterations,data1, data2,itval);
+    }, 1000); 
+  }
+}
+
+
+function updateProfile(val,name){
+  let value = [$("#newUserName").val(),$("#newfName").val(),$("#newlName").val(),$("#newPhoneNumber").val(),$("#newBirthday").val(),$("#newAddress").val(),$("#newCountry").val(),$("#newProvince").val(),$("#newCities").val(),$("#newZip").val(),$("#newEmail").val()]
+    
+  for(let i=0; i < value.length; i++){
+      if(i==val){
+        let dataValue=value[i];
+      
+        let updatedUserData = {
+        key:name,
+        value:dataValue
+      };
+    
+    $.ajax({
+      url: UPDATEPROFILE_API,
+      type: "POST",
+      data: "updatedUserData="+JSON.stringify(updatedUserData),
+      success: function(response) {
+        var parsedResponse=JSON.parse(response);
+        if (parsedResponse.status === 200) {
+          $('.displayMsg').css('color','yellowgreen');
+          $('.displayMsg').html(parsedResponse.description);
+        } else {
+          $('.displayMsg').html(parsedResponse.description);
+            console.error(parsedResponse.description);
+        }
+      },
+      error: function(xhr, status, error) {
+        alert("error");
+      }
+    });
+  }}
+}
   
 
 
@@ -177,35 +212,75 @@ function updateProfile(){
   }
   
 
-  function sendBio(){
-    let bio = {
-      "elem":$("#elementary").val(),
-      "high":$("#highSchool").val(),
-      "college":$("#college").val(),
-      "work":$("#work").val(),
-      "fav":$("#favorites").val(),
-      "hob":$("#hobbies").val(),
-      "sport":$("#sports").val(),
-      "status":$("#status").val(),
+  function bioDelayedIteration(iteration, maxIterations, data1, data2, data3, data4, data5, data6, data7, data8, ival) {
+    if (iteration <= maxIterations){
+        if($("#elementary").val() != "" && iteration==1){
+          sendBio(ival,data1);
+        }
+        if($("#highSchool").val() != "" && iteration==2){
+         
+          sendBio(ival,data2);
+        }
+        if($("#college").val() != "" && iteration==3){
+         
+          sendBio(ival,data3);
+        }
+        if($("#work").val() != "" && iteration==4){
+         
+          sendBio(ival,data4);
+        }
+        if($("#favorites").val() != "" && iteration==5){
+          sendBio(ival,data5);
+        }
+        if($("#hobbies").val() != "" && iteration==6){
+          sendBio(ival,data6);
+        }
+        if($("#sports").val() != "" && iteration==7){
+          sendBio(ival,data7);
+        }
+        if($("#status").val() != "" && iteration==8){
+          sendBio(ival,data8);
+        }
+        ival++;
+        iteration++;
+      setTimeout(function(){
+        bioDelayedIteration(iteration, maxIterations,data1, data2, data3, data4, data5, data6, data7, data8, ival);
+      }, 500); 
+    }
+  }
+
+  
+  function sendBio(arrVal,dbRowName){
+    let value = [$("#elementary").val(),$("#highSchool").val(),$("#college").val(),$("#work").val(),$("#favorites").val(),$("#hobbies").val(),$("#sports").val(),$("#status").val(),];
+    
+    for(let i=0; i<=value.length; i++){
+      if(arrVal==i){
+      let newVal = {
+        name:dbRowName,
+        userBio:value[i]
       };
     
-    $.ajax({
-      url: SENDBIO_API,
-      type: "POST",
-      data: "bio="+JSON.stringify(bio),
-      success: function(response) {
-        var parsedResponse=JSON.parse(response);
-        if (parsedResponse.status === 200) {
-          $('.bioResponse').css('color','yellowgreen');
-          $('.bioResponse').html(parsedResponse.description);
-         } else {
-          $('.bioResponse').css('color','red');
-          $('.bioResponse').html(parsedResponse.description);
-         }
-      },
-      error: function(xhr, status, error) {
-        alert("error");
+    
+      $.ajax({
+        url: SENDBIO_API,
+        type: "POST",
+        data: "bio="+JSON.stringify(newVal),
+        success: function(response) {
+          var parsedResponse=JSON.parse(response);
+          if (parsedResponse.status === 200) {
+            $('.bioResponse').css('color','yellowgreen');
+            $('.bioResponse').html(parsedResponse.description);
+          } else {
+            $('.bioResponse').css('color','red');
+            $('.bioResponse').html(parsedResponse.description);
+          }
+        },
+        error: function(xhr, status, error) {
+          alert("error");
+        }
+      });
       }
-    });
+  
     }
+  }
   

@@ -16,14 +16,14 @@
       
       <div class="rowOdd col2">
         <div>
-          <div class="userName pad" id="UserName"></div>
+          <div class="userName pad" id="userName"></div>
           <div class="inputContainer unDisplay">
             <i class="fa-solid fa-circle-xmark xmark"></i>
            <div class="textCenter"> enter your new Username </div>
             <div class="newInputs">
-              <input type="text" id="newUserName" class="inputs" value="">             
+              <input type="text" id="newUserName" class="inputs" value="1">             
             </div>
-            <button class="button okBtn" onclick="updateProfile()">update</button>
+            <button class="button okBtn" onclick="updateProfile(0,'userName')">update</button>
           </div>
         </div>
         <div class="updateUserName updateBtn">update</div>
@@ -39,7 +39,7 @@
               <input type="text" id="newfName" class="inputs">
               <input type="text" id="newlName" class="inputs">
             </div>
-            <button class="button okBtn nameBnt" onclick="updateProfile()">update</button>
+            <button class="button okBtn nameBnt" onclick="delayedIteration(1,2,'fName','lName',1)">update</button>
           </div>  
         </div>
         <div class="updateName updateBtn ">update</div>
@@ -54,7 +54,7 @@
             <div class="newInputs">
               <input type="number" id="newPhoneNumber" class="inputs">
             </div>
-            <button class="button okBtn" onclick="updateProfile()">update</button>
+            <button class="button okBtn" onclick="updateProfile(3,'phoneNumber')">update</button>
           </div>      
         </div>
         <div class="updatePhoneNumber updateBtn">update</div>
@@ -69,7 +69,7 @@
             <div class="newInputs">
               <input type="date" id="newBirthday" class="inputs">
             </div>
-            <button class="button okBtn" onclick="updateProfile()">update</button>
+            <button class="button okBtn" onclick="updateProfile(4,'birthday')">update</button>
           </div>         
         </div>
         <div class="updateBirthday updateBtn">update</div>
@@ -84,17 +84,19 @@
             <div class="inputs inputGrid ">
               address<textarea name="" id="newAddress" cols="30" rows="2"></textarea>
               country <select name="country" id="newCountry">
-                        <option value="country">Phillippines</option>
+                        <option id="newCountry">Phillippines</option>
               </select>
               province<select name="province" id="newProvince">
-                        <option value="province">Cavite</option>
+                        <option id="newProvince">Cavite</option>
               </select>
-              city<select name="city" id="newCity">
-                    <option value="city">Trece Martirez</option>
+              city<select name="city" id="newCities">
+                    <option id="newCities">Trece Martirez</option>
+                    <option id="newCities">dasma</option>
+                    <option id="newCities">imus</option>
               </select>
               zip<input type="zip" id="newZip">
             </div>
-            <button class="button addOkBtn" onclick="updateProfile()">update</button>
+            <button class="button addOkBtn" onclick="addDelayedIteration(1,5,'address','country','province','city','zip',5)">update</button>
           </div>
         </div>      
         <div class="updateAddress updateBtn">update</div>
@@ -110,7 +112,7 @@
             <div class="newInputs">
               <input type="email" id="newEmail" class="inputs">
             </div>
-            <button class="button okBtn" onclick="updateProfile()">update</button>
+            <button class="button okBtn" onclick="updateProfile(10,'email')">update</button>
           </div>
         </div>
         <div class="updateEmail updateBtn">update</div>
@@ -139,6 +141,7 @@
     </div>
       
   </div>    
+
   <div class="aboutText"><h4>about you</h4></div>
   <div class="bioResponse"></div>
   <div class="bioContainer">
@@ -160,7 +163,7 @@
     <input class="moreInfo" type="text" id="status">
     
   </div>
-  <button onclick="sendBio()" class="bioBtn" type="button">submit my info</button>
+  <button onclick="bioDelayedIteration(1,9,'elem', 'high', 'college', 'work', 'fav', 'hob', 'sport', 'status',0)" class="bioBtn" type="button">submit my info</button>
 </body>
 
 </html>

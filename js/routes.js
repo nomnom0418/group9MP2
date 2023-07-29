@@ -19,3 +19,4 @@ const SENDBIO_API = "../../api/updateProfile.php";
 const GETBIO_API = "../../api/getBio.php";
 const UPDATEPASSWORD_API = "../../api/updatePass.php";
 const VIEWUSERS_API = "../../api/viewUsers.php";
+const VIEWEDITBLOG_API = "../../api/viewEditBlog.php";

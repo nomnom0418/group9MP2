@@ -18,6 +18,12 @@ body{
   box-sizing: border-box;
  
 }
+.heads{
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+}
 .myBody{
   font-family:  'Roboto',Raleway, Arial, Helvetica, sans-serif;
   background-color: var(--thirdColor);
@@ -28,20 +34,16 @@ body{
   position: absolute;
   width: 70%;
   display: grid;
-  grid-template-rows: 10px auto;
-  gap: 10%;
-  background-color: red;
-  top: 200px;
+  grid-template-rows: 1px auto;
+  top: 230px;
   left: 50%;
   transform: translateX(-50%);
 }
 .greet{
   height: 1.5em;
   position: absolute;
-
   margin-top: 20px; 
   justify-content: center;
-  background-color: #2a3638;
   width: 130px;
   left: 50%;
   transform: translateX(-50px);
@@ -59,7 +61,8 @@ body{
   color: var(--secondaryColor);
   position: absolute;
   top: -170px;
-  transform: translateX(40%);
+  left:53%;
+  transform: translateX(-50%);
 }
 .botText{
   font-family: 'dancing Script', Arial, Helvetica, sans-serif;
@@ -69,9 +72,131 @@ body{
 }
 .botCon{
   display: grid;
-  grid-template-columns: 70% 30%;
+  width: auto;
+  grid-template-columns: 9.4fr 2.6fr;
+
+  gap: 2px;
 }
 .picCon{
-  height: 150px;
+  height: 180px;
   width: 150px;
+  border-radius: 5px;
+  align-self: center;
+}
+.leftCon{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  gap: 25px;
+}
+.rightCon{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+ 
+}
+
+.blogContainer{
+  height: auto;
+  width: 95%;
+  background-color: var(--thirdColor);
+  margin: 5px 5px;
+  padding: 0px 10px ;
+  border-radius: 10px;
+  box-shadow: .5px .5px 2px var(--transparent);
+}
+.blogPicture{
+  height: 250px;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px var(--transparent);
+}
+.topCon{
+  width: 100%;
+  height: 10px;
+}
+.blogInfo{
+  text-align: justify;
+}
+.title{
+  text-align: center;
+
+}
+.intro{
+  text-align: justify;
+}
+.love{
+  width: 100%;
+  text-align: center;
+  color: red;
+}
+.work{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+.bio{
+  position: sticky;
+  top: 80px;
+}
+.study{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+.bday{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+.live{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+.link{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--secondaryColor);
+}
+.cen{
+  width: 100%;
+  text-align: center;
+}
+.mlink{
+color: maroon;
+}
+.flink{
+color: blue;
+width: 100%;
+text-align: center;
+}
+.pNum{
+  width: 100%;
+  text-align: center;
+}
+.phone{
+  color: #2DA7DD;
+}
+.since{
+  margin-top: 20px;
+  font-size: .8em;
+}
+
+@media(width < 700px) {
+  .botCon{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  
+
+  }
+   
 }

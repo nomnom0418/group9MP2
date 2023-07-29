@@ -21,7 +21,7 @@ body{
 .sidebarContainer{
   background-color: var(--thirdColor);
   display: grid;
-  width: 4.5%;
+  width: 45px;
   font-family: Raleway,'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 400;
   height: 100%;
@@ -74,12 +74,16 @@ body{
 .account{
   font-size: 1.3em;
 }
-.sideBarHome, .yourInfo, .manageYourAccount,.createBlog, .logout{
+.yourInfo, .manageYourAccount,.createBlog, .logout{
+  padding-top: 12px;
+  padding-left: 33%;
+}
+.sideBarHome{
   padding-top: 12px;
   padding-left: 30%;
-}
+} 
 .hoverColor:hover{
-  
+  border-radius: 50%;  
   background-color: var(--fontColor);
   cursor: pointer;
 }
