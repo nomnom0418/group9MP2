@@ -159,7 +159,9 @@ $(document).ready(function(){
 
 
 function updateProfileImage(){
+
   let inputElement = $("#profileImageBnt")[0];
+
     if (inputElement.files.length>0){
       let file = inputElement.files[0];
       let formData = new FormData();
@@ -246,6 +248,9 @@ function logout(){
     "success":function(response){
     console.log(response);
     let parseResponse=JSON.parse(response);
+    $('.logout').click(function(){
+      window.location.href="../../index.html";
+    })
     },
     "error" : function(xhr,status,error){
       alert("error");
@@ -258,6 +263,7 @@ function alertElement(message) {
     element.css("display","block");  
    
     element.html(message);
+  
   setTimeout(function () {
     element.fadeOut();
   }, 3000);

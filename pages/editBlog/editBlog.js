@@ -47,7 +47,7 @@ function updateIteration(iteration, maxIterations, data1, data2, data3, data4, d
        
         updateBlog(ival,data4);
       }
-      if($("#editImage").val() != "" && iteration==5){
+      if($("#editImg")[0] != null && iteration==5){
         updateBlog(ival,data5);
       }
 
@@ -61,46 +61,55 @@ function updateIteration(iteration, maxIterations, data1, data2, data3, data4, d
 
 
 
-function updateBlog(arrVal,dbRowName){
-  let blogId=$('#blogId').html()
-  let updates = [$("#editCategory").val(),$("#editTitle").val(),$("#editIntro").val(),$("#editContent").val(),$("#editImg").val()];
- 
-  for(let i=0; i<=updates.length; i++){
-    if(arrVal==i){
-   
-      let newVal = {
-      name:dbRowName,
-      update:updates[i],
-      blogId:blogId
-    };
-  
-      $.ajax({
-        url: VIEWEDITBLOG_API, 
-        type: "POST", 
-        data: "update="+JSON.stringify(newVal),
-        success: function (response){
-          console.log(response);
-          
-          // let parsedResponse=JSON.parse(response);
-          // if (parsedResponse.status === 200) {
-          //   alert(parsedResponse.description);
-          //   $('#category').val("");
-          //   $('#title').val("");
-          //   $('#intro').val("");
-          //   $('#content').val("");
+function updateBlog(arrVal, dbRowName) {
+  let blogId = $('#blogId').html();
+  let updates = [$("#editCategory").val(), $("#editTitle").val(), $("#editIntro").val(), $("#editContent").val(), $("#editImg")[0].files[0]];
 
-          // } else {
-          //   alert(parsedResponse.description)
-          // }
+  // Loop through updates array based on the value of arrVal
+  if (arrVal < 4) {
+    let newVal = {
+      name: dbRowName,
+      update: updates[arrVal],
+      blogId: blogId
+    };
+
+    $.ajax({
+      url: VIEWEDITBLOG_API,
+      type: "POST",
+      data: "update=" + JSON.stringify(newVal),
+      success: function(response) {
+        console.log(response);
+      },
+      error: function(xhr, status, error) {
+        console.error(error);
+      },
+    });
+  } else if (arrVal == 4) {
+    let file = updates[4];
+    if (file) {
+      let formData = new FormData();
+      formData.append("editImg", file);
+      formData.append("rowName", dbRowName);
+      formData.append("blogId", blogId);
+
+      $.ajax({
+        url: "../../api/forEditImg.php",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+          console.log(response);
         },
-        error: function (xhr, status, error) {
-        
+        error: function(xhr, status, error) {
+          console.error(error);
         },
       });
+    } else {
+      console.error("No image file selected.");
     }
   }
-}
-  
+}  
   $(document).ready(function(){
     $('.sideBarHome').hover(function(){
       $('.sideHome').css('visibility','visible');
